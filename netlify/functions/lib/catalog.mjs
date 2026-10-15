@@ -40,3 +40,19 @@ export const SERVICE_ZIPS = new Set([
 export function formatUSD(cents) {
   return (cents / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
 }
+
+// Tune-up and Frame Foundry Care (services.html#care). Keep in sync with the services and terms pages.
+export const SERVICES = {
+  tuneup: {
+    name: "Frame Foundry tune-up",
+    description: "One in-home visit: dust cleaning, processor thermal paste, BIOS/driver/Windows updates, stress test and report.",
+    amountCents: 7900,
+  },
+  care: {
+    name: "Frame Foundry Care (yearly)",
+    description:
+      "Yearly plan: one tune-up per year, repair labor on PCs we built (20% off for other PCs), priority replies, 3 remote help sessions. Renews every year until cancelled.",
+    amountCents: 9900,
+    interval: "year",
+  },
+};

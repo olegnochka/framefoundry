@@ -71,3 +71,8 @@
 .ffb-hint { font-size: 0.82rem; color: var(--muted); margin: 0.5rem 0 0.8rem; }
 .ffb-error { color: #ffb4a3; font-size: 0.92rem; }
 .ffb-go:disabled { opacity: 0.6; }
+
+/* ---------- Tune-up / Care buttons ---------- */
+.ffcare-slot:not(:empty) { margin-top: 16px; }
+.ffcare-slot .btn { width: 100%; justify-content: center; }
+.ffb-check[hidden] { display: none; }

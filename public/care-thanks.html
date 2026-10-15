@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you - Frame Foundry</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Frame Foundry tune-up and Care plan confirmation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://framefoundrypc.com/support.html">
+<meta property="og:title" content="Support - Frame Foundry">
+<meta property="og:description" content="How to reach Frame Foundry, answers to common questions, and help with a PC we built.">
+<meta property="og:image" content="https://framefoundrypc.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon.png">
+<meta name="theme-color" content="#0A0B0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="commerce.css">
+<script src="site.js" defer></script>
+<script src="chat.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 23V9h11M10 16h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>Frame Foundry</a>
+    <nav class="nav" aria-label="Main">
+      <a href="builds.html">Builds</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta" href="quote.html">Get a quote</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Frame Foundry</p>
+    <h1>Thank you - you're booked</h1>
+    <p>Your payment went through and Stripe has emailed you a receipt.</p>
+  </div>
+</section>
+<main>
+  <div class="wrap narrow">
+    <div id="care-tuneup">
+      <h2>What happens next</h2>
+      <ol>
+        <li><strong>Within one business day:</strong> we email you to pick a time for your tune-up visit.</li>
+        <li><strong>The visit:</strong> about an hour at your home - cleaning, fresh thermal paste, updates and a stress test, with a short report.</li>
+      </ol>
+      <p>Need to cancel before the visit? Just reply to our email for a full refund.</p>
+    </div>
+    <div id="care-plan" hidden>
+      <h2>Welcome to Frame Foundry Care</h2>
+      <ol>
+        <li><strong>Within one business day:</strong> we email you a welcome note and offer times for this year's tune-up (or book it later - any time in your plan year).</li>
+        <li><strong>All year:</strong> priority replies, up to 3 remote help sessions, and repair labor as described in the <a href="terms.html#care">plan terms</a>.</li>
+        <li><strong>Renewal:</strong> your plan renews automatically each year at $99 + any sales tax. We email you before each renewal, and you can cancel online from the <a href="services.html#care-manage">services page</a> or by email.</li>
+      </ol>
+    </div>
+    <div class="notice"><p style="margin:0">Questions any time: <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>. Stripe has emailed you a receipt.</p></div>
+    <p style="margin-top:2rem"><a class="btn ghost" href="index.html">Back to the home page</a></p>
+  </div>
+</main>
+<script>
+  if (new URLSearchParams(location.search).get("plan") === "care") {
+    document.getElementById("care-plan").hidden = false;
+    document.getElementById("care-tuneup").hidden = true;
+  }
+</script>
+<footer class="site-footer">
+  <div class="wrap cols">
+    <div>
+      <p><strong>Frame Foundry</strong> - custom gaming PCs, built to order in the West San Fernando Valley.</p>
+      <p>Pacific Front Desk LLC dba Frame Foundry. Home-based workshop in Canoga Park, Los Angeles. No storefront - delivery and in-home service by appointment.</p>
+      <p><a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a></p>
+    </div>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="builds.html">Builds</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="quote.html">Get a quote</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <ul>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="warranty.html">Warranty</a></li>
+      <li><a href="terms.html">Terms of Sale</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
