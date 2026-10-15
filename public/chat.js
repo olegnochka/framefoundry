@@ -60,7 +60,7 @@
     var head = el("div", "ffc-head");
     var title = el("div", "ffc-title");
     title.appendChild(el("strong", null, "Frame Foundry"));
-    title.appendChild(el("span", null, "AI assistant - Oleg reads every lead"));
+    title.appendChild(el("span", null, "AI assistant - our team reads every message"));
     var close = el("button", "ffc-close", "×");
     close.type = "button";
     close.setAttribute("aria-label", "Close chat");
