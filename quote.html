@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a quote - Frame Foundry</title>
+<meta name="description" content="Ask Frame Foundry for a free itemized quote for a custom gaming PC or an upgrade. Reply within 24 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://framefoundrypc.com/quote.html">
+<meta property="og:title" content="Get a quote - Frame Foundry">
+<meta property="og:description" content="Ask Frame Foundry for a free itemized quote for a custom gaming PC or an upgrade. Reply within 24 hours.">
+<meta property="og:image" content="https://framefoundrypc.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon.png">
+<meta name="theme-color" content="#0A0B0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 23V9h11M10 16h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>Frame Foundry</a>
+    <nav class="nav" aria-label="Main">
+      <a href="builds.html">Builds</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta" href="quote.html" aria-current="page">Get a quote</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Frame Foundry</p>
+    <h1>Get a free quote</h1>
+    <p>Answer what you can - there are no wrong answers. You will get an itemized quote by email within 24 hours, valid for 72 hours. No obligation.</p>
+  </div>
+</section>
+<main>
+  <div class="wrap narrow">
+    <!-- Form service: Netlify Forms. Submissions appear in Netlify -> Project -> Forms -> "quote"; set an email notification to hello@framefoundrypc.com there. -->
+    <form class="form-panel" name="quote" method="POST" action="/quote.html#sent" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote">
+      <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+
+      <div class="row-2">
+        <div class="field"><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label for="phone">Phone <span class="hint">Optional - only if you prefer a call or text</span></label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+        <div class="field"><label for="zip">Delivery ZIP code</label><input type="text" id="zip" name="delivery_zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required></div>
+      </div>
+
+      <fieldset>
+        <legend>What do you need?</legend>
+        <label class="choice"><input type="radio" name="request_type" value="New PC" checked> A new PC</label>
+        <label class="choice"><input type="radio" name="request_type" value="Upgrade my PC"> An upgrade to my current PC</label>
+        <label class="choice"><input type="radio" name="request_type" value="Assembly of my parts"> Assembly of parts I already have</label>
+      </fieldset>
+
+      <div class="field">
+        <label for="budget">Budget for the PC <span class="hint">Before tax, setup and delivery</span></label>
+        <select id="budget" name="budget" required>
+          <option value="">Choose one</option>
+          <option>Under $1,500 (likely an upgrade)</option>
+          <option>$1,500 - $2,000</option>
+          <option>$2,000 - $2,500</option>
+          <option>$2,500 - $3,500</option>
+          <option>$3,500 - $5,000</option>
+          <option>Over $5,000</option>
+          <option>Not sure - advise me</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="games">Games and apps <span class="hint">What will it run most? e.g. Fortnite, Call of Duty, Cyberpunk 2077, Premiere Pro, Blender</span></label>
+        <textarea id="games" name="games" required></textarea>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="resolution">Monitor</label>
+          <select id="resolution" name="resolution">
+            <option>Not sure yet</option>
+            <option>1080p (Full HD)</option>
+            <option>1440p (Quad HD)</option>
+            <option>4K (Ultra HD)</option>
+            <option>Ultrawide</option>
+            <option>TV in the living room</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="noise">How quiet?</label>
+          <select id="noise" name="noise">
+            <option>No preference</option>
+            <option>Quiet matters (shared room, office)</option>
+            <option>As quiet as possible</option>
+            <option>Don't care - performance first</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="aesthetics">Looks <span class="hint">Case color, size, lighting (RGB) or none, glass or solid side, anything you have seen and liked</span></label>
+        <textarea id="aesthetics" name="aesthetics"></textarea>
+      </div>
+
+      <div class="row-2">
+        <div class="field"><label for="deadline">Needed by <span class="hint">Birthday, holiday, no rush</span></label><input type="date" id="deadline" name="deadline"></div>
+        <div class="field">
+          <label for="heard">How did you find us?</label>
+          <select id="heard" name="heard_about_us">
+            <option value="">Choose one</option>
+            <option>Google search</option>
+            <option>Google Maps</option>
+            <option>Nextdoor</option>
+            <option>Facebook or Marketplace</option>
+            <option>School, PTA or club</option>
+            <option>Friend or family</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Add-ons to include in the quote</legend>
+        <label class="choice"><input type="checkbox" name="addons" value="In-home setup"> In-home setup ($149 or $249)</label>
+        <label class="choice"><input type="checkbox" name="addons" value="Monitor, keyboard, mouse or headset"> Monitor, keyboard, mouse or headset</label>
+        <label class="choice"><input type="checkbox" name="addons" value="Parental controls"> Parental controls</label>
+      </fieldset>
+
+      <div class="field">
+        <label for="notes">Anything else? <span class="hint">For upgrades: what is in your PC now, if you know</span></label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+
+      <p class="small muted">We use your details only to prepare and send your quote. See the <a href="privacy.html">privacy policy</a>.</p>
+      <button class="btn" type="submit">Send my quote request</button>
+    </form>
+
+    <div id="sent" class="notice" style="margin-top:2.5rem">
+      <p style="margin:0"><strong>Sent your request?</strong> Thank you - you will hear back within 24 hours.
+      Prefer email? Write to <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>.</p>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap cols">
+    <div>
+      <p><strong>Frame Foundry</strong> - custom gaming PCs, built to order in the West San Fernando Valley.</p>
+      <p>Pacific Front Desk LLC dba Frame Foundry. Home-based workshop in Canoga Park, Los Angeles. No storefront - delivery and in-home service by appointment.</p>
+      <p><a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a></p>
+    </div>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="builds.html">Builds</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="quote.html">Get a quote</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <ul>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="warranty.html">Warranty</a></li>
+      <li><a href="terms.html">Terms of Sale</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
