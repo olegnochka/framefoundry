@@ -55,7 +55,12 @@ const TOOLS = [
   },
 ];
 
-const anthropic = new Anthropic(); // reads ANTHROPIC_API_KEY
+// Created per request: Netlify provides environment variables at invocation time, not when the module loads.
+let anthropic = null;
+function client() {
+  if (!anthropic) anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  return anthropic;
+}
 
 // Best-effort abuse guard (per function instance): 20 requests per IP per 10 minutes.
 const hits = new Map();
@@ -131,7 +136,7 @@ export default async (req, context) => {
   try {
     let response;
     for (let round = 0; round <= MAX_TOOL_ROUNDS; round++) {
-      response = await anthropic.beta.messages.create({
+      response = await client().beta.messages.create({
         model: MODEL,
         max_tokens: 2048,
         output_config: { effort: "low" },
