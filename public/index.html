@@ -16,7 +16,7 @@
 <meta name="theme-color" content="#0A0B0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="commerce.css">
 <script src="site.js" defer></script>
@@ -67,32 +67,56 @@
 
     <h2>Example builds</h2>
     <p class="muted">Starting points, re-priced on the day you ask for a quote. Every quote is built around your games, your room and your budget.</p>
-    <div class="grid grid-3">
-      <div class="card">
-        <img src="img/build-mainstream.jpg" width="1200" height="900" alt="Mainstream build: Lian Li Lancool 207 case with a Radeon RX 9060 XT inside" loading="lazy">
-        <h3>Mainstream</h3>
-        <p class="price">$1,899 <small>tier</small></p>
-        <p class="small muted">$1,865.32 before tax as priced on Oct 14, 2026</p>
-        <p class="small">Smooth 1080p at high settings and comfortable 1440p in today's popular games.</p>
-        <a href="builds.html#mainstream">See every part</a>
+    <section class="ffg ffg-home" aria-label="The three example builds">
+      <div class="ffg-grid">
+      <article class="ffg-card" data-build="quiet-creator">
+        <div class="ffg-top"><span class="ffg-sku">SKU: FF-QC-9800X3D-5070TI</span><span class="ffg-tag">Creator Flagship</span></div>
+        <h2 class="ffg-name">Frame Foundry - Quiet Creator</h2>
+        <p class="ffg-sub">Quiet high-end creation and 4K ray-tracing rig</p>
+        <a class="ffg-media" href="builds.html#quiet-creator"><img src="img/build-quiet-creator.jpg" width="1200" height="900" alt="Quiet Creator build: Fractal Design North case with a wood front panel" loading="lazy"></a>
+        <ul class="ffg-parts">
+          <li class="ffg-part ffg-gpu"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span><span class="ffg-pname">MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB</span><span class="ffg-mpn">MPN: RTX 5070 Ti 16G SHADOW 3X OC</span></span></li>
+          <li class="ffg-part"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6"/></svg></span><span><span class="ffg-pname">AMD Ryzen 7 9800X3D, 8 cores, up to 5.2 GHz</span><span class="ffg-mpn">MPN: 100-100001084WOF</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">MB</span><span><span class="ffg-pname">Asus PRIME B850-PLUS WIFI ATX AM5 motherboard</span><span class="ffg-mpn">MPN: PRIME B850-PLUS WIFI</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">RAM</span><span><span class="ffg-pname">Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36</span><span class="ffg-mpn">MPN: CMK32GX5M2E6000C36</span></span></li>
+        </ul>
+        <div class="ffg-tiles"><div class="ffg-tile"><span>Made for</span><strong>4K / 1440p</strong></div><div class="ffg-tile"><span>Noise</span><strong>Very quiet</strong></div></div>
+        <div class="ffg-foot"><div><span class="ffg-from">Example build</span><span class="ffg-price">$3,538</span><span class="ffg-tax">before sales tax</span></div>
+          <a class="ffg-btn" href="builds.html#quiet-creator">Configure &amp; Buy</a></div>
+      </article>
+      <article class="ffg-card" data-build="performance">
+        <div class="ffg-top"><span class="ffg-sku">SKU: FF-PERF-9600X-9070XT</span><span class="ffg-tag">High Performance</span></div>
+        <h2 class="ffg-name">Frame Foundry - Performance</h2>
+        <p class="ffg-sub">High-FPS 1440p for competitive and big single-player games</p>
+        <a class="ffg-media" href="builds.html#performance"><img src="img/build-performance.jpg" width="1200" height="900" alt="Performance build: Lian Li Lancool 207 case with a Radeon RX 9070 XT inside" loading="lazy"></a>
+        <ul class="ffg-parts">
+          <li class="ffg-part ffg-gpu"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span><span class="ffg-pname">ASRock Challenger Radeon RX 9070 XT 16GB</span><span class="ffg-mpn">MPN: RX9070XT CL 16GO</span></span></li>
+          <li class="ffg-part"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6"/></svg></span><span><span class="ffg-pname">AMD Ryzen 5 9600X, 6 cores, up to 5.4 GHz</span><span class="ffg-mpn">MPN: 100-100001405WOF</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">MB</span><span><span class="ffg-pname">Asus PRIME B850-PLUS WIFI ATX AM5 motherboard</span><span class="ffg-mpn">MPN: PRIME B850-PLUS WIFI</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">RAM</span><span><span class="ffg-pname">Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36</span><span class="ffg-mpn">MPN: CMK32GX5M2E6000C36</span></span></li>
+        </ul>
+        <div class="ffg-tiles"><div class="ffg-tile"><span>Made for</span><strong>1440p high refresh</strong></div><div class="ffg-tile"><span>Lighting</span><strong>ARGB front fans</strong></div></div>
+        <div class="ffg-foot"><div><span class="ffg-from">Example build</span><span class="ffg-price">$2,474</span><span class="ffg-tax">before sales tax</span></div>
+          <a class="ffg-btn" href="builds.html#performance">Configure &amp; Buy</a></div>
+      </article>
+      <article class="ffg-card" data-build="mainstream">
+        <div class="ffg-top"><span class="ffg-sku">SKU: FF-MAIN-9600X-9060XT</span><span class="ffg-tag">Popular Value</span></div>
+        <h2 class="ffg-name">Frame Foundry - Mainstream</h2>
+        <p class="ffg-sub">High-value 1080p and 1440p gaming, a strong first gaming PC</p>
+        <a class="ffg-media" href="builds.html#mainstream"><img src="img/build-mainstream.jpg" width="1200" height="900" alt="Mainstream build: Lian Li Lancool 207 case with a Radeon RX 9060 XT inside" loading="lazy"></a>
+        <ul class="ffg-parts">
+          <li class="ffg-part ffg-gpu"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span><span class="ffg-pname">Sapphire PULSE Radeon RX 9060 XT 16GB</span><span class="ffg-mpn">MPN: 11350-03-20G</span></span></li>
+          <li class="ffg-part"><span class="ffg-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6"/></svg></span><span><span class="ffg-pname">AMD Ryzen 5 9600X, 6 cores, up to 5.4 GHz</span><span class="ffg-mpn">MPN: 100-100001405WOF</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">MB</span><span><span class="ffg-pname">Asus PRIME B850-PLUS WIFI ATX AM5 motherboard</span><span class="ffg-mpn">MPN: PRIME B850-PLUS WIFI</span></span></li>
+          <li class="ffg-part ffg-txt"><span class="ffg-ico">RAM</span><span><span class="ffg-pname">Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000</span><span class="ffg-mpn">MPN: KF560C36BBEAK2-16</span></span></li>
+        </ul>
+        <div class="ffg-tiles"><div class="ffg-tile"><span>Made for</span><strong>1080p / 1440p</strong></div><div class="ffg-tile"><span>Lighting</span><strong>ARGB fans + RGB memory</strong></div></div>
+        <div class="ffg-foot"><div><span class="ffg-from">Example build</span><span class="ffg-price">$1,865</span><span class="ffg-tax">before sales tax</span></div>
+          <a class="ffg-btn" href="builds.html#mainstream">Configure &amp; Buy</a></div>
+      </article>
       </div>
-      <div class="card">
-        <img src="img/build-performance.jpg" width="1200" height="900" alt="Performance build: Lian Li Lancool 207 case with a Radeon RX 9070 XT inside" loading="lazy">
-        <h3>Performance</h3>
-        <p class="price">$2,499 <small>tier</small></p>
-        <p class="small muted">$2,474.32 before tax as priced on Oct 14, 2026</p>
-        <p class="small">High frame rates at 1440p for competitive shooters and big single-player games, with 32GB of memory so streaming or a browser full of tabs does not slow it down.</p>
-        <a href="builds.html#performance">See every part</a>
-      </div>
-      <div class="card">
-        <img src="img/build-quiet-creator.jpg" width="1200" height="900" alt="Quiet Creator build: Fractal Design North case with a wood front panel" loading="lazy">
-        <h3>Quiet Creator</h3>
-        <p class="price">$3,599 <small>tier</small></p>
-        <p class="small muted">$3,537.77 before tax as priced on Oct 14, 2026</p>
-        <p class="small">Quiet enough for a living room or a home office.</p>
-        <a href="builds.html#quiet-creator">See every part</a>
-      </div>
-    </div>
+      <p class="small muted ffg-note">Prices before sales tax, as checked on Oct 14, 2026. "Configure &amp; Buy" shows every part and price, and lets you buy the build as-is or ask us to change anything.</p>
+    </section>
 
     <h2>How it works</h2>
     <ol class="steps">
