@@ -18,19 +18,28 @@
     return n;
   }
 
-  // Turns plain URLs in assistant replies into links; everything else stays text (no HTML injection).
+  // Minimal, safe formatting for assistant replies: **bold**, [text](url) links, bare URLs and the email address.
+  // Everything is built with DOM nodes (never innerHTML), so a reply can't inject HTML.
+  var TOKEN = /(\*\*[^*\n]+\*\*|\[[^\]\n]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)]+|hello@framefoundrypc\.com)/g;
+  function link(text, href) {
+    var a = el("a", null, text);
+    a.href = href;
+    if (!/^https:\/\/framefoundrypc\.com\//.test(href) && !/^mailto:/.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
+    return a;
+  }
   function renderText(node, text) {
-    var parts = String(text).split(/(https?:\/\/[^\s)]+|hello@framefoundrypc\.com)/g);
-    parts.forEach(function (p) {
-      if (/^https?:\/\//.test(p)) {
-        var a = el("a", null, p.replace(/^https:\/\/framefoundrypc\.com\//, "").replace(/\.html$/, "") || p);
-        a.href = p;
-        node.appendChild(a);
+    String(text).split(TOKEN).forEach(function (p) {
+      if (!p) return;
+      var m;
+      if (/^\*\*[^*]+\*\*$/.test(p)) {
+        node.appendChild(el("strong", null, p.slice(2, -2)));
+      } else if ((m = p.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/))) {
+        node.appendChild(link(m[1], m[2]));
+      } else if (/^https?:\/\//.test(p)) {
+        node.appendChild(link(p.replace(/^https:\/\/framefoundrypc\.com\//, "").replace(/\.html$/, "") || p, p));
       } else if (p === "hello@framefoundrypc.com") {
-        var m = el("a", null, p);
-        m.href = "mailto:" + p;
-        node.appendChild(m);
-      } else if (p) {
+        node.appendChild(link(p, "mailto:" + p));
+      } else {
         node.appendChild(document.createTextNode(p));
       }
     });

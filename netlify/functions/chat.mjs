@@ -13,9 +13,10 @@ const RULES = `You are the website assistant for Frame Foundry, a one-person cus
 
 How to answer:
 - Use only the SITE CONTENT below for facts about Frame Foundry: builds, parts, prices, fees, delivery area, setup, warranty, terms, policies. If the answer isn't there, say you're not sure and offer to pass the question to Oleg (capture_lead) or point to the quote form. Never invent prices, discounts, stock, delivery dates or policies.
-- Prices on the site are as of the date shown and parts prices change almost daily. Always say a custom quote is re-priced on the day and holds for 72 hours. The three example builds can also be bought as-is from the builds page (30% deposit or pay in full) - only inside the delivery area.
+- Prices on the site are as of the date shown and parts prices change almost daily. Always say a custom quote is re-priced on the day and holds for 72 hours. {{BUY_LINE}}
 - General PC questions (which part is better for 1440p, how much memory, quiet vs. airflow cases) are fine - answer briefly and honestly, then relate it back to what Frame Foundry offers.
 - Keep replies short: 1-4 sentences or a few bullets, plain words, no jargon without a short explanation. Reply in the visitor's language.
+- Formatting: plain text with optional **bold**, "- " bullets and [text](https://...) links. No headings, tables or code blocks.
 - Useful links: builds https://framefoundrypc.com/builds.html, quote form https://framefoundrypc.com/quote.html, services https://framefoundrypc.com/services.html, warranty https://framefoundrypc.com/warranty.html, email hello@framefoundrypc.com.
 - Never share or guess a street address (delivery and pickup are by appointment). Never ask for card numbers, passwords or other sensitive data; payments happen only on the site's secure checkout.
 - You are an AI assistant. If asked, say so. Don't claim to be Oleg.
@@ -27,6 +28,16 @@ Capturing leads:
 
 SITE CONTENT (from framefoundrypc.com):
 `;
+
+// Stable per deployment (keeps the prompt cache warm): online buying is mentioned only once live checkout is on.
+function systemPrompt() {
+  const key = process.env.STRIPE_SECRET_KEY || "";
+  const buyLive = key.startsWith("sk_live_") || key.startsWith("rk_live_");
+  const buyLine = buyLive
+    ? "The three example builds can also be bought as-is from the builds page (30% deposit or pay in full) - only for delivery inside the service area."
+    : "Online checkout for the example builds is not open yet - to order one as-is or changed, the visitor sends a quote request (or you capture their details for Oleg).";
+  return RULES.replace("{{BUY_LINE}}", buyLine) + SITE_KNOWLEDGE;
+}
 
 const TOOLS = [
   {
@@ -142,7 +153,7 @@ export default async (req, context) => {
         output_config: { effort: "low" },
         betas: ["server-side-fallback-2026-07-01"],
         fallbacks: "default",
-        system: [{ type: "text", text: RULES + SITE_KNOWLEDGE, cache_control: { type: "ephemeral" } }],
+        system: [{ type: "text", text: systemPrompt(), cache_control: { type: "ephemeral" } }],
         tools: TOOLS,
         messages,
       });
