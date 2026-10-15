@@ -1,4 +1,4 @@
-// Posts a message to the #frame-foundry-leads Slack channel through an incoming webhook.
+// Posts a message to the #leads channel in the Frame Foundry Slack workspace through an incoming webhook.
 // SLACK_WEBHOOK_URL is set in Netlify -> Project configuration -> Environment variables.
 // Without it, messages are written to the function log instead, so nothing breaks.
 export async function postSlack(text) {
