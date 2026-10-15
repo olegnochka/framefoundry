@@ -1,0 +1,10 @@
+{
+  "name": "framefoundry-site",
+  "private": true,
+  "type": "module",
+  "description": "Frame Foundry website + Netlify Functions (chat, checkout, Slack alerts)",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.134.0",
+    "stripe": "^23.0.0"
+  }
+}

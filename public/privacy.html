@@ -18,7 +18,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="commerce.css">
 <script src="site.js" defer></script>
+<script src="chat.js" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -37,7 +39,7 @@
   <div class="wrap">
     <p class="eyebrow">Frame Foundry</p>
     <h1>Privacy policy</h1>
-    <p>Last updated Oct 14, 2026. Short version: we collect only what we need to quote, build and deliver your PC, and we never sell it.</p>
+    <p>Last updated Oct 15, 2026. Short version: we collect only what we need to quote, build and deliver your PC, and we never sell it.</p>
   </div>
 </section>
 <main>
@@ -48,18 +50,22 @@
     <ul>
       <li><strong>Quote form:</strong> your name, email, optional phone number, delivery ZIP code, and what you tell us about your budget, games and preferences.</li>
       <li><strong>Orders:</strong> your delivery address, payment records (card details are handled by our payment processor; we never see or store the full card number), and the parts list and serial numbers of your PC for warranty claims.</li>
+      <li><strong>Chat:</strong> the messages you type into the website's AI chat, and any contact details you choose to share there.</li>
       <li><strong>Emails and messages</strong> you send us.</li>
     </ul>
 
     <h2>What this website does not do</h2>
-    <p>No analytics, no advertising trackers, no cookies set by us. The site is a set of static pages hosted on GitHub Pages,
-    which may keep standard server logs (such as IP addresses) for security - see GitHub's privacy statement.</p>
+    <p>No analytics, no advertising trackers, no cookies set by us. The site is hosted on Netlify, which may keep standard
+    server logs (such as IP addresses) for security - see Netlify's privacy policy. The chat keeps your conversation only in
+    your own browser tab until you close it. Stripe's checkout page, if you buy a build, sets its own cookies for fraud prevention.</p>
 
     <h2>Who else handles your data</h2>
     <ul>
-      <li><strong>Formspree</strong> receives the quote form and forwards it to us by email.</li>
-      <li><strong>Our email provider</strong> stores our correspondence.</li>
-      <li><strong>Our payment processor</strong> handles card payments.</li>
+      <li><strong>Netlify</strong> hosts the site and receives the quote form (Netlify Forms), then emails it to us.</li>
+      <li><strong>Anthropic</strong> provides the AI model behind the chat; your chat messages are sent to it to generate replies. We do not use chat messages to train any AI model.</li>
+      <li><strong>Slack</strong> is where we receive notifications about new quote requests, chat leads and orders.</li>
+      <li><strong>Google Workspace</strong> is our email provider and stores our correspondence.</li>
+      <li><strong>Stripe</strong> processes card payments; we never see or store your full card number.</li>
       <li><strong>Manufacturers</strong>, when we register parts or make a warranty claim for you (part serial numbers, and your name if they require it).</li>
     </ul>
     <p>We do not sell or share your personal information for advertising, and we never have.</p>
