@@ -24,6 +24,7 @@ export default async (req) => {
   }
 
   const test = event.livemode ? "" : " _(TEST MODE - no real money)_";
+  console.log(`stripe-webhook: ${event.type} ${event.id} kind=${event.data.object?.metadata?.kind || "-"}`);
 
   if (event.type === "checkout.session.completed" && SERVICES[event.data.object.metadata?.kind]) {
     // Tune-up booking or new Frame Foundry Care member (care.mjs).

@@ -13,7 +13,10 @@ export async function postSlack(text) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, unfurl_links: false }),
     });
-    if (!res.ok) console.error("Slack webhook failed:", res.status, await res.text());
+    const body = await res.text();
+    // Logged on every post so delivery problems show up in the Netlify function log (the webhook URL itself is never logged).
+    console.log(`Slack webhook response: ${res.status} ${body.slice(0, 100)}`);
+    if (!res.ok) console.error("Slack webhook failed:", res.status, body);
     return res.ok;
   } catch (err) {
     console.error("Slack webhook error:", err);
