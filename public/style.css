@@ -353,3 +353,10 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
 /* Build card button: orange accent. */
 .ffg-btn { background: var(--accent); color: var(--accent-ink); }
 .ffg-btn:hover { background: var(--accent-hover); color: var(--accent-ink); }
+.ffg-top { justify-content: flex-start; }
+.ffg-tag { text-align: left; }
+.ffg-card { grid-row: span 5; }
+.ffg-card > .ffg-name { margin-top: 0; }
+/* Hero photo: keep the PC clear of the headline on wide screens. */
+.hero-media img { object-position: 61% 50%; }
+@media (max-width: 720px) { .hero-media img { object-position: 62% 50%; } }
