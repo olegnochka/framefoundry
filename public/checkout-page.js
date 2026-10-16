@@ -1,15 +1,13 @@
 // Frame Foundry - checkout page for the three example builds (checkout.html?build=<id>).
 // Builds and prices come from GET /api/checkout (lib/catalog.mjs), never from this file.
 // With Stripe on: pay a 30% deposit or in full through Stripe Checkout (/api/checkout).
-// Without Stripe (or in test mode without ?preview=1): the order is sent as a request through the
+// Test-mode Stripe is shown on the live site too, with a TEST MODE note (Oleg, 2026-10-16).
+// Without Stripe: the order is sent as a request through the
 // Netlify "quote" form (email + Slack #leads) and we arrange payment by email.
 (function () {
   var root = document.getElementById("co");
   if (!root) return;
   var params = new URLSearchParams(location.search);
-  try { if (params.get("preview") === "1") sessionStorage.setItem("ff-preview", "1"); } catch (e) {}
-  var preview = false;
-  try { preview = sessionStorage.getItem("ff-preview") === "1"; } catch (e) {}
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -25,7 +23,7 @@
       var builds = data.builds || [];
       var build = builds.filter(function (b) { return b.id === params.get("build"); })[0];
       if (!build) return chooser(builds);
-      render(build, data.enabled && (data.live || preview), data.enabled && !data.live, (data.care && data.care.priceCents) || 9900);
+      render(build, data.enabled, data.enabled && !data.live, (data.care && data.care.priceCents) || 9900);
     })
     .catch(function () {
       root.innerHTML = '<p class="muted">Checkout could not load. Please refresh, or email <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>.</p>';

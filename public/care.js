@@ -1,13 +1,10 @@
 // Frame Foundry - "Book a tune-up" and "Join Frame Foundry Care" buttons on services.html (Stripe Checkout via /api/care).
-// Same rules as buy.js: hidden unless Stripe is configured; in TEST mode only with ?preview=1.
+// Shown whenever Stripe is configured; in TEST mode the dialog says so (Oleg, 2026-10-16: test payments on the live site).
 (function () {
   var slots = document.querySelectorAll(".ffcare-slot[data-plan]");
   var manage = document.getElementById("care-manage");
   if (!slots.length) return;
   var params = new URLSearchParams(location.search);
-  try { if (params.get("preview") === "1") sessionStorage.setItem("ff-preview", "1"); } catch (e) {}
-  var preview = false;
-  try { preview = sessionStorage.getItem("ff-preview") === "1"; } catch (e) {}
 
   var PLANS = {
     tuneup: {
@@ -27,7 +24,7 @@
   fetch("/api/care", { method: "GET" })
     .then(function (r) { return r.ok ? r.json() : { enabled: false }; })
     .then(function (s) {
-      if (!s || !s.enabled || !(s.live || preview)) return;
+      if (!s || !s.enabled) return;
       mount(!s.live);
       if (manage && s.portal) {
         manage.textContent = "";
