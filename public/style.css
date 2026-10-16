@@ -307,3 +307,5 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
 .ffg-name { margin-top: 0; }
 .ffg-parts + .ffg-foot { margin-top: 22px; }
 .ffg-top + .ffg-name { margin-top: 14px; }
+.ffg-media img { object-fit: contain; padding: 14px; }
+.build-head img { background: var(--bg); }
