@@ -1,0 +1,40 @@
+{
+  "_about": "Source of truth for the 3 current builds' prices. scripts/apply-prices.py reads today's prices from public/data/price-history.csv, re-prices the builds when a part moved more than 5% since the site's prices, and rewrites builds.html, index.html, lib/catalog.mjs and chat.mjs. Edit rules here, not in the pages.",
+  "rules": {
+    "trigger_change": 0.05,
+    "card_fee_rate": 0.05,
+    "processing_rate": 0.029,
+    "processing_fixed": 0.30,
+    "reserve_rate": 0.03,
+    "labor_rate": 35,
+    "min_after_labor": 50,
+    "price_ending": 99
+  },
+  "parts": {
+    "cpu_9600x":       {"category": "Processor (CPU)", "item": "AMD Ryzen 5 9600X", "basis": "pcpp", "site_price": 177.99},
+    "cpu_9800x3d":     {"category": "Processor (CPU)", "item": "AMD Ryzen 7 9800X3D", "basis": "newegg", "site_price": 444.00},
+    "cpu_7800x3d":     {"category": "Processor (CPU)", "item": "AMD Ryzen 7 7800X3D", "basis": "pcpp", "site_price": 347.98, "upsell_only": true},
+    "cooler_pa120se":  {"category": "CPU cooler", "item": "Thermalright Peerless Assassin 120 SE", "basis": "pcpp", "site_price": 31.41},
+    "cooler_drp5":     {"category": "CPU cooler", "item": "be quiet! Dark Rock Pro 5", "basis": "pcpp", "site_price": 84.90},
+    "mb_b850":         {"category": "Motherboard", "item": "Asus PRIME B850-PLUS WIFI (Wi-Fi built in)", "basis": "pcpp", "site_price": 129.00},
+    "ram_16gb":        {"category": "Memory (RAM)", "item": "Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000", "basis": "pcpp", "site_price": 259.99},
+    "ram_32gb":        {"category": "Memory (RAM)", "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36", "basis": "newegg", "site_price": 489.99},
+    "gpu_9060xt":      {"category": "Graphics card (GPU)", "item": "Sapphire PULSE Radeon RX 9060 XT 16GB", "basis": "newegg", "site_price": 519.99},
+    "gpu_9070xt":      {"category": "Graphics card (GPU)", "item": "ASRock Challenger Radeon RX 9070 XT 16GB", "basis": "newegg", "site_price": 899.99},
+    "gpu_5070ti":      {"category": "Graphics card (GPU)", "item": "MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB", "basis": "newegg", "site_price": 1229.99},
+    "ssd_1tb":         {"category": "Storage (SSD)", "item": "Kingston NV3 1TB NVMe", "basis": "pcpp", "site_price": 156.99},
+    "ssd_2tb":         {"category": "Storage (SSD)", "item": "WD_BLACK SN7100 2TB NVMe", "basis": "pcpp", "site_price": 319.00},
+    "psu_850":         {"category": "Power supply (PSU)", "item": "Thermaltake Toughpower GF1 850W 80+ Gold, fully modular", "basis": "pcpp", "site_price": 139.99},
+    "case_lancool207": {"category": "Case", "item": "Lian Li Lancool 207 (airflow, fans included)", "basis": "pcpp", "site_price": 74.99},
+    "case_north":      {"category": "Case", "item": "Fractal Design North (wood front, quiet)", "basis": "pcpp", "site_price": 154.99},
+    "os_win11home":    {"category": "Operating system", "item": "Windows 11 Home (licensed OEM copy)", "basis": "pcpp", "site_price": 128.99}
+  },
+  "builds": {
+    "mainstream":    {"name": "Mainstream", "set_price": 1999, "priced_on": "2026-10-16", "assembly_label": "Standard assembly", "assembly": 249, "packaging": 50, "hours": 3.5,
+                      "parts": ["cpu_9600x", "cooler_pa120se", "mb_b850", "ram_16gb", "gpu_9060xt", "ssd_1tb", "psu_850", "case_lancool207", "os_win11home"]},
+    "performance":   {"name": "Performance", "set_price": 2699, "priced_on": "2026-10-16", "assembly_label": "Standard assembly", "assembly": 249, "packaging": 55, "hours": 4,
+                      "parts": ["cpu_9600x", "cooler_pa120se", "mb_b850", "ram_32gb", "gpu_9070xt", "ssd_1tb", "psu_850", "case_lancool207", "os_win11home"]},
+    "quiet-creator": {"name": "Quiet Creator", "set_price": 3799, "priced_on": "2026-10-16", "assembly_label": "Premium assembly (quiet tuning)", "assembly": 399, "packaging": 85, "hours": 7,
+                      "parts": ["cpu_9800x3d", "cooler_drp5", "mb_b850", "ram_32gb", "gpu_5070ti", "ssd_2tb", "psu_850", "case_north", "os_win11home"]}
+  }
+}

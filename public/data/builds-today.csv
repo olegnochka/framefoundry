@@ -1,0 +1,4 @@
+date,build,set_price,priced_on,parts_at_site_prices,parts_today,packaging,labor_hours,card_processing_today,reserve_today,before_labor_today,after_labor_today,formula_price_today
+2026-10-16,Mainstream,1999,2026-10-16,1619.34,1619.34,50,3.5,58.27,59.97,211.42,88.92,1999
+2026-10-16,Performance,2699,2026-10-16,2229.34,2229.34,55,4,78.57,80.97,255.12,115.12,2699
+2026-10-16,Quiet Creator,3799,2026-10-16,3120.85,3120.85,85,7,110.47,113.97,368.71,123.71,3799

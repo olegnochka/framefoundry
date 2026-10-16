@@ -1,0 +1,41 @@
+date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
+2026-10-14,cpu_9600x,AMD Ryzen 5 9600X,174.00,,174.00,baseline
+2026-10-14,cpu_9800x3d,AMD Ryzen 7 9800X3D,443.00,444.00,444.00,baseline
+2026-10-14,cpu_7800x3d,AMD Ryzen 7 7800X3D (upsell),347.98,,347.98,baseline
+2026-10-14,cooler_pa120se,Thermalright Peerless Assassin 120 SE,31.41,,31.41,baseline
+2026-10-14,cooler_drp5,be quiet! Dark Rock Pro 5,82.35,,82.35,baseline
+2026-10-14,mb_b850,Asus PRIME B850-PLUS WIFI,129.00,,129.00,baseline
+2026-10-14,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,259.99,,259.99,baseline
+2026-10-14,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,473.79,479.99,479.99,baseline (PCPP showed 567.99 an hour later)
+2026-10-14,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,519.99,519.99,519.99,baseline
+2026-10-14,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,814.99,879.99,879.99,baseline (PCPP lowest = Gigabyte Gaming OC)
+2026-10-14,gpu_5070ti,MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,1179.99,1179.99,1179.99,baseline
+2026-10-14,ssd_1tb,WD Green SN3000 1TB,149.99,,149.99,baseline
+2026-10-14,ssd_2tb,WD_BLACK SN7100 2TB,319.00,,319.00,baseline
+2026-10-14,psu_850,Thermaltake Toughpower GF1 (2024) 850W,79.99,,79.99,baseline
+2026-10-14,case_lancool207,Lian Li Lancool 207,74.99,,74.99,baseline
+2026-10-14,case_north,Fractal Design North,154.99,,154.99,baseline
+2026-10-14,os_win11home,Windows 11 Home OEM,119.99,,119.99,baseline
+2026-10-16,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,,519.99,519.99,daily rise watch
+2026-10-16,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,,899.99,899.99,daily rise watch
+2026-10-16,gpu_5070ti,MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,,1229.99,1229.99,daily rise watch
+2026-10-16,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,259.99,369.99,369.99,daily rise watch (KF560C36BBEAK2-16; Newegg now lists it - PCPP still 259.99)
+2026-10-16,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,,489.99,489.99,daily rise watch (CMK32GX5M2E6000C36)
+2026-10-16,cpu_9800x3d,AMD Ryzen 7 9800X3D,,444.00,444.00,daily rise watch
+2026-10-16,cpu_9600x,AMD Ryzen 5 9600X,177.99,,177.99,weekly check (manual run)
+2026-10-16,cpu_9800x3d,AMD Ryzen 7 9800X3D,444.00,444.00,444.00,weekly check
+2026-10-16,cpu_7800x3d,AMD Ryzen 7 7800X3D,347.98,,347.98,weekly check (upsell only)
+2026-10-16,cooler_pa120se,Thermalright Peerless Assassin 120 SE,31.41,,31.41,weekly check
+2026-10-16,cooler_drp5,be quiet! Dark Rock Pro 5,84.90,,84.90,weekly check
+2026-10-16,mb_b850,Asus PRIME B850-PLUS WIFI,129.00,,129.00,weekly check
+2026-10-16,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,259.99,,259.99,weekly check (Newegg 369.99 this morning; PCPP basis per rule)
+2026-10-16,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,567.99,489.99,489.99,weekly check (Newegg from this morning's watch)
+2026-10-16,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,519.99,519.99,519.99,weekly check
+2026-10-16,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,879.99,899.99,899.99,weekly check (PCPP MPN RX9070XT CL 16G)
+2026-10-16,gpu_5070ti,MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,1169.99,1229.99,1229.99,weekly check
+2026-10-16,ssd_1tb,WD Green SN3000 1TB,,,156.99,"OUT OF STOCK (PCPP no price, not at Newegg) - basis = Kingston NV3 1TB M.2-2280 PCIe 4.0 (SNV3S/1000G) 156.99"
+2026-10-16,ssd_2tb,WD_BLACK SN7100 2TB,319.00,,319.00,weekly check
+2026-10-16,psu_850,Thermaltake Toughpower GF1 (2024) 850W,139.99,,139.99,weekly check - was 79.99
+2026-10-16,case_lancool207,Lian Li Lancool 207,74.99,,74.99,weekly check (LAN207RX)
+2026-10-16,case_north,Fractal Design North,154.99,,154.99,weekly check
+2026-10-16,os_win11home,Windows 11 Home OEM,128.99,,128.99,weekly check - was 119.99
