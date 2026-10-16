@@ -2,7 +2,7 @@
 // Needs STRIPE_SECRET_KEY (sk_test_... while testing, sk_live_... after the seller's permit + insurance are active).
 // Optional: STRIPE_AUTOMATIC_TAX=true once Stripe Tax is set up for California in the Stripe dashboard.
 import Stripe from "stripe";
-import { BUILDS, SERVICE_ZIPS, depositCents, formatUSD } from "./lib/catalog.mjs";
+import { BUILDS, SERVICES, SERVICE_ZIPS, depositCents, formatUSD } from "./lib/catalog.mjs";
 
 const SITE = process.env.URL || "https://framefoundrypc.com";
 
@@ -22,7 +22,7 @@ export default async (req) => {
     const builds = Object.entries(BUILDS).map(([id, b]) => ({
       id, name: b.name, summary: b.summary, totalCents: b.totalCents, depositCents: depositCents(b.totalCents),
     }));
-    return json({ enabled: Boolean(key), live, builds });
+    return json({ enabled: Boolean(key), live, builds, care: { priceCents: SERVICES.care.amountCents } });
   }
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   if (!key) return json({ error: "Online checkout isn't open yet - please use the quote form." }, 503);
@@ -43,6 +43,10 @@ export default async (req) => {
     return json({ error: "outside_area", message: "That ZIP is outside our usual delivery area - send a quote request and we'll check." }, 400);
   }
   if (body.agreed !== true) return json({ error: "Please accept the terms first." }, 400);
+  // Optional Frame Foundry Care ($99/year, auto-renewing). Needs its own explicit consent to automatic
+  // renewal (California Business and Professions Code 17602), same as care.mjs.
+  const care = body.care === true;
+  if (care && body.autorenew !== true) return json({ error: "Please confirm the automatic yearly renewal for Frame Foundry Care." }, 400);
 
   const total = build.totalCents;
   const amount = mode === "full" ? total : depositCents(total);
@@ -55,35 +59,42 @@ export default async (req) => {
 
   const stripe = new Stripe(key);
   try {
+    const buildItem = {
+      quantity: 1,
+      price_data: { currency: "usd", unit_amount: amount, tax_behavior: "exclusive", product_data: { name, description } },
+    };
+    const careItem = {
+      quantity: 1,
+      price_data: {
+        currency: "usd",
+        unit_amount: SERVICES.care.amountCents,
+        tax_behavior: "exclusive",
+        recurring: { interval: SERVICES.care.interval },
+        product_data: { name: SERVICES.care.name, description: SERVICES.care.description },
+      },
+    };
+    const metadata = { build: buildId, mode, zip, build_total_cents: String(total), balance_cents: String(balance), care: care ? "yes" : "no" };
+    const submitMessage = care
+      ? `By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). Frame Foundry Care renews automatically every year at ${formatUSD(SERVICES.care.amountCents)} plus any sales tax until you cancel; we email you before each renewal and you can cancel online or by email. We order your parts today and contact you within 24 hours to schedule delivery.`
+      : "By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). We order your parts today and contact you within 24 hours to schedule delivery.";
     const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      line_items: [
-        {
-          quantity: 1,
-          price_data: {
-            currency: "usd",
-            unit_amount: amount,
-            tax_behavior: "exclusive",
-            product_data: { name, description },
-          },
-        },
-      ],
+      // With Care the session is a subscription: the build is a one-time item on the first invoice.
+      mode: care ? "subscription" : "payment",
+      line_items: care ? [buildItem, careItem] : [buildItem],
       automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX === "true" },
-      customer_creation: "always",
+      ...(care
+        ? { subscription_data: { description: SERVICES.care.name, metadata: { kind: "care", build: buildId, zip } } }
+        : {
+            customer_creation: "always",
+            payment_intent_data: { description: name, metadata: { build: buildId, mode, zip, balance_cents: String(balance) } },
+          }),
       phone_number_collection: { enabled: true },
       shipping_address_collection: { allowed_countries: ["US"] },
       custom_text: {
         shipping_address: { message: "Delivery address - we deliver and set up in the West Valley and Conejo Valley." },
-        submit: {
-          message:
-            "By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). We order your parts today and contact you within 24 hours to schedule delivery.",
-        },
+        submit: { message: submitMessage },
       },
-      metadata: { build: buildId, mode, zip, build_total_cents: String(total), balance_cents: String(balance) },
-      payment_intent_data: {
-        description: name,
-        metadata: { build: buildId, mode, zip, balance_cents: String(balance) },
-      },
+      metadata,
       success_url: `${SITE}/order-thanks.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE}/checkout.html?build=${buildId}`,
     });

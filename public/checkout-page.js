@@ -25,7 +25,7 @@
       var builds = data.builds || [];
       var build = builds.filter(function (b) { return b.id === params.get("build"); })[0];
       if (!build) return chooser(builds);
-      render(build, data.enabled && (data.live || preview), data.enabled && !data.live);
+      render(build, data.enabled && (data.live || preview), data.enabled && !data.live, (data.care && data.care.priceCents) || 9900);
     })
     .catch(function () {
       root.innerHTML = '<p class="muted">Checkout could not load. Please refresh, or email <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>.</p>';
@@ -43,7 +43,7 @@
     root.appendChild(row);
   }
 
-  function render(b, payOnline, testMode) {
+  function render(b, payOnline, testMode, carePrice) {
     root.textContent = "";
     var grid = el("div", "co-grid");
 
@@ -62,9 +62,11 @@
     var lines = el("dl", "co-lines");
     function line(k, v, cls) { var d = el("div", cls); d.appendChild(el("dt", null, k)); d.appendChild(el("dd", null, v)); lines.appendChild(d); }
     line("Build price", money(b.totalCents));
+    var careLine = el("div"); careLine.appendChild(el("dt", null, "Frame Foundry Care (first year)")); careLine.appendChild(el("dd", null, money(carePrice))); careLine.hidden = true; lines.appendChild(careLine);
     line("Sales tax", payOnline ? "Added at checkout" : "Added to your invoice");
     line("Delivery", "Free within 10 miles, otherwise see services");
     line("Total before sales tax", money(b.totalCents), "is-total");
+    var totalDd = lines.querySelector(".is-total dd");
     card.appendChild(lines);
     grid.appendChild(card);
 
@@ -84,6 +86,30 @@
       l.appendChild(r); l.appendChild(t); opts.appendChild(l);
     });
     form.appendChild(opts);
+
+    // Optional Frame Foundry Care add-on (auto-renewing yearly plan) with its own renewal consent.
+    var careBox = el("fieldset", "co-opts co-care");
+    careBox.appendChild(el("legend", null, "Add-on"));
+    var careLabel = el("label", "co-opt");
+    var careCb = el("input"); careCb.type = "checkbox"; careCb.name = "care";
+    var careTxt = el("span");
+    careTxt.appendChild(el("strong", null, "Add Frame Foundry Care - " + money(carePrice) + " a year"));
+    careTxt.appendChild(el("span", "small muted", "A yearly tune-up, free repair labor for as long as you stay on the plan, priority replies and remote help. The first year is charged together with your payment; it renews automatically, cancel any time."));
+    var careMore = el("a", "small", "What's included"); careMore.href = "services.html#care-plan"; careMore.target = "_blank"; careMore.rel = "noopener";
+    careTxt.appendChild(careMore);
+    careLabel.appendChild(careCb); careLabel.appendChild(careTxt); careBox.appendChild(careLabel);
+    var renewLabel = el("label", "ffb-check"); renewLabel.hidden = true;
+    var renewCb = el("input"); renewCb.type = "checkbox";
+    var renewTxt = el("span");
+    renewTxt.innerHTML = "<strong>Automatic renewal:</strong> I understand Frame Foundry Care renews every year and my card is charged the yearly price (now " + money(carePrice) + " + any sales tax) on each renewal date until I cancel. I can cancel online or by email any time; I get a reminder email before each renewal. <a href=\"terms.html#care\" target=\"_blank\" rel=\"noopener\">Plan terms</a>.";
+    renewLabel.appendChild(renewCb); renewLabel.appendChild(renewTxt); careBox.appendChild(renewLabel);
+    form.appendChild(careBox);
+    careCb.addEventListener("change", function () {
+      renewLabel.hidden = !careCb.checked;
+      if (!careCb.checked) renewCb.checked = false;
+      careLine.hidden = !careCb.checked;
+      totalDd.textContent = money(b.totalCents + (careCb.checked ? carePrice : 0));
+    });
 
     function input(label, name, type, attrs) {
       var f = el("div", "field");
@@ -129,12 +155,13 @@
       var z = zip.value.trim();
       if (!payOnline && (!name.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value.trim()))) return fail("Please enter your name and a valid email.");
       if (!/^\d{5}$/.test(z)) return fail("Please enter a 5-digit ZIP code.");
+      if (careCb.checked && !renewCb.checked) return fail("Please tick the box to confirm the automatic yearly renewal for Frame Foundry Care.");
       if (!cb.checked) return fail("Please tick the box to accept the terms.");
       go.disabled = true;
       go.textContent = payOnline ? "Opening secure payment..." : "Sending...";
 
       if (payOnline) {
-        fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ build: b.id, mode: mode, zip: z, agreed: true }) })
+        fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ build: b.id, mode: mode, zip: z, agreed: true, care: careCb.checked, autorenew: renewCb.checked }) })
           .then(function (r) { return r.json().catch(function () { return {}; }); })
           .then(function (data) {
             if (data.url) { location.href = data.url; return; }
@@ -150,10 +177,10 @@
         email: email.value.trim(),
         phone: phone.value.trim(),
         delivery_zip: z,
-        request_type: "Order as-is: " + b.name,
+        request_type: "Order as-is: " + b.name + (careCb.checked ? " + Frame Foundry Care" : ""),
         budget: (mode === "full" ? "Pay in full " : "30% deposit ") + "- build price " + money(b.totalCents),
         games: "-",
-        notes: (notes.value.trim() ? notes.value.trim() + "\n\n" : "") + "Order from the checkout page: " + b.name + " (" + money(b.totalCents) + " before tax), " + (mode === "full" ? "pay in full" : "30% deposit " + money(b.depositCents)) + ". Agreed to terms.",
+        notes: (notes.value.trim() ? notes.value.trim() + "\n\n" : "") + "Order from the checkout page: " + b.name + " (" + money(b.totalCents) + " before tax), " + (mode === "full" ? "pay in full" : "30% deposit " + money(b.depositCents)) + ". " + (careCb.checked ? "ADD Frame Foundry Care (" + money(carePrice) + "/year, auto-renews; customer confirmed the automatic renewal). " : "No Care plan. ") + "Agreed to terms.",
       });
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() })
         .then(function (r) {

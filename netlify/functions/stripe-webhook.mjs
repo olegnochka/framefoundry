@@ -90,8 +90,9 @@ export default async (req) => {
         (balance > 0 ? `   *Balance due at delivery:* ${formatUSD(balance)} + tax` : ""),
       `*Customer:* ${slackEscape(s.customer_details?.name) || "-"}   ${slackEscape(s.customer_details?.email) || ""}   ${slackEscape(s.customer_details?.phone) || ""}`,
       `*Deliver to:* ${slackEscape([addr.line1, addr.line2, addr.city, addr.postal_code].filter(Boolean).join(", ")) || "-"} (ZIP given on site: ${slackEscape(m.zip) || "-"})`,
+      m.care === "yes" ? `:shield: *Frame Foundry Care added* - ${formatUSD(SERVICES.care.amountCents)}/year, renews automatically (first year included in this payment)` : "",
       "*Next:* order the parts today, email the customer to schedule delivery, add the order to the Leads Tracker.",
-    ];
+    ].filter(Boolean);
     await postSlack(lines.join("\n"));
   }
   return new Response("ok", { status: 200 });
