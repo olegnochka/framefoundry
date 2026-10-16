@@ -5,6 +5,7 @@
 import Stripe from "stripe";
 import { BUILDS, SERVICES, formatUSD } from "./lib/catalog.mjs";
 import { postSlack, slackEscape } from "./lib/slack.mjs";
+import { PARTS_BY_ID } from "./lib/parts-catalog.mjs";
 
 export default async (req) => {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
@@ -60,6 +61,22 @@ export default async (req) => {
       who = c.deleted ? "" : c.name || c.email || "";
     } catch {}
     await postSlack(`:wave: *Care cancelled* - ${slackEscape(who) || "a member"}; the plan has ended.${test}`);
+  } else if (event.type === "checkout.session.completed" && event.data.object.metadata?.kind === "custom") {
+    // Deposit for a PC configured in the builder (build-checkout.mjs).
+    const s = event.data.object;
+    const m = s.metadata;
+    const addr = s.collected_information?.shipping_details?.address || s.customer_details?.address || {};
+    const parts = String(m.parts || "").split(",").filter(Boolean).map((id) => PARTS_BY_ID[id]?.name || id);
+    const lines = [
+      `:hammer_and_wrench: *Custom build - deposit paid*${test}`,
+      `*Paid:* ${formatUSD(s.amount_total ?? 0)}   *Build total:* ${formatUSD(Number(m.build_total_cents || 0))}   *Balance due at delivery:* ${formatUSD(Number(m.balance_cents || 0))} + tax`,
+      `*Customer:* ${slackEscape(s.customer_details?.name) || "-"}   ${slackEscape(s.customer_details?.email) || ""}   ${slackEscape(s.customer_details?.phone) || ""}`,
+      `*Deliver to:* ${slackEscape([addr.line1, addr.line2, addr.city, addr.postal_code].filter(Boolean).join(", ")) || "-"}`,
+      `*Assembly:* ${slackEscape(m.assembly || "standard")}`,
+      `*Parts:*\n${parts.map((n) => "- " + slackEscape(n)).join("\n")}`,
+      "*Next:* order the parts today (Best Buy prices were confirmed at checkout), email the customer to schedule delivery.",
+    ];
+    await postSlack(lines.join("\n"));
   } else if (event.type === "checkout.session.completed") {
     const s = event.data.object;
     const m = s.metadata || {};

@@ -347,3 +347,6 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
   .hero-trust { gap: 16px 28px; }
 }
 .feature-strip .wrap { max-width: 1360px; }
+
+/* "Build your PC" links are hidden until the PC builder (Best Buy prices) goes live - delete this rule to show them again. */
+.build-cta { display: none !important; }

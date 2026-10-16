@@ -18,7 +18,12 @@ export default async (req) => {
   const live = key.startsWith("sk_live_") || key.startsWith("rk_live_");
 
   // The builds page asks first, and only shows the Buy buttons when checkout is configured.
-  if (req.method === "GET") return json({ enabled: Boolean(key), live });
+  if (req.method === "GET") {
+    const builds = Object.entries(BUILDS).map(([id, b]) => ({
+      id, name: b.name, summary: b.summary, totalCents: b.totalCents, depositCents: depositCents(b.totalCents),
+    }));
+    return json({ enabled: Boolean(key), live, builds });
+  }
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   if (!key) return json({ error: "Online checkout isn't open yet - please use the quote form." }, 503);
 
@@ -80,7 +85,7 @@ export default async (req) => {
         metadata: { build: buildId, mode, zip, balance_cents: String(balance) },
       },
       success_url: `${SITE}/order-thanks.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${SITE}/builds.html#${buildId}`,
+      cancel_url: `${SITE}/checkout.html?build=${buildId}`,
     });
     return json({ url: session.url });
   } catch (err) {
