@@ -3,6 +3,7 @@
 // Optional: STRIPE_AUTOMATIC_TAX=true once Stripe Tax is set up for California in the Stripe dashboard.
 import Stripe from "stripe";
 import { BUILDS, SERVICES, SERVICE_ZIPS, depositCents, formatUSD } from "./lib/catalog.mjs";
+import { priceId } from "./lib/stripe-catalog.mjs";
 
 const SITE = process.env.URL || "https://framefoundrypc.com";
 
@@ -52,27 +53,11 @@ export default async (req) => {
   const amount = mode === "full" ? total : depositCents(total);
   const balance = total - amount;
   const name = mode === "full" ? `${build.name} - paid in full` : `${build.name} - 30% deposit`;
-  const description =
-    mode === "full"
-      ? `${build.summary}. Build price ${formatUSD(total)} before sales tax.`
-      : `${build.summary}. Build price ${formatUSD(total)} before sales tax; balance ${formatUSD(balance)} due at delivery.`;
-
   const stripe = new Stripe(key);
   try {
-    const buildItem = {
-      quantity: 1,
-      price_data: { currency: "usd", unit_amount: amount, tax_behavior: "exclusive", product_data: { name, description } },
-    };
-    const careItem = {
-      quantity: 1,
-      price_data: {
-        currency: "usd",
-        unit_amount: SERVICES.care.amountCents,
-        tax_behavior: "exclusive",
-        recurring: { interval: SERVICES.care.interval },
-        product_data: { name: SERVICES.care.name, description: SERVICES.care.description },
-      },
-    };
+    // Prices come from the Stripe catalog (synced from catalog.mjs by lookup key).
+    const buildItem = { quantity: 1, price: await priceId(stripe, `ff_build_${buildId}_${mode}`) };
+    const careItem = care ? { quantity: 1, price: await priceId(stripe, "ff_care_yearly") } : null;
     const metadata = { build: buildId, mode, zip, build_total_cents: String(total), balance_cents: String(balance), care: care ? "yes" : "no" };
     const submitMessage = care
       ? `By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). Frame Foundry Care renews automatically every year at ${formatUSD(SERVICES.care.amountCents)} plus any sales tax until you cancel; we email you before each renewal and you can cancel online or by email. We order your parts today and contact you within 24 hours to schedule delivery.`
@@ -86,7 +71,11 @@ export default async (req) => {
         ? { subscription_data: { description: SERVICES.care.name, metadata: { kind: "care", build: buildId, zip } } }
         : {
             customer_creation: "always",
-            payment_intent_data: { description: name, metadata: { build: buildId, mode, zip, balance_cents: String(balance) } },
+            payment_intent_data: {
+              description: name,
+              statement_descriptor_suffix: "FRAME FOUNDRY",
+              metadata: { build: buildId, mode, zip, balance_cents: String(balance) },
+            },
           }),
       phone_number_collection: { enabled: true },
       shipping_address_collection: { allowed_countries: ["US"] },

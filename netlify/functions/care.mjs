@@ -5,6 +5,7 @@
 // requires an online way to cancel.
 import Stripe from "stripe";
 import { SERVICES, SERVICE_ZIPS, formatUSD } from "./lib/catalog.mjs";
+import { priceId } from "./lib/stripe-catalog.mjs";
 
 const SITE = process.env.URL || "https://framefoundrypc.com";
 
@@ -45,13 +46,6 @@ export default async (req) => {
   if (planId === "care" && body.autorenew !== true) return json({ error: "Please confirm the automatic yearly renewal." }, 400);
 
   const metadata = { kind: planId, zip };
-  const price_data = {
-    currency: "usd",
-    unit_amount: plan.amountCents,
-    tax_behavior: "exclusive",
-    product_data: { name: plan.name, description: plan.description },
-    ...(plan.interval ? { recurring: { interval: plan.interval } } : {}),
-  };
   const submitMessage =
     planId === "care"
       ? `Frame Foundry Care renews automatically every year at ${formatUSD(plan.amountCents)} plus any sales tax until you cancel. We email you before each renewal; cancel online any time (framefoundrypc.com/services.html) or by emailing hello@framefoundrypc.com. Full terms: framefoundrypc.com/terms.html#care`
@@ -61,11 +55,11 @@ export default async (req) => {
   try {
     const session = await stripe.checkout.sessions.create({
       mode: planId === "care" ? "subscription" : "payment",
-      line_items: [{ quantity: 1, price_data }],
+      line_items: [{ quantity: 1, price: await priceId(stripe, planId === "care" ? "ff_care_yearly" : "ff_tuneup") }],
       automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX === "true" },
       ...(planId === "care"
         ? { subscription_data: { description: plan.name, metadata } }
-        : { customer_creation: "always", payment_intent_data: { description: plan.name, metadata } }),
+        : { customer_creation: "always", payment_intent_data: { description: plan.name, statement_descriptor_suffix: "FRAME FOUNDRY", metadata } }),
       phone_number_collection: { enabled: true },
       shipping_address_collection: { allowed_countries: ["US"] },
       custom_text: {
