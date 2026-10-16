@@ -1,20 +1,20 @@
 // The three "buy as-is" builds. Checkout prices come ONLY from here (never from the browser).
-// Keep these in sync with public/builds.html - the price is the "Total before sales tax" row.
+// Keep these in sync with public/builds.html - the price is the "Total before sales tax" row (the agreed set prices).
 export const BUILDS = {
   mainstream: {
     name: "Mainstream build",
     summary: "Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD, Lancool 207, Windows 11 Home, standard assembly",
-    totalCents: 186532,
+    totalCents: 189900,
   },
   performance: {
     name: "Performance build",
     summary: "Ryzen 5 9600X, Radeon RX 9070 XT 16GB, 32GB DDR5, 1TB SSD, Lancool 207, Windows 11 Home, standard assembly",
-    totalCents: 247432,
+    totalCents: 249900,
   },
   "quiet-creator": {
     name: "Quiet Creator build",
     summary: "Ryzen 7 9800X3D, GeForce RTX 5070 Ti 16GB, 32GB DDR5, 2TB SSD, Fractal North, Windows 11 Home, premium quiet assembly",
-    totalCents: 353777,
+    totalCents: 359900,
   },
 };
 
