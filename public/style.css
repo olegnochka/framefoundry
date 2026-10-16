@@ -309,3 +309,9 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
 .ffg-top + .ffg-name { margin-top: 14px; }
 .ffg-media img { object-fit: contain; padding: 14px; }
 .build-head img { background: var(--bg); }
+/* Line up every row (title, subtitle, photo, parts, tiles, price) across the build cards. */
+.ffg-grid { row-gap: 0; }
+.ffg-card { display: grid; grid-template-rows: subgrid; grid-row: span 7; row-gap: 0; margin-bottom: 24px; }
+.ffg-card > * { min-width: 0; }
+.ffg-foot { align-self: end; }
+.ffg-tiles { align-items: stretch; }
