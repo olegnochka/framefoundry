@@ -315,3 +315,7 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
 .ffg-card > * { min-width: 0; }
 .ffg-foot { align-self: end; }
 .ffg-tiles { align-items: stretch; }
+/* Hero: text block on the left, PC on the right (the wrap is a flex item, so give it full width). */
+.hero > .wrap { width: 100%; }
+.hero-media img { opacity: 0.9; }
+@media (max-width: 720px) { .hero-media img { opacity: 0.4; } }
