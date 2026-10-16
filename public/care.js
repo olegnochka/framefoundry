@@ -48,7 +48,7 @@
       '<p class="ffb-amount"></p>' +
       '<label class="ffb-label" for="ffc-zip">ZIP code where the PC is</label>' +
       '<input id="ffc-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" required>' +
-      '<p class="ffb-hint">Visits are in the West San Fernando Valley and Conejo Valley. Elsewhere, <a href="quote.html">send a quote request</a>.</p>' +
+      '<p class="ffb-hint">Visits cover the San Fernando Valley, Conejo Valley, Simi Valley, Camarillo, Malibu and the Westside. Elsewhere, <a href="quote.html">send a quote request</a>.</p>' +
       '<label class="ffb-check ffc-renew"><input type="checkbox" name="autorenew"><span><strong>Automatic renewal:</strong> I understand Frame Foundry Care renews every year and my card is charged the yearly price (now $99 + any sales tax) on each renewal date until I cancel. I can cancel online or by email any time; I get a reminder email before each renewal.</span></label>' +
       '<label class="ffb-check"><input type="checkbox" name="agree"><span>I agree to the <a href="terms.html#care" target="_blank" rel="noopener">terms</a>.</span></label>' +
       '<p class="ffb-error" role="alert" hidden></p>' +

@@ -24,7 +24,7 @@ export function depositCents(totalCents) {
   return Math.round(totalCents * DEPOSIT_RATE);
 }
 
-// Delivery area: West San Fernando Valley + Conejo Valley (see services.html). Outside these ZIPs we quote first.
+// Delivery area: San Fernando Valley, Conejo Valley, Simi Valley, Camarillo, Malibu and the Westside (see services.html). Outside these ZIPs we quote first.
 export const SERVICE_ZIPS = new Set([
   // Canoga Park, Winnetka, West Hills, Woodland Hills, Tarzana, Reseda, Encino
   "91303", "91304", "91305", "91306", "91307", "91308", "91309", "91364", "91365", "91367", "91371",
@@ -35,6 +35,17 @@ export const SERVICE_ZIPS = new Set([
   "91302", "91372", "91301", "91376", "91377", "91361", "91362",
   // Thousand Oaks, Newbury Park, Simi Valley, Moorpark
   "91320", "91358", "91359", "91360", "93063", "93065", "93062", "93064", "93094", "93021",
+  // Added 2026-10-16 (Oleg's map): East Valley, Burbank, Malibu/Topanga, Westside, Camarillo
+  // Van Nuys, Panorama City, Mission Hills, San Fernando, Pacoima/Arleta, Sylmar/Kagel Canyon/Lake View Terrace, Sun Valley, Sunland-Tujunga
+  "91401", "91402", "91405", "91345", "91340", "91331", "91342", "91352", "91040", "91042",
+  // North Hollywood, Valley Village, Toluca Lake, Studio City, Burbank
+  "91601", "91602", "91605", "91606", "91607", "91604", "91501", "91502", "91504", "91505", "91506",
+  // Topanga, Malibu, Pacific Palisades, Santa Monica, Brentwood, Westwood, Bel Air, West LA, Mar Vista, Marina del Rey
+  "90290", "90265", "90272", "90401", "90402", "90403", "90404", "90405", "90049", "90024", "90077", "90025", "90064", "90066", "90292",
+  // Beverly Hills, West Hollywood, Inglewood
+  "90210", "90211", "90212", "90069", "90046", "90048", "90301", "90302", "90303", "90304", "90305",
+  // Camarillo / Santa Rosa Valley, Somis
+  "93010", "93012", "93066",
 ]);
 
 export function formatUSD(cents) {

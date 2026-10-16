@@ -125,7 +125,7 @@
       phone = input("Phone (optional)", "phone", "tel", { autocomplete: "tel" });
     }
     var zip = input("Delivery ZIP code", "zip", "text", { inputMode: "numeric", maxLength: 5, autocomplete: "postal-code" });
-    form.appendChild(el("p", "small muted", "We deliver in the West San Fernando Valley and Conejo Valley. Delivery is by hand, by appointment."));
+    form.appendChild(el("p", "small muted", "We deliver across the San Fernando Valley, Conejo Valley, Simi Valley, Camarillo, Malibu and the Westside. Delivery is by hand, by appointment."));
     if (!payOnline) notes = input("Anything we should know? (optional)", "notes", "textarea");
 
     var agree = el("label", "ffb-check");

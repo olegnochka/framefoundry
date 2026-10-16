@@ -80,7 +80,7 @@ export default async (req) => {
       phone_number_collection: { enabled: true },
       shipping_address_collection: { allowed_countries: ["US"] },
       custom_text: {
-        shipping_address: { message: "Delivery address - we deliver and set up in the West Valley and Conejo Valley." },
+        shipping_address: { message: "Delivery address - we deliver and set up across the San Fernando Valley, Conejo Valley, Simi Valley, Camarillo, Malibu and the Westside." },
         submit: { message: submitMessage },
       },
       metadata,
