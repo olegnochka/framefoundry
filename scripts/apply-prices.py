@@ -174,6 +174,39 @@ def write_sheet_data(cfg, day, prices):
             w.writerow([day, b["name"], b["set_price"], b["priced_on"], f"{site_total:.2f}", total, b["packaging"], b["hours"]])
 
 
+def write_dashboard_day(cfg, day, prices, summary, old_prices):
+    """One document for the Price Desk dashboard (collection "days", doc id = date), written next to the project
+    folder as price-dashboard-day.json. The daily task adds its own notes and stores it with ArtifactData."""
+    parts, builds, rules = cfg["parts"], cfg["builds"], cfg["rules"]
+    rows = []
+    for bid, b in builds.items():
+        today = [prices.get(k) for k in b["parts"]]
+        row = {"name": b["name"], "set_price": b["set_price"], "old_price": old_prices[bid]}
+        if all(t is not None for t in today):
+            total = sum(today)
+            e = economics(b, total, b["set_price"], rules)
+            row.update(parts_today=float(total), before_labor=float(e["before_labor"]), after_labor=float(e["after_labor"]),
+                       price_lock=float(e["lock"].quantize(CENT)))
+        rows.append(row)
+    if summary["missing"]:
+        status = "attention"
+        headline = "No price today for " + ", ".join(summary["missing"]) + " - builds not re-priced until you pick a replacement part."
+    elif summary["repriced"]:
+        status = "repriced"
+        headline = "Re-priced: " + ", ".join(f'{c["build"]} {whole(c["old_price"])} -> {whole(c["new_price"])}' if c["old_price"] != c["new_price"]
+                                              else f'{c["build"]} stays {whole(c["new_price"])}' for c in summary["changes"]) + "."
+    else:
+        status = "ok"
+        headline = "No part moved more than 5% from the site's prices - site unchanged."
+    thin = [r["name"] for r in rows if r.get("after_labor") is not None and r["after_labor"] < rules["min_after_labor"]]
+    if thin and status == "ok":
+        status = "attention"
+        headline += " Thin margin after labor: " + ", ".join(thin) + "."
+    doc = {"date": day, "status": status, "headline": headline, "builds": rows,
+           "movers": summary["movers"], "missing": summary["missing"], "deployed": False, "notes": []}
+    (SITE.parent / "price-dashboard-day.json").write_text(json.dumps(doc, indent=2) + "\n")
+
+
 def main():
     args = sys.argv[1:]
     day = args[args.index("--date") + 1] if "--date" in args else None
@@ -194,6 +227,7 @@ def main():
         if abs(pct) > rules["trigger_change"] * 100 and not parts[k].get("upsell_only"):
             movers.append({"part": k, "item": parts[k]["item"], "site_price": float(old), "today": float(t), "change_pct": round(float(pct), 1)})
 
+    old_prices = {bid: b["set_price"] for bid, b in builds.items()}
     summary = {"date": day, "missing": missing, "movers": movers, "repriced": False, "changes": [], "deployed": False}
     if movers and not missing:
         for k in parts:
@@ -213,6 +247,9 @@ def main():
     if not dry:
         write_sheet_data(cfg, day, prices)
 
+    if not dry:
+        write_dashboard_day(cfg, day, prices, summary, old_prices)
+
     if deploy and not dry:
         files = ["data/pricing.json", "public/data", "public/builds.html", "public/index.html",
                  "netlify/functions/lib/catalog.mjs", "netlify/functions/chat.mjs", "netlify/functions/lib/site-knowledge.mjs"]
@@ -223,6 +260,10 @@ def main():
             subprocess.run(["git", "commit", "-q", "-m", msg + "\n\nAutomated by the Frame Foundry daily price check."], cwd=SITE, check=True)
             subprocess.run(["git", "push", "-q", "origin", "main"], cwd=SITE, check=True)
             summary["deployed"] = True
+            dash = SITE.parent / "price-dashboard-day.json"
+            if dash.exists():
+                d = json.loads(dash.read_text()); d["deployed"] = summary["repriced"]
+                dash.write_text(json.dumps(d, indent=2) + "\n")
     print(json.dumps(summary))
 
 
