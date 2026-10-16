@@ -163,22 +163,15 @@ def write_sheet_data(cfg, day, prices):
             pct = f"{(t / D(str(p['site_price'])) - 1) * 100:.1f}" if t is not None else ""
             w.writerow([day, k, p["category"], p["item"], "Newegg" if p["basis"] == "newegg" else "PCPartPicker",
                         f"{t:.2f}" if t is not None else "MISSING", f"{p['site_price']:.2f}", pct, used])
+    # Margins are NOT written here (this file is public); the Google Sheet computes them from these columns.
     with (out / "builds-today.csv").open("w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["date", "build", "set_price", "priced_on", "parts_at_site_prices", "parts_today", "packaging", "labor_hours",
-                    "card_processing_today", "reserve_today", "before_labor_today", "after_labor_today", "formula_price_today"])
+        w.writerow(["date", "build", "set_price", "priced_on", "parts_at_site_prices", "parts_today", "packaging", "labor_hours"])
         for b in builds.values():
             site_total = sum(D(str(parts[k]["site_price"])) for k in b["parts"])
             today = [prices.get(k) for k in b["parts"]]
-            if any(t is None for t in today):
-                w.writerow([day, b["name"], b["set_price"], b["priced_on"], f"{site_total:.2f}", "MISSING", b["packaging"], b["hours"], "", "", "", "", ""])
-                continue
-            total = sum(today)
-            e = economics(b, total, b["set_price"], rules)
-            proc = D(b["set_price"]) * D(str(rules["processing_rate"])) + D(str(rules["processing_fixed"]))
-            w.writerow([day, b["name"], b["set_price"], b["priced_on"], f"{site_total:.2f}", f"{total:.2f}", b["packaging"], b["hours"],
-                        f"{proc:.2f}", f"{D(b['set_price']) * D(str(rules['reserve_rate'])):.2f}",
-                        f"{e['before_labor']:.2f}", f"{e['after_labor']:.2f}", formula_price(b, total, rules)])
+            total = "MISSING" if any(t is None for t in today) else f"{sum(today):.2f}"
+            w.writerow([day, b["name"], b["set_price"], b["priced_on"], f"{site_total:.2f}", total, b["packaging"], b["hours"]])
 
 
 def main():
