@@ -319,3 +319,31 @@ fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
 .hero > .wrap { width: 100%; }
 .hero-media img { opacity: 0.9; }
 @media (max-width: 720px) { .hero-media img { opacity: 0.4; } }
+
+/* Hero trust row + feature strip (homepage). */
+.hero-trust { list-style: none; margin: 2.2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 18px 40px; }
+.hero-trust li { display: flex; align-items: flex-start; gap: 14px; margin: 0; }
+.hero-trust li::before { content: none; }
+.hero-trust svg { flex: none; width: 34px; height: 34px; color: var(--accent); }
+.hero-trust span { font-family: var(--display); font-weight: 600; font-size: 0.95rem; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+.hero-trust small { display: block; margin-top: 6px; font-family: var(--display); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); }
+.feature-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg); }
+.feature-strip ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.feature-strip li { display: flex; align-items: center; gap: 18px; margin: 0; padding: 30px 24px; }
+.feature-strip li::before { content: none; }
+.feature-strip li + li { border-left: 1px solid var(--line); }
+.feature-strip svg { flex: none; width: 40px; height: 40px; color: var(--ink); }
+.feature-strip strong { display: block; font-family: var(--display); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+.feature-strip span { display: block; margin-top: 4px; font-size: 0.95rem; color: var(--muted); }
+@media (max-width: 960px) {
+  .feature-strip ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature-strip li:nth-child(3) { border-left: 0; }
+  .feature-strip li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 560px) {
+  .feature-strip ul { grid-template-columns: minmax(0, 1fr); }
+  .feature-strip li + li { border-left: 0; border-top: 1px solid var(--line); }
+  .feature-strip li { padding: 20px 0; }
+  .hero-trust { gap: 16px 28px; }
+}
+.feature-strip .wrap { max-width: 1360px; }
