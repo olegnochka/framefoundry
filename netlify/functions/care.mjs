@@ -56,7 +56,7 @@ export default async (req) => {
     const session = await stripe.checkout.sessions.create({
       mode: planId === "care" ? "subscription" : "payment",
       line_items: [{ quantity: 1, price: await priceId(stripe, planId === "care" ? "ff_care_yearly" : "ff_tuneup") }],
-      automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX === "true" },
+      automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX !== "false" }, // Stripe Tax, CA permit 238-973920
       ...(planId === "care"
         ? { subscription_data: { description: plan.name, metadata } }
         : { customer_creation: "always", payment_intent_data: { description: plan.name, statement_descriptor_suffix: "FRAME FOUNDRY", metadata } }),

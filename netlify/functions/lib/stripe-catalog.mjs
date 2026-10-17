@@ -6,7 +6,13 @@
 // apart from Pacific Front Desk's own products in the same Stripe account).
 import { BUILDS, SERVICES, depositCents } from "./catalog.mjs";
 
+// Stripe Tax product tax codes (California seller's permit 238-973920, Stripe Tax on since 2026-10-17).
+// Complete PCs are taxable tangible goods; the tune-up visit and the Care plan are services (CPA to confirm).
+const TAX_GOODS = "txcd_99999999"; // General - Tangible Goods
+const TAX_SERVICES = "txcd_20030000"; // General - Services
+
 const cache = new Map(); // lookupKey -> { id, amount } for the life of the function instance
+const checkedProducts = new Set();
 
 // Every sellable item, keyed by lookup key.
 export function catalogItems() {
@@ -14,20 +20,20 @@ export function catalogItems() {
   for (const [id, b] of Object.entries(BUILDS)) {
     items[`ff_build_${id}_full`] = {
       product: `ff_build_${id}`, name: `Frame Foundry ${b.name}`, description: b.summary,
-      amountCents: b.totalCents, nickname: "Pay in full",
+      amountCents: b.totalCents, nickname: "Pay in full", taxCode: TAX_GOODS,
     };
     items[`ff_build_${id}_deposit`] = {
       product: `ff_build_${id}`, name: `Frame Foundry ${b.name}`, description: b.summary,
-      amountCents: depositCents(b.totalCents), nickname: "30% deposit",
+      amountCents: depositCents(b.totalCents), nickname: "30% deposit", taxCode: TAX_GOODS,
     };
   }
   items.ff_care_yearly = {
     product: "ff_care", name: SERVICES.care.name, description: SERVICES.care.description,
-    amountCents: SERVICES.care.amountCents, recurring: { interval: SERVICES.care.interval }, nickname: "Yearly",
+    amountCents: SERVICES.care.amountCents, recurring: { interval: SERVICES.care.interval }, nickname: "Yearly", taxCode: TAX_SERVICES,
   };
   items.ff_tuneup = {
     product: "ff_tuneup", name: SERVICES.tuneup.name, description: SERVICES.tuneup.description,
-    amountCents: SERVICES.tuneup.amountCents, nickname: "Per visit",
+    amountCents: SERVICES.tuneup.amountCents, nickname: "Per visit", taxCode: TAX_SERVICES,
   };
   return items;
 }
@@ -42,14 +48,14 @@ function matches(price, item) {
 async function ensureProduct(stripe, item) {
   try {
     const p = await stripe.products.retrieve(item.product);
-    if (!p.active || p.name !== item.name || p.description !== item.description) {
-      return await stripe.products.update(item.product, { active: true, name: item.name, description: item.description });
+    if (!p.active || p.name !== item.name || p.description !== item.description || p.tax_code !== item.taxCode) {
+      return await stripe.products.update(item.product, { active: true, name: item.name, description: item.description, tax_code: item.taxCode });
     }
     return p;
   } catch (err) {
     if (err?.code !== "resource_missing" && err?.statusCode !== 404) throw err;
     return stripe.products.create({
-      id: item.product, name: item.name, description: item.description,
+      id: item.product, name: item.name, description: item.description, tax_code: item.taxCode,
       metadata: { brand: "frame-foundry" },
     });
   }
@@ -61,6 +67,10 @@ export async function priceId(stripe, lookupKey) {
   if (!item) throw new Error(`Unknown catalog item ${lookupKey}`);
   const hit = cache.get(lookupKey);
   if (hit && hit.amount === item.amountCents) return hit.id;
+  if (!checkedProducts.has(item.product)) {
+    await ensureProduct(stripe, item); // keeps name, description and tax code current
+    checkedProducts.add(item.product);
+  }
 
   const found = await stripe.prices.list({ lookup_keys: [lookupKey], active: true, limit: 1 });
   let price = found.data[0];

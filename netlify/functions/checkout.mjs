@@ -1,6 +1,6 @@
 // Buy-as-is checkout for the three reference builds (Stripe Checkout).
 // Needs STRIPE_SECRET_KEY (sk_test_... while testing, sk_live_... after the seller's permit + insurance are active).
-// Optional: STRIPE_AUTOMATIC_TAX=true once Stripe Tax is set up for California in the Stripe dashboard.
+// Sales tax: Stripe Tax is on (California registration added 2026-10-17); set STRIPE_AUTOMATIC_TAX=false to turn it off.
 import Stripe from "stripe";
 import { BUILDS, SERVICES, SERVICE_ZIPS, depositCents, formatUSD } from "./lib/catalog.mjs";
 import { priceId } from "./lib/stripe-catalog.mjs";
@@ -66,7 +66,7 @@ export default async (req) => {
       // With Care the session is a subscription: the build is a one-time item on the first invoice.
       mode: care ? "subscription" : "payment",
       line_items: care ? [buildItem, careItem] : [buildItem],
-      automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX === "true" },
+      automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX !== "false" }, // Stripe Tax, CA permit 238-973920
       ...(care
         ? { subscription_data: { description: SERVICES.care.name, metadata: { kind: "care", build: buildId, zip } } }
         : {

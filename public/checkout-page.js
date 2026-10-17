@@ -61,7 +61,7 @@
     function line(k, v, cls) { var d = el("div", cls); d.appendChild(el("dt", null, k)); d.appendChild(el("dd", null, v)); lines.appendChild(d); }
     line("Build price", money(b.totalCents));
     var careLine = el("div"); careLine.appendChild(el("dt", null, "Frame Foundry Care (first year)")); careLine.appendChild(el("dd", null, money(carePrice))); careLine.hidden = true; lines.appendChild(careLine);
-    line("Sales tax", payOnline ? "Added at checkout" : "Added to your invoice");
+    line("Sales tax", payOnline ? "Added at checkout for your delivery address (with a deposit: on the deposit now, on the balance at delivery)" : "Added to your invoice");
     line("Delivery", "Free within 10 miles, otherwise see services");
     line("Total before sales tax", money(b.totalCents), "is-total");
     var totalDd = lines.querySelector(".is-total dd");
