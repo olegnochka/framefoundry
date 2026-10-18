@@ -85,10 +85,20 @@ export default async (req) => {
     const paid = formatUSD(s.amount_total ?? 0);
     const balance = Number(m.balance_cents || 0);
     const addr = s.collected_information?.shipping_details?.address || s.customer_details?.address || {};
+    // Amount to collect at delivery (Tap to Pay on iPhone in the Stripe Dashboard app): the balance plus sales tax
+    // at the same rate Stripe Tax charged on the deposit (the Care plan is untaxed, so only the build part counts).
+    const taxPaid = s.total_details?.amount_tax ?? 0;
+    const buildPart = Number(m.build_total_cents || 0) - balance;
+    const rate = buildPart > 0 ? taxPaid / buildPart : 0;
+    const balanceTax = Math.round(balance * rate);
+    const collect = balance > 0
+      ? `\n:iphone: *Collect at delivery:* *${formatUSD(balance + balanceTax)}* = balance ${formatUSD(balance)} + sales tax ${formatUSD(balanceTax)}` +
+        (rate > 0 ? ` (${(rate * 100).toFixed(2)}%)` : " (no tax was charged on the deposit - check the rate for the address)") +
+        ` - Stripe Dashboard app -> Tap to Pay, description "${slackEscape(build)} balance - ${slackEscape(s.customer_details?.name) || "customer"}"`
+      : "";
     const lines = [
       `:moneybag: *${m.mode === "full" ? "Paid in full" : "Deposit paid"}* - ${slackEscape(build)}${test}`,
-      `*Paid:* ${paid} (incl. tax ${formatUSD(s.total_details?.amount_tax ?? 0)})` +
-        (balance > 0 ? `   *Balance due at delivery:* ${formatUSD(balance)} + tax` : ""),
+      `*Paid:* ${paid} (incl. tax ${formatUSD(taxPaid)})` + collect,
       `*Customer:* ${slackEscape(s.customer_details?.name) || "-"}   ${slackEscape(s.customer_details?.email) || ""}   ${slackEscape(s.customer_details?.phone) || ""}`,
       `*Deliver to:* ${slackEscape([addr.line1, addr.line2, addr.city, addr.postal_code].filter(Boolean).join(", ")) || "-"} (ZIP given on site: ${slackEscape(m.zip) || "-"})`,
       m.care === "yes" ? `:shield: *Frame Foundry Care added* - ${formatUSD(SERVICES.care.amountCents)}/year, renews automatically (first year included in this payment)` : "",
