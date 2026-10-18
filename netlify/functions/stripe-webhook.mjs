@@ -94,10 +94,10 @@ export default async (req) => {
     const collect = balance > 0
       ? `\n:iphone: *Collect at delivery:* *${formatUSD(balance + balanceTax)}* = balance ${formatUSD(balance)} + sales tax ${formatUSD(balanceTax)}` +
         (rate > 0 ? ` (${(rate * 100).toFixed(2)}%)` : " (no tax was charged on the deposit - check the rate for the address)") +
-        ` - Stripe Dashboard app -> Tap to Pay, description "${slackEscape(build)} balance - ${slackEscape(s.customer_details?.name) || "customer"}"`
+        ` - Stripe Dashboard app -> Tap to Pay, description *"${slackEscape(m.order || "")} balance"* (customer email ${slackEscape(s.customer_details?.email) || "-"} for the receipt)`
       : "";
     const lines = [
-      `:moneybag: *${m.mode === "full" ? "Paid in full" : "Deposit paid"}* - ${slackEscape(build)}${test}`,
+      `:moneybag: *${m.mode === "full" ? "Paid in full" : "Deposit paid"}* - ${slackEscape(build)}` + (m.order ? `   *Order ${slackEscape(m.order)}*` : "") + test,
       `*Paid:* ${paid} (incl. tax ${formatUSD(taxPaid)})` + collect,
       `*Customer:* ${slackEscape(s.customer_details?.name) || "-"}   ${slackEscape(s.customer_details?.email) || ""}   ${slackEscape(s.customer_details?.phone) || ""}`,
       `*Deliver to:* ${slackEscape([addr.line1, addr.line2, addr.city, addr.postal_code].filter(Boolean).join(", ")) || "-"} (ZIP given on site: ${slackEscape(m.zip) || "-"})`,

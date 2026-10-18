@@ -20,6 +20,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="commerce.css">
+<script>
+  // Order number from the checkout redirect (?order=FF-MMDD-NNNN) - shown so the customer can quote it.
+  document.addEventListener("DOMContentLoaded", function () {
+    var o = new URLSearchParams(location.search).get("order") || "";
+    if (!/^FF-\d{4}-\d{4}$/.test(o)) return;
+    var el = document.getElementById("order-no");
+    el.textContent = "Your order number: " + o + ". Keep it handy - it's on your receipt and we use it at delivery.";
+    el.hidden = false;
+  });
+</script>
 <script src="site.js" defer></script>
 <script src="chat.js" defer></script>
 </head>
@@ -46,11 +56,12 @@
 </section>
 <main>
   <div class="wrap narrow">
+    <p id="order-no" class="notice" hidden style="margin-bottom:1.5rem"></p>
     <h2>What happens next</h2>
     <ol>
       <li><strong>Today:</strong> we order your parts and email you within 24 hours to confirm the build and pick a delivery day.</li>
       <li><strong>Build and test:</strong> assembly, BIOS and memory settings, Windows, drivers, a stress test and a quality checklist, with photos sent to you.</li>
-      <li><strong>Delivery:</strong> we bring it to you and make sure it works. If you paid a deposit, the balance is due then.</li>
+      <li><strong>Delivery:</strong> we bring it to you and make sure it works. If you paid a deposit, the balance is due then - you pay it by tapping your card or phone, and we use your order number to match it to your deposit.</li>
     </ol>
     <div class="notice"><p style="margin:0">If a part sells out before we can buy it, we contact you with options first - we never swap a part without your OK.
     Questions any time: <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>.</p></div>

@@ -7,6 +7,14 @@ import { priceId } from "./lib/stripe-catalog.mjs";
 
 const SITE = process.env.URL || "https://framefoundrypc.com";
 
+// Short order number that ties the online deposit to the balance collected at delivery (Tap to Pay description,
+// Stripe search, receipts, Slack). Format FF-MMDD-NNNN (Los Angeles date + 4 random digits).
+function orderNumber() {
+  const d = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+  const mmdd = String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
+  return `FF-${mmdd}-${String(Math.floor(1000 + Math.random() * 9000))}`;
+}
+
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
@@ -52,29 +60,30 @@ export default async (req) => {
   const total = build.totalCents;
   const amount = mode === "full" ? total : depositCents(total);
   const balance = total - amount;
-  const name = mode === "full" ? `${build.name} - paid in full` : `${build.name} - 30% deposit`;
+  const order = orderNumber();
+  const name = `${order} ${build.name} - ${mode === "full" ? "paid in full" : "30% deposit"}`;
   const stripe = new Stripe(key);
   try {
     // Prices come from the Stripe catalog (synced from catalog.mjs by lookup key).
     const buildItem = { quantity: 1, price: await priceId(stripe, `ff_build_${buildId}_${mode}`) };
     const careItem = care ? { quantity: 1, price: await priceId(stripe, "ff_care_yearly") } : null;
-    const metadata = { build: buildId, mode, zip, build_total_cents: String(total), balance_cents: String(balance), care: care ? "yes" : "no" };
+    const metadata = { order, build: buildId, mode, zip, build_total_cents: String(total), balance_cents: String(balance), care: care ? "yes" : "no" };
     const submitMessage = care
-      ? `By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). Frame Foundry Care renews automatically every year at ${formatUSD(SERVICES.care.amountCents)} plus any sales tax until you cancel; we email you before each renewal and you can cancel online or by email. We order your parts today and contact you within 24 hours to schedule delivery.`
-      : "By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). We order your parts today and contact you within 24 hours to schedule delivery.";
+      ? `Order ${order}. By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). Frame Foundry Care renews automatically every year at ${formatUSD(SERVICES.care.amountCents)} plus any sales tax until you cancel; we email you before each renewal and you can cancel online or by email. We order your parts today and contact you within 24 hours to schedule delivery.`
+      : `Order ${order}. By paying you agree to Frame Foundry's terms (framefoundrypc.com/terms.html). We order your parts today and contact you within 24 hours to schedule delivery.`;
     const session = await stripe.checkout.sessions.create({
       // With Care the session is a subscription: the build is a one-time item on the first invoice.
       mode: care ? "subscription" : "payment",
       line_items: care ? [buildItem, careItem] : [buildItem],
       automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX !== "false" }, // Stripe Tax, CA permit 238-973920
       ...(care
-        ? { subscription_data: { description: SERVICES.care.name, metadata: { kind: "care", build: buildId, zip } } }
+        ? { subscription_data: { description: `${SERVICES.care.name} (${order})`, metadata: { kind: "care", order, build: buildId, zip } } }
         : {
             customer_creation: "always",
             payment_intent_data: {
               description: name,
               statement_descriptor_suffix: "FRAME FOUNDRY",
-              metadata: { build: buildId, mode, zip, balance_cents: String(balance) },
+              metadata: { order, build: buildId, mode, zip, balance_cents: String(balance) },
             },
           }),
       phone_number_collection: { enabled: true },
@@ -84,7 +93,7 @@ export default async (req) => {
         submit: { message: submitMessage },
       },
       metadata,
-      success_url: `${SITE}/order-thanks.html?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${SITE}/order-thanks.html?order=${order}&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE}/checkout.html?build=${buildId}`,
     });
     return json({ url: session.url });
