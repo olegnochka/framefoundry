@@ -74,3 +74,20 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-18,case_lancool207,Lian Li Lancool 207,,,,NOT CHECKED - PCPartPicker case page declined in the browser (not out of stock)
 2026-10-18,case_north,Fractal Design North,,,,NOT CHECKED - PCPartPicker case page declined in the browser (not out of stock)
 2026-10-18,os_win11home,Windows 11 Home OEM,,,,NOT CHECKED - PCPartPicker OS page declined in the browser (not out of stock)
+2026-10-19,cpu_9600x,AMD Ryzen 5 9600X,179.67,,179.67,daily rise watch - site 177.99 (+0.9%)
+2026-10-19,cpu_9800x3d,AMD Ryzen 7 9800X3D,424.00,444.00,444.00,daily rise watch
+2026-10-19,cpu_7800x3d,AMD Ryzen 7 7800X3D,348.00,,348.00,daily rise watch (upsell only)
+2026-10-19,cooler_pa120se,Thermalright Peerless Assassin 120 SE,31.41,,31.41,daily rise watch
+2026-10-19,cooler_drp5,be quiet! Dark Rock Pro 5,84.99,,84.99,daily rise watch - site 79.90 (+6.4%)
+2026-10-19,mb_b850,Asus PRIME B850-PLUS WIFI,129.00,,129.00,daily rise watch
+2026-10-19,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,259.99,,259.99,daily rise watch
+2026-10-19,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,469.99,499.99,499.99,"daily rise watch (Newegg CMK32GX5M2E6000C36) - site 489.99 (+2.0%); PCPartPicker CL36 black listings 469.99-499.99"
+2026-10-19,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,,519.99,519.99,daily rise watch (Newegg)
+2026-10-19,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,,899.99,899.99,daily rise watch (Newegg)
+2026-10-19,gpu_5070ti,MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,,1229.99,1229.99,daily rise watch (Newegg)
+2026-10-19,ssd_1tb,Kingston NV3 1TB (SNV3S/1000G),159.00,,159.00,daily rise watch
+2026-10-19,ssd_2tb,WD_BLACK SN7100 2TB,338.95,,338.95,daily rise watch - site 319.00 (+6.3%)
+2026-10-19,psu_850,Thermaltake Toughpower GF1 (2024) 850W,139.99,,139.99,daily rise watch
+2026-10-19,case_lancool207,Lian Li Lancool 207,74.99,,74.99,daily rise watch (black)
+2026-10-19,case_north,Fractal Design North,154.99,,154.99,daily rise watch
+2026-10-19,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch

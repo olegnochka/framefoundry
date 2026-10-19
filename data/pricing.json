@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 177.99
+      "site_price": 179.67
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -40,7 +40,7 @@
       "category": "CPU cooler",
       "item": "be quiet! Dark Rock Pro 5",
       "basis": "pcpp",
-      "site_price": 79.9
+      "site_price": 84.99
     },
     "mb_b850": {
       "category": "Motherboard",
@@ -58,7 +58,7 @@
       "category": "Memory (RAM)",
       "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36",
       "basis": "newegg",
-      "site_price": 489.99
+      "site_price": 499.99
     },
     "gpu_9060xt": {
       "category": "Graphics card (GPU)",
@@ -88,7 +88,7 @@
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 319.0
+      "site_price": 338.95
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -119,7 +119,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 1999,
-      "priced_on": "2026-10-17",
+      "priced_on": "2026-10-19",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -139,7 +139,7 @@
     "performance": {
       "name": "Performance",
       "set_price": 2699,
-      "priced_on": "2026-10-17",
+      "priced_on": "2026-10-19",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -159,7 +159,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 3799,
-      "priced_on": "2026-10-17",
+      "priced_on": "2026-10-19",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
