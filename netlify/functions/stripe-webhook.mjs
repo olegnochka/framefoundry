@@ -89,8 +89,10 @@ export default async (req) => {
     // at the same rate Stripe Tax charged on the deposit (the Care plan is untaxed, so only the build part counts).
     const taxPaid = s.total_details?.amount_tax ?? 0;
     const buildPart = Number(m.build_total_cents || 0) - balance;
-    const rate = buildPart > 0 ? taxPaid / buildPart : 0;
-    const balanceTax = Math.round(balance * rate);
+    // Rate rounded to 0.01% (Stripe shows e.g. 10.25%); balance tax = tax on the whole build minus tax already paid,
+    // so deposit tax + balance tax always equals the full-order tax (no rounding drift).
+    const rate = buildPart > 0 ? Math.round((taxPaid / buildPart) * 10000) / 10000 : 0;
+    const balanceTax = Math.max(0, Math.round(Number(m.build_total_cents || 0) * rate) - taxPaid);
     const collect = balance > 0
       ? `\n:iphone: *Collect at delivery:* *${formatUSD(balance + balanceTax)}* = balance ${formatUSD(balance)} + sales tax ${formatUSD(balanceTax)}` +
         (rate > 0 ? ` (${(rate * 100).toFixed(2)}%)` : " (no tax was charged on the deposit - check the rate for the address)") +
