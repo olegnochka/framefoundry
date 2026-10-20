@@ -10,8 +10,8 @@ import { sendEmail, emailEnabled, buildOrderEmail, serviceEmail } from "./lib/em
 
 export default async (req) => {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
-  const key = process.env.STRIPE_SECRET_KEY;
-  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  const key = (process.env.STRIPE_SECRET_KEY || "").trim();
+  const secret = (process.env.STRIPE_WEBHOOK_SECRET || "").trim(); // trim: a pasted secret can carry a stray space or newline
   if (!key || !secret) return new Response("Not configured", { status: 503 });
 
   const stripe = new Stripe(key);
