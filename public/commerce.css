@@ -147,3 +147,7 @@
 @media (max-width: 860px) { .co-grid { grid-template-columns: minmax(0, 1fr); } }
 .co-care .co-opt span a { display: inline-block; margin-top: 4px; }
 .co-care .ffb-check { margin: 4px 0 0; }
+
+/* Tune-up and Care cards: equal height, booking buttons pinned to the bottom so they line up */
+#tuneup, #care-plan { display: flex; flex-direction: column; }
+#tuneup .ffcare-slot, #care-plan .ffcare-slot { margin-top: auto; padding-top: 16px; }

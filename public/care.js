@@ -76,7 +76,7 @@
       if (!p) return;
       var b = document.createElement("button");
       b.type = "button";
-      b.className = id === "care" ? "btn" : "btn ghost";
+      b.className = "btn"; // both plans use the main orange button (Oleg, 2026-10-20)
       b.textContent = p.button;
       slot.appendChild(b);
       b.addEventListener("click", function () {
