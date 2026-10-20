@@ -6,6 +6,7 @@ import Stripe from "stripe";
 import { BUILDS, SERVICES, formatUSD } from "./lib/catalog.mjs";
 import { postSlack, slackEscape } from "./lib/slack.mjs";
 import { PARTS_BY_ID } from "./lib/parts-catalog.mjs";
+import { sendEmail, emailEnabled, buildOrderEmail, serviceEmail } from "./lib/email.mjs";
 
 export default async (req) => {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
@@ -42,6 +43,8 @@ export default async (req) => {
         : "*Next:* email within one business day to book the visit.",
     ];
     await postSlack(lines.join("\n"));
+    await confirm(s, serviceEmail({ kind: m.kind, paidCents: s.amount_total ?? 0, taxCents: s.total_details?.amount_tax ?? 0,
+      careCents: SERVICES.care.amountCents, testMode: !event.livemode, money: formatUSD }), event.id);
   } else if (event.type === "invoice.paid" && event.data.object.billing_reason === "subscription_cycle") {
     const inv = event.data.object;
     await postSlack(
@@ -107,6 +110,24 @@ export default async (req) => {
       "*Next:* order the parts today, email the customer to schedule delivery, add the order to the Leads Tracker.",
     ].filter(Boolean);
     await postSlack(lines.join("\n"));
+    await confirm(s, buildOrderEmail({
+      order: m.order, buildName: build, summary: BUILDS[m.build]?.summary || "", mode: m.mode,
+      paidCents: s.amount_total ?? 0, taxCents: taxPaid, balanceCents: balance, balanceTaxCents: balanceTax,
+      care: m.care === "yes", careCents: SERVICES.care.amountCents, testMode: !event.livemode, money: formatUSD,
+    }), event.id);
   }
   return new Response("ok", { status: 200 });
 };
+
+// Sends the customer confirmation and notes the result in Slack (only when Resend is set up).
+async function confirm(session, email, eventId) {
+  if (!emailEnabled()) return;
+  const to = session.customer_details?.email;
+  try {
+    const r = await sendEmail({ to, ...email, idempotencyKey: `confirm-${eventId}` });
+    await postSlack(r.sent ? `:email: Confirmation email sent to ${slackEscape(to)}` : `:warning: Confirmation email NOT sent (${slackEscape(r.reason)}) - email the customer yourself.`);
+  } catch (err) {
+    console.error("confirmation email error", err?.message);
+    await postSlack(":warning: Confirmation email failed - email the customer yourself.");
+  }
+}
