@@ -52,7 +52,7 @@ PAGES = {
 }
 
 
-GA_ID = "G-6NCWVEJ7S0"  # Google Analytics 4 property "framefoundrypc.com" (account Frame Foundry)
+GA_ID = "G-6NCWVEJ7S0"  # Google Analytics 4 property "framefoundrypc.com" (account Pacific Front Desk)
 GA_TAG = (f'<!-- ga -->\n<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
           f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>\n"
           "<!-- /ga -->")
