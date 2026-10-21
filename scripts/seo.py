@@ -12,6 +12,7 @@ It (re)writes, from the pages themselves and data/pricing.json:
     services -> Service + Offer for each priced service
     support  -> FAQPage built from the "Common questions" headings and answers
 - public/sitemap.xml (indexable pages only)
+- the Google Analytics 4 tag (GA_ID) right after <head> on every page
 robots.txt and llms.txt are static files in public/.
 Facts here must match the pages - never add claims the site does not make.
 """
@@ -49,6 +50,18 @@ PAGES = {
     "order-thanks.html": ("Order received - Frame Foundry", "Thank you for your Frame Foundry order - what happens next.", False),
     "care-thanks.html": ("Thank you - Frame Foundry", None, False),
 }
+
+
+GA_ID = "G-6NCWVEJ7S0"  # Google Analytics 4 property "framefoundrypc.com" (account Frame Foundry)
+GA_TAG = (f'<!-- ga -->\n<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
+          f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>\n"
+          "<!-- /ga -->")
+
+
+def put_ga(s):
+    if "<!-- ga -->" in s:
+        return re.sub(r"<!-- ga -->.*?<!-- /ga -->", lambda m: GA_TAG, s, flags=re.S)
+    return s.replace("<head>", "<head>\n" + GA_TAG, 1)
 
 
 def url_of(page):
@@ -140,7 +153,7 @@ def main():
         p = PUB / page
         if not p.exists():
             continue
-        s = set_head(p.read_text(), page, title, desc, indexable)
+        s = put_ga(set_head(p.read_text(), page, title, desc, indexable))
         if page == "index.html":
             s = put_jsonld(s, [{"@context": "https://schema.org", **org()},
                                {"@context": "https://schema.org", "@type": "WebSite", "name": BUSINESS, "url": f"{BASE}/"}])
