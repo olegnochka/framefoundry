@@ -1,0 +1,11 @@
+# Frame Foundry - framefoundrypc.com
+# Search engines and AI assistants are welcome to read the public pages.
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /order-thanks.html
+Disallow: /care-thanks.html
+Disallow: /api/
+Disallow: /.netlify/
+
+Sitemap: https://framefoundrypc.com/sitemap.xml

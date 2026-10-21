@@ -1,0 +1,28 @@
+# Frame Foundry
+
+> Custom gaming PCs built to order in Canoga Park, Los Angeles, and hand-delivered with in-home setup across the San Fernando Valley, Conejo Valley, Simi Valley, Camarillo, Malibu and the Westside. A small local team; every part is priced at cost plus 5% with a visible build fee, and every PC gets a 1-year local labor warranty plus each part's manufacturer warranty.
+
+Business: Pacific Front Desk LLC dba Frame Foundry. Home-based workshop in Canoga Park, CA 91303 - no storefront, no walk-in sales; delivery and in-home service by appointment. Contact: hello@framefoundrypc.com. Prices are in US dollars, before sales tax.
+
+## Current builds (set prices, ready to order online)
+- Mainstream - $1,999: Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD. 1080p high and comfortable 1440p gaming.
+- Performance - $2,699: Ryzen 5 9600X, Radeon RX 9070 XT 16GB, 32GB DDR5, 1TB SSD. High-refresh 1440p gaming.
+- Quiet Creator - $3,799: Ryzen 7 9800X3D, GeForce RTX 5070 Ti 16GB, 32GB DDR5, 2TB SSD, quiet tuning. Gaming plus creative work.
+Prices are re-checked daily against PCPartPicker and Newegg. Pay a 30% deposit or in full online; the balance is paid at delivery.
+
+## Services
+- PC build fee: $249 standard, $399 premium (quiet tuning, small form factor, showcase cabling).
+- In-home setup: $149 standard, $249 premium.
+- Tune-up: $79 per visit, at your home, any desktop PC.
+- Frame Foundry Care: $99 a year - yearly tune-up, free repair labor on PCs we built, priority replies, remote help. Renews yearly, cancel any time.
+- Delivery: free within about 10 miles of Canoga Park (plus Agoura Hills, Westlake Village, Thousand Oaks), $49 for 10-25 miles, $99 for the Westside, Malibu and Camarillo. No shipping.
+
+## Pages
+- [Home](https://framefoundrypc.com/): what Frame Foundry does and how pricing works
+- [Current builds](https://framefoundrypc.com/builds.html): every part and price for each build
+- [Services and prices](https://framefoundrypc.com/services.html): build fees, setup, tune-ups, Care, delivery areas
+- [Free quote](https://framefoundrypc.com/quote.html): request a custom build or upgrade quote
+- [About](https://framefoundrypc.com/about.html)
+- [Support and FAQ](https://framefoundrypc.com/support.html)
+- [Warranty](https://framefoundrypc.com/warranty.html)
+- [Terms of sale](https://framefoundrypc.com/terms.html)

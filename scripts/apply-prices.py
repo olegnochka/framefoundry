@@ -138,6 +138,14 @@ def rewrite_site(cfg):
     CHAT.write_text(ch)
     subprocess.run([sys.executable, "-E", str(SITE / "scripts" / "build-knowledge.py")], cwd=SITE, check=True,
                    stdout=subprocess.DEVNULL)
+    # Keep search data current: Product prices in the builds page JSON-LD, sitemap dates, llms.txt prices.
+    subprocess.run([sys.executable, "-E", str(SITE / "scripts" / "seo.py")], cwd=SITE, check=True, stdout=subprocess.DEVNULL)
+    llms = SITE / "public" / "llms.txt"
+    if llms.exists():
+        t = llms.read_text()
+        for name, key in (("Mainstream", "mainstream"), ("Performance", "performance"), ("Quiet Creator", "quiet-creator")):
+            t = re.sub(rf"- {name} - \$[\d,]+:", f"- {name} - {whole(builds[key]['set_price'])}:", t)
+        llms.write_text(t)
 
 
 def cards(html, builds):
@@ -251,7 +259,8 @@ def main():
         write_dashboard_day(cfg, day, prices, summary, old_prices)
 
     if deploy and not dry:
-        files = ["data/pricing.json", "public/data", "public/builds.html", "public/index.html",
+        files = ["data/pricing.json", "public/data", "public/builds.html", "public/index.html", "public/llms.txt", "public/sitemap.xml",
+                 "public/services.html", "public/support.html", "public/about.html", "public/quote.html",
                  "netlify/functions/lib/catalog.mjs", "netlify/functions/chat.mjs", "netlify/functions/lib/site-knowledge.mjs"]
         subprocess.run(["git", "add", *files], cwd=SITE, check=True)
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=SITE).returncode != 0:
