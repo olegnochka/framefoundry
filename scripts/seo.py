@@ -41,6 +41,7 @@ PAGES = {
     "support.html": ("Gaming PC Support and FAQ | Frame Foundry",
                      "How to reach Frame Foundry, answers to common questions about custom gaming PCs, delivery, payment and upgrades, and help with a PC we built.", True),
     "quote.html": ("Free Custom Gaming PC Quote - LA and the Valley | Frame Foundry", None, True),
+    "price-report.html": (None, None, True),  # title, description and JSON-LD come from price-report.py
     "warranty.html": ("Warranty - Frame Foundry", None, True),
     "terms.html": ("Terms of Sale - Frame Foundry", None, True),
     "privacy.html": ("Privacy Policy - Frame Foundry", None, True),
@@ -64,8 +65,9 @@ def put_jsonld(s, data):
 
 
 def set_head(s, page, title, desc, indexable):
-    s = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", s, count=1, flags=re.S)
-    s = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{html.escape(title)}">', s, count=1)
+    if title:
+        s = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", s, count=1, flags=re.S)
+        s = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{html.escape(title)}">', s, count=1)
     if desc:
         s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{html.escape(desc)}">', s, count=1)
         s = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{html.escape(desc)}">', s, count=1)
