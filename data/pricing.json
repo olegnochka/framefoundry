@@ -69,7 +69,7 @@
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
       "item": "ASRock Challenger Radeon RX 9070 XT 16GB",
-      "basis": "newegg",
+      "basis": "pcpp",
       "site_price": 899.99
     },
     "gpu_5070ti": {
