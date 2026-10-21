@@ -257,13 +257,15 @@ def main():
         # Monthly price report page follows the daily data (month-to-date).
         subprocess.run([sys.executable, "-E", str(SITE / "scripts" / "price-report.py")], cwd=SITE, check=True,
                        stdout=subprocess.DEVNULL)
+        subprocess.run([sys.executable, "-E", str(SITE / "scripts" / "guides.py")], cwd=SITE, check=True,
+                       stdout=subprocess.DEVNULL)
 
     if not dry:
         write_dashboard_day(cfg, day, prices, summary, old_prices)
 
     if deploy and not dry:
         files = ["data/pricing.json", "public/data", "public/builds.html", "public/index.html", "public/llms.txt", "public/sitemap.xml",
-                 "public/services.html", "public/support.html", "public/about.html", "public/quote.html", "public/price-report.html",
+                 "public/services.html", "public/support.html", "public/about.html", "public/quote.html", "public/price-report.html", "public/guides.html", "public/best-gaming-pc-2026.html", "public/first-gaming-pc-guide.html", "public/prebuilt-vs-custom-pc.html",
                  "netlify/functions/lib/catalog.mjs", "netlify/functions/chat.mjs", "netlify/functions/lib/site-knowledge.mjs"]
         subprocess.run(["git", "add", *files], cwd=SITE, check=True)
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=SITE).returncode != 0:
