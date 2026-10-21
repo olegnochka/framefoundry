@@ -126,3 +126,5 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-21,case_north,Fractal Design North,154.99,,154.99,daily rise watch
 2026-10-21,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch
 2026-10-21,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,879.99,,879.99,"price source switched to PCPartPicker (Oleg 2026-10-21): Newegg out of stock new; same card in stock at Amazon $879.99"
+2026-10-21,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),,,75.90,"model corrected (Oleg 2026-10-21): black US model at Amazon $75.90 (ASIN B0CKY88GMT); the 139.99 price since Oct 16 was the white Snow Edition EU listing"
+2026-10-21,case_lancool207,Lian Li Lancool 207,,82.99,82.99,"store check 2026-10-21: black LANCOOL 207RX $82.99 at both Newegg and Amazon (was 74.99)"

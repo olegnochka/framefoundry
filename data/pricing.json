@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 180.49
+      "site_price": 178.95
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -70,7 +70,7 @@
       "category": "Graphics card (GPU)",
       "item": "ASRock Challenger Radeon RX 9070 XT 16GB",
       "basis": "pcpp",
-      "site_price": 899.99
+      "site_price": 879.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
@@ -93,14 +93,16 @@
     "psu_850": {
       "category": "Power supply (PSU)",
       "item": "Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",
+      "mpn": "PS-TPD-0850FNFAGU-P",
+      "match_note": "Black, US plug. NOT the white Snow Edition / EU listing (B09QHTRYZ4). Amazon ASIN B0CKY88GMT.",
       "basis": "pcpp",
-      "site_price": 139.99
+      "site_price": 75.9
     },
     "case_lancool207": {
       "category": "Case",
       "item": "Lian Li Lancool 207 (airflow, fans included)",
       "basis": "pcpp",
-      "site_price": 74.99
+      "site_price": 82.99
     },
     "case_north": {
       "category": "Case",
@@ -119,7 +121,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 1999,
-      "priced_on": "2026-10-20",
+      "priced_on": "2026-10-21",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -138,8 +140,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2699,
-      "priced_on": "2026-10-20",
+      "set_price": 2599,
+      "priced_on": "2026-10-21",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -159,7 +161,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 3799,
-      "priced_on": "2026-10-20",
+      "priced_on": "2026-10-21",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
