@@ -89,7 +89,8 @@ def main():
     dataset = {"@context": "https://schema.org", "@type": "Dataset", "name": f"Gaming PC parts prices, {label}",
                "description": desc, "url": canonical, "temporalCoverage": f"{first}/{last}",
                "creator": {"@type": "Organization", "name": "Frame Foundry", "url": f"{BASE}/"},
-               "isAccessibleForFree": True,
+               "isAccessibleForFree": True, "license": f"{BASE}/data-license.html",
+               "copyrightHolder": {"@type": "Organization", "name": "Pacific Front Desk LLC dba Frame Foundry"},
                "distribution": {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{BASE}/data/price-history.csv"}}
     head = head.replace("</head>", f'<script type="application/ld+json">{json.dumps(dataset, separators=(",", ":"))}</script>\n</head>', 1)
     biggest = up[0] if up else None
@@ -134,7 +135,7 @@ def main():
     <ul>
       <li>Every morning we check each part's lowest price on PCPartPicker, or Newegg's own price where Newegg sells it directly. These are national US online prices - the prices we pay to buy parts for PCs we build in Los Angeles.</li>
       <li>When a part moves more than 5% from the price on our builds page, we re-price the builds that use it. Your price is locked once you pay - if a part rises afterwards, we absorb it (<a href="terms.html">Terms of Sale</a>).</li>
-      <li>The raw data is public: <a href="data/price-history.csv">price-history.csv</a> has every daily check since we started.</li>
+      <li>The raw data is public to view: <a href="data/price-history.csv">price-history.csv</a> has every daily check since we started. It is ours - see <a href="data-license.html">how you may use it</a>.</li>
     </ul>
     <p>Want a build around a different budget or part? <a href="quote.html">Ask for a free quote</a> - we price it the same way.</p>
     <p class="muted">Updated daily - last check {nice_date(last)}, {last[:4]}.</p>
@@ -145,7 +146,61 @@ def main():
 </html>
 """
     (PUB / "price-report.html").write_text(head + body)
+    license_page()
     print(f"price report: {label}, {nice_date(first)}-{nice_date(last)}, {len(moves)} parts, {len(up)} up / {len(down)} down / {len(flat)} flat")
+
+
+
+def license_page():
+    """data-license.html - the license the Dataset JSON-LD points to. All rights reserved (Oleg, 2026-10-22)."""
+    url = f"{BASE}/data-license.html"
+    head, header, footer = page_shell("Price Data License - Frame Foundry",
+                                      "Frame Foundry's price report and price history are copyrighted, all rights reserved. How you may view, quote and link to them.", url)
+    year = date.today().year
+    body = f"""<body>
+{header}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Price data license</h1>
+    <p>Our price report and price history are ours. Here is what you may do with them.</p>
+  </div>
+</section>
+<main>
+  <div class="wrap narrow">
+    <h2>What this covers</h2>
+    <p>The <a href="price-report.html">gaming PC parts price report</a>, the daily price history file
+    (<a href="data/price-history.csv">price-history.csv</a>) and the other price files in our data folder, including the selection,
+    arrangement and notes in them.</p>
+
+    <h2>Copyright</h2>
+    <p>Copyright {year} Pacific Front Desk LLC dba Frame Foundry. All rights reserved.</p>
+
+    <h2>What you may do</h2>
+    <ul>
+      <li>View and download the data for your own personal, non-commercial use.</li>
+      <li>Quote a few figures in an article, post or video, with credit to Frame Foundry and a link to <a href="price-report.html">framefoundrypc.com/price-report.html</a>.</li>
+    </ul>
+
+    <h2>What needs our written permission</h2>
+    <ul>
+      <li>Republishing, selling or redistributing the data, in whole or in large part.</li>
+      <li>Copying it into another database, price tracker, product or website, or collecting it automatically on a schedule.</li>
+      <li>Using it to train or feed software, including AI models, beyond reading and citing it.</li>
+    </ul>
+    <p>To ask, email <a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a>.</p>
+
+    <h2>No guarantee</h2>
+    <p>The prices are what we saw at the stores we check, on the dates shown, before sales tax. They are not offers to sell at those prices,
+    and stores change prices and stock without notice. We work to keep the data accurate but cannot guarantee it, and we are not liable
+    for decisions made from it. Our own build prices are on the <a href="builds.html">builds page</a> and in our <a href="terms.html">terms of sale</a>.</p>
+  </div>
+</main>
+{footer}
+</body>
+</html>
+"""
+    (PUB / "data-license.html").write_text(head + body)
 
 
 if __name__ == "__main__":

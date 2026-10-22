@@ -43,6 +43,7 @@ PAGES = {
                      "How to reach Frame Foundry, answers to common questions about custom gaming PCs, delivery, payment and upgrades, and help with a PC we built.", True),
     "quote.html": ("Free Custom Gaming PC Quote - LA and the Valley | Frame Foundry", None, True),
     "price-report.html": (None, None, True),  # title, description and JSON-LD come from price-report.py
+    "data-license.html": (None, None, True),  # written by price-report.py
     "guides.html": (None, None, True),  # guides.py writes title, description and JSON-LD for the hub and guides
     "best-gaming-pc-2026.html": (None, None, True),
     "first-gaming-pc-guide.html": (None, None, True),

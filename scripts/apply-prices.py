@@ -271,7 +271,7 @@ def main():
 
     if deploy and not dry:
         files = ["data/pricing.json", "public/data", "public/builds.html", "public/index.html", "public/llms.txt", "public/sitemap.xml",
-                 "public/services.html", "public/support.html", "public/about.html", "public/quote.html", "public/price-report.html", "public/guides.html", "public/best-gaming-pc-2026.html", "public/first-gaming-pc-guide.html", "public/prebuilt-vs-custom-pc.html", "public/blog.xml", "public/blog-*.html", "content/blog",
+                 "public/services.html", "public/support.html", "public/about.html", "public/quote.html", "public/price-report.html", "public/data-license.html", "public/guides.html", "public/best-gaming-pc-2026.html", "public/first-gaming-pc-guide.html", "public/prebuilt-vs-custom-pc.html", "public/blog.xml", "public/blog-*.html", "content/blog",
                  "netlify/functions/lib/catalog.mjs", "netlify/functions/chat.mjs", "netlify/functions/lib/site-knowledge.mjs"]
         subprocess.run(["git", "add", *files], cwd=SITE, check=True)
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=SITE).returncode != 0:
