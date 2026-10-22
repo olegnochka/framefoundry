@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Frame Foundry blog</title>
+  <link>https://framefoundrypc.com/guides.html</link>
+  <description>Gaming PCs, parts, prices, upgrades and games - from a custom PC builder in Los Angeles.</description>
+  <language>en-us</language>
+  <item>
+    <title>Graphics card and memory prices are climbing this fall - what it means if you are buying</title>
+    <link>https://framefoundrypc.com/blog-graphics-card-and-memory-prices-fall-2026.html</link>
+    <guid>https://framefoundrypc.com/blog-graphics-card-and-memory-prices-fall-2026.html</guid>
+    <pubDate>Thu, 22 Oct 2026 16:00:00 +0000</pubDate>
+    <description>Average graphics card prices rose about 30-50% since July and DDR5 memory keeps rising, while CPUs and power supplies held steady. What we see and how we price around it.</description>
+  </item>
+</channel>
+</rss>

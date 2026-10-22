@@ -21,7 +21,7 @@ Prices are re-checked daily against PCPartPicker and Newegg. Pay a 30% deposit o
 - [Home](https://framefoundrypc.com/): what Frame Foundry does and how pricing works
 - [Current builds](https://framefoundrypc.com/builds.html): every part and price for each build
 - [Services and prices](https://framefoundrypc.com/services.html): build fees, setup, tune-ups, Care, delivery areas
-- [Gaming PC buying guides](https://framefoundrypc.com/guides.html): hub for the guides below
+- [Gaming PC guides and blog](https://framefoundrypc.com/guides.html): buying guides plus regular blog posts on parts, prices, upgrades and games (RSS: https://framefoundrypc.com/blog.xml)
 - [Best gaming PC at each budget](https://framefoundrypc.com/best-gaming-pc-2026.html): the exact parts at each current build price and what each is good at
 - [A parent's guide to a first gaming PC](https://framefoundrypc.com/first-gaming-pc-guide.html): what kids need for Fortnite, Roblox and Minecraft, extras, parental controls
 - [Prebuilt vs custom gaming PC](https://framefoundrypc.com/prebuilt-vs-custom-pc.html): how to compare prices part by part, with a real itemized build

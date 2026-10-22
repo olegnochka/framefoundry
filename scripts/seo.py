@@ -153,6 +153,8 @@ def faq_ld(s):
 
 def main():
     cfg = json.loads((SITE / "data" / "pricing.json").read_text())
+    for post in sorted(PUB.glob("blog-*.html")):  # blog.py writes title, description and JSON-LD for posts
+        PAGES.setdefault(post.name, (None, None, True))
     for page, (title, desc, indexable) in PAGES.items():
         p = PUB / page
         if not p.exists():

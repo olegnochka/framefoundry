@@ -15,6 +15,7 @@ and never show labor or margin figures.
 import html, json
 from datetime import date
 
+from blog import load_posts, nice
 from pagekit import BASE, PUB, SITE, money, page_shell, whole
 
 PUBLISHED = "2026-10-21"
@@ -64,7 +65,7 @@ def article_ld(title, desc, url, today):
 
 def write(page, title, desc, eyebrow, h1, lede, body, ld, today):
     url = f"{BASE}/{page}"
-    head, header, footer = page_shell(title, desc, url)
+    head, header, footer = page_shell(title, desc, url, current="guides.html")
     scripts = "".join(f'<script type="application/ld+json">{json.dumps(d, ensure_ascii=False, separators=(",", ":"))}</script>\n' for d in ld)
     head = head.replace("</head>", scripts + "</head>", 1)
     out = f"""{head}<body>
@@ -271,8 +272,10 @@ def prebuilt_vs_custom(cfg, builds, today):
 
 def hub(builds, today):
     m, p, q = builds["mainstream"], builds["performance"], builds["quiet-creator"]
-    title = "Gaming PC Buying Guides | Frame Foundry"
-    desc = "Plain-language guides to buying a gaming PC: what to buy at each budget, a parent's guide to a first gaming PC, prebuilt vs custom, and monthly part prices."
+    posts = load_posts(today)
+    title = "Gaming PC Guides and Blog | Frame Foundry"
+    desc = ("Plain-language guides to buying a gaming PC, plus our blog on parts, prices, upgrades and games - "
+            "from a custom PC builder in Los Angeles.")
     items = [
         ("best-gaming-pc-2026.html", f"Best gaming PC for {whole(m['set_price'])}, {whole(p['set_price'])} and {whole(q['set_price'])}", "The exact parts at each budget, what each build is good at, and what to upgrade first."),
         ("first-gaming-pc-guide.html", "A parent's guide to a first gaming PC", "What kids actually need for Fortnite, Roblox and Minecraft, the extras people forget, and parental controls."),
@@ -280,12 +283,19 @@ def hub(builds, today):
         ("price-report.html", "Gaming PC parts price report", "What graphics cards, memory, SSDs and processors cost this month, checked daily."),
     ]
     cards = "".join(f'<div class="card"><h3><a href="{u}">{html.escape(t)}</a></h3><p>{html.escape(d)}</p></div>' for u, t, d in items)
-    body = f'    <div class="grid grid-2" style="margin-top:2.4rem">{cards}</div>\n    <p style="margin-top:2rem">Have a question these do not answer? <a href="quote.html">Ask us</a> - a real person on our team replies within one business day.</p>'
+    blog = "".join(f'<div class="card"><p class="muted small" style="margin:0 0 .3rem">{nice(x["date"])} - {x["minutes"]} min read</p>'
+                   f'<h3><a href="{x["page"]}">{html.escape(x["title"])}</a></h3><p>{html.escape(x["description"])}</p></div>' for x in posts)
+    body = (f'    <h2>Buying guides</h2>\n    <div class="grid grid-2">{cards}</div>\n'
+            f'    <h2 id="blog">From the blog</h2>\n    <p class="muted">New posts every day or two on parts, prices, upgrades and games. '
+            f'<a href="blog.xml">RSS feed</a>.</p>\n'
+            + (f'    <div class="grid grid-2">{blog}</div>\n' if posts else '    <p>The first posts are on their way.</p>\n')
+            + '    <p style="margin-top:2rem">Have a question these do not answer? <a href="quote.html">Ask us</a> - a real person on our team replies within one business day.</p>')
     url = f"{BASE}/guides.html"
-    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Gaming PC buying guides", "url": url, "description": desc,
-          "hasPart": [{"@type": "Article", "headline": t, "url": f"{BASE}/{u}"} for u, t, _ in items]}
-    write("guides.html", title, desc, "Guides", "Gaming PC buying guides",
-          "Straight answers to the questions people ask before buying a gaming PC, written from the builds and prices we work with every day.",
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Gaming PC guides and blog", "url": url, "description": desc,
+          "hasPart": [{"@type": "Article", "headline": t, "url": f"{BASE}/{u}"} for u, t, _ in items]
+                     + [{"@type": "BlogPosting", "headline": x["title"], "url": x["url"], "datePublished": x["date"]} for x in posts]}
+    write("guides.html", title, desc, "Guides and blog", "Gaming PC guides and blog",
+          "Straight answers to the questions people ask before buying a gaming PC, and regular posts on parts, prices, upgrades and games.",
           body, [ld], today)
 
 
