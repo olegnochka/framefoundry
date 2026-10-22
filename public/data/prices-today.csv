@@ -1,18 +1,18 @@
 date,part_key,category,item,price_source,today_cost,site_price,change_vs_site_pct,used_in
-2026-10-21,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,178.95,178.95,0.0,"Mainstream, Performance"
-2026-10-21,cpu_9800x3d,Processor (CPU),AMD Ryzen 7 9800X3D,Newegg,469.00,469.00,0.0,Quiet Creator
-2026-10-21,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,348.00,348.00,0.0,upsell only
-2026-10-21,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,31.41,31.41,0.0,"Mainstream, Performance"
-2026-10-21,cooler_drp5,CPU cooler,be quiet! Dark Rock Pro 5,PCPartPicker,82.49,82.49,0.0,Quiet Creator
-2026-10-21,mb_b850,Motherboard,Asus PRIME B850-PLUS WIFI (Wi-Fi built in),PCPartPicker,129.00,129.00,0.0,"Mainstream, Performance, Quiet Creator"
-2026-10-21,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,269.99,269.99,0.0,Mainstream
-2026-10-21,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,Newegg,499.99,499.99,0.0,"Performance, Quiet Creator"
-2026-10-21,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,Newegg,519.99,519.99,0.0,Mainstream
-2026-10-21,gpu_9070xt,Graphics card (GPU),ASRock Challenger Radeon RX 9070 XT 16GB,PCPartPicker,879.99,879.99,0.0,Performance
-2026-10-21,gpu_5070ti,Graphics card (GPU),MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,Newegg,1229.99,1229.99,0.0,Quiet Creator
-2026-10-21,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,159.00,159.00,0.0,"Mainstream, Performance"
-2026-10-21,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,338.95,338.95,0.0,Quiet Creator
-2026-10-21,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,75.90,75.90,0.0,"Mainstream, Performance, Quiet Creator"
-2026-10-21,case_lancool207,Case,"Lian Li Lancool 207 (airflow, fans included)",PCPartPicker,82.99,82.99,0.0,"Mainstream, Performance"
-2026-10-21,case_north,Case,"Fractal Design North (wood front, quiet)",PCPartPicker,154.99,154.99,0.0,Quiet Creator
-2026-10-21,os_win11home,Operating system,Windows 11 Home (licensed OEM copy),PCPartPicker,128.99,128.99,0.0,"Mainstream, Performance, Quiet Creator"
+2026-10-22,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,179.99,178.95,0.6,"Mainstream, Performance"
+2026-10-22,cpu_9800x3d,Processor (CPU),AMD Ryzen 7 9800X3D,Newegg,469.00,469.00,0.0,Quiet Creator
+2026-10-22,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,348.00,348.00,0.0,upsell only
+2026-10-22,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,MISSING,31.41,,"Mainstream, Performance"
+2026-10-22,cooler_drp5,CPU cooler,be quiet! Dark Rock Pro 5,PCPartPicker,MISSING,82.49,,Quiet Creator
+2026-10-22,mb_b850,Motherboard,Asus PRIME B850-PLUS WIFI (Wi-Fi built in),PCPartPicker,MISSING,129.00,,"Mainstream, Performance, Quiet Creator"
+2026-10-22,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,MISSING,269.99,,Mainstream
+2026-10-22,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,Newegg,499.99,499.99,0.0,"Performance, Quiet Creator"
+2026-10-22,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,Newegg,519.99,519.99,0.0,Mainstream
+2026-10-22,gpu_9070xt,Graphics card (GPU),ASRock Challenger Radeon RX 9070 XT 16GB,PCPartPicker,MISSING,879.99,,Performance
+2026-10-22,gpu_5070ti,Graphics card (GPU),MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,Newegg,1229.99,1229.99,0.0,Quiet Creator
+2026-10-22,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,MISSING,159.00,,"Mainstream, Performance"
+2026-10-22,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,MISSING,338.95,,Quiet Creator
+2026-10-22,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,MISSING,75.90,,"Mainstream, Performance, Quiet Creator"
+2026-10-22,case_lancool207,Case,"Lian Li Lancool 207 (airflow, fans included)",PCPartPicker,MISSING,82.99,,"Mainstream, Performance"
+2026-10-22,case_north,Case,"Fractal Design North (wood front, quiet)",PCPartPicker,MISSING,154.99,,Quiet Creator
+2026-10-22,os_win11home,Operating system,Windows 11 Home (licensed OEM copy),PCPartPicker,MISSING,128.99,,"Mainstream, Performance, Quiet Creator"

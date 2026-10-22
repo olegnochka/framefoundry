@@ -128,3 +128,20 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-21,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,879.99,,879.99,"price source switched to PCPartPicker (Oleg 2026-10-21): Newegg out of stock new; same card in stock at Amazon $879.99"
 2026-10-21,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),,,75.90,"model corrected (Oleg 2026-10-21): black US model at Amazon $75.90 (ASIN B0CKY88GMT); the 139.99 price since Oct 16 was the white Snow Edition EU listing"
 2026-10-21,case_lancool207,Lian Li Lancool 207,,82.99,82.99,"store check 2026-10-21: black LANCOOL 207RX $82.99 at both Newegg and Amazon (was 74.99)"
+2026-10-22,cpu_9600x,AMD Ryzen 5 9600X,179.99,,179.99,daily rise watch - was 178.95 (+0.6%)
+2026-10-22,cpu_9800x3d,AMD Ryzen 7 9800X3D,444.00,469.00,469.00,daily rise watch (Newegg); PCPartPicker lowest 444.00
+2026-10-22,cpu_7800x3d,AMD Ryzen 7 7800X3D,348.00,,348.00,daily rise watch (upsell only)
+2026-10-22,cooler_pa120se,Thermalright Peerless Assassin 120 SE,,,,"NO PCPARTPICKER READ - browser pane declined pcpartpicker.com after the CPU page. Amazon 31.41 (same as site)"
+2026-10-22,cooler_drp5,be quiet! Dark Rock Pro 5,,,,"NO PCPARTPICKER READ (browser declined). Amazon 82.49 (same as site)"
+2026-10-22,mb_b850,Asus PRIME B850-PLUS WIFI,,,,"NO PCPARTPICKER READ (browser declined). Amazon 182.96, Newegg 215.32 (third-party), both well above site 129.00 - check PCPartPicker"
+2026-10-22,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,,,,"NO PCPARTPICKER READ (browser declined). Amazon 399.99 (KF560C30BBEAK2-16), Newegg 389.99, both well above site 269.99 - check PCPartPicker"
+2026-10-22,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,,499.99,499.99,daily rise watch (Newegg CMK32GX5M2E6000C36)
+2026-10-22,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,,519.99,519.99,daily rise watch (Newegg)
+2026-10-22,gpu_9070xt,ASRock Challenger Radeon RX 9070 XT 16GB,,,,"NO PCPARTPICKER READ (browser declined). Amazon 879.99 (same as site); Newegg sold by Newegg back in stock at 949.99"
+2026-10-22,gpu_5070ti,MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,,1229.99,1229.99,daily rise watch (Newegg)
+2026-10-22,ssd_1tb,Kingston NV3 1TB (SNV3S/1000G),,,,"NO PCPARTPICKER READ (browser declined). Amazon 156.50 (site 159.00)"
+2026-10-22,ssd_2tb,WD_BLACK SN7100 2TB,,,,"NO PCPARTPICKER READ (browser declined). Amazon only showed SN7100X 2TB 342.00 (site 338.95)"
+2026-10-22,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),,,,"NO PCPARTPICKER READ (browser declined). Amazon 75.90 ASIN B0CKY88GMT (same as site)"
+2026-10-22,case_lancool207,Lian Li Lancool 207,,,,"NO PCPARTPICKER READ (browser declined). Amazon black 82.99 (same as site)"
+2026-10-22,case_north,Fractal Design North,,,,"NO PCPARTPICKER READ (browser declined). Amazon 154.99 (same as site)"
+2026-10-22,os_win11home,Windows 11 Home OEM,,128.99,,"NO PCPARTPICKER READ (browser declined). Newegg 128.99 (same as site)"
