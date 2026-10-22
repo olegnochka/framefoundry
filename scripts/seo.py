@@ -107,6 +107,37 @@ def org():
             "knowsAbout": ["Custom gaming PCs", "PC assembly", "PC upgrades", "PC tune-ups", "Gaming PC setup"]}
 
 
+# Hand delivery by zone (services.html#delivery); every ZIP here is in SERVICE_ZIPS in lib/catalog.mjs.
+DELIVERY_ZONES = [
+    (0, ["91303", "91304", "91305", "91306", "91307", "91308", "91309", "91364", "91365", "91367", "91371", "91335", "91337",
+         "91311", "91313", "91324", "91325", "91326", "91327", "91328", "91330", "91343", "91302", "91372", "91301", "91376",
+         "91377", "91361", "91362", "91320", "91358", "91359", "91360"]),
+    (49, ["91356", "91357", "91316", "91436", "91403", "91423", "91401", "91405", "91406", "91411", "91402", "91344", "91345",
+          "91340", "91331", "91342", "91352", "91040", "91042", "91601", "91602", "91605", "91606", "91607", "91604", "91501",
+          "91502", "91504", "91505", "91506", "93063", "93065", "93062", "93064", "93094", "93021", "93012", "90290"]),
+    (99, ["90265", "90272", "90401", "90402", "90403", "90404", "90405", "90049", "90024", "90077", "90025", "90064", "90066",
+          "90292", "90210", "90211", "90212", "90069", "90046", "90048", "90301", "90302", "90303", "90304", "90305", "93010", "93066"]),
+]
+
+
+def shipping_details():
+    # Built to order: usually 5 to 10 days from deposit to delivery (support.html), delivered by hand.
+    return [{"@type": "OfferShippingDetails",
+             "shippingRate": {"@type": "MonetaryAmount", "value": f"{rate:.2f}", "currency": "USD"},
+             "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "CA", "postalCode": zips},
+             "deliveryTime": {"@type": "ShippingDeliveryTime",
+                              "handlingTime": {"@type": "QuantitativeValue", "minValue": 5, "maxValue": 10, "unitCode": "DAY"},
+                              "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY"}}}
+            for rate, zips in DELIVERY_ZONES]
+
+
+def return_policy():
+    # terms.html section 5: cancellations and refunds before delivery; no returns after delivery (problems go under the warranty).
+    return {"@type": "MerchantReturnPolicy", "applicableCountry": "US",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+            "merchantReturnLink": f"{BASE}/terms.html"}
+
+
 def builds_ld(cfg):
     items = []
     summaries = {"mainstream": "Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD - 1080p and 1440p gaming",
@@ -116,8 +147,11 @@ def builds_ld(cfg):
         items.append({"@context": "https://schema.org", "@type": "Product", "name": f"Frame Foundry {b['name']} gaming PC",
                       "description": summaries.get(bid, ""), "image": f"{BASE}/img/build-{bid}.webp", "brand": {"@type": "Brand", "name": BUSINESS},
                       "url": f"{BASE}/builds.html#{bid}",
-                      "offers": {"@type": "Offer", "price": f"{b['set_price']:.2f}", "priceCurrency": "USD", "availability": "https://schema.org/MadeToOrder",
-                                 "url": f"{BASE}/checkout.html?build={bid}", "seller": {"@id": f"{BASE}/#business"}, "areaServed": "Los Angeles and Ventura counties, CA"}})
+                      # InStock: orderable today, built after the deposit (Google does not accept MadeToOrder).
+                      "offers": {"@type": "Offer", "price": f"{b['set_price']:.2f}", "priceCurrency": "USD", "availability": "https://schema.org/InStock",
+                                 "itemCondition": "https://schema.org/NewCondition",
+                                 "url": f"{BASE}/checkout.html?build={bid}", "seller": {"@id": f"{BASE}/#business"}, "areaServed": "Los Angeles and Ventura counties, CA",
+                                 "shippingDetails": shipping_details(), "hasMerchantReturnPolicy": return_policy()}})
     return items
 
 
