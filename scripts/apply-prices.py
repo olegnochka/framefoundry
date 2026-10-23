@@ -122,8 +122,8 @@ def rewrite_site(cfg):
     trio = (f'Mainstream {whole(builds["mainstream"]["set_price"])}, Performance {whole(builds["performance"]["set_price"])} '
             f'and Quiet Creator {whole(builds["quiet-creator"]["set_price"])}')
     s = sub1(r"Mainstream \$[\d,]+, Performance \$[\d,]+ and Quiet Creator \$[\d,]+", trio, s, "meta prices")
-    BUILDS_HTML.write_text(cards(s, builds))
-    INDEX_HTML.write_text(cards(INDEX_HTML.read_text(), builds))
+    BUILDS_HTML.write_text(cards(s, builds, parts))
+    INDEX_HTML.write_text(cards(INDEX_HTML.read_text(), builds, parts))
 
     c = CATALOG.read_text()
     for bid, b in builds.items():
@@ -148,11 +148,21 @@ def rewrite_site(cfg):
         llms.write_text(t)
 
 
-def cards(html, builds):
+def cards(html, builds, parts):
+    # The build cards list four key parts by name: graphics card, processor, motherboard (MB) and memory (RAM).
+    card_cats = [("ffg-gpu", "Graphics card (GPU)"), ("ffg-part\">", "Processor (CPU)"), (">MB<", "Motherboard"), (">RAM<", "Memory (RAM)")]
     for bid, b in builds.items():
         a = html.index(f'data-build="{bid}"')
         e = html.index("</article>", a)
         card = html[a:e]
+        picks = {parts[k]["category"]: parts[k]["item"] for k in b["parts"]}
+        items = re.findall(r'<li class="ffg-part[^"]*">.*?</li>', card, flags=re.S)
+        for li in items:
+            for marker, cat in card_cats:
+                if marker in li and cat in picks:
+                    new = re.sub(r'<span class="ffg-pname">.*?</span>', f'<span class="ffg-pname">{picks[cat]}</span>', li, count=1)
+                    card = card.replace(li, new, 1)
+                    break
         card = sub1(r'<span class="ffg-price">\$[\d,]+</span>', f'<span class="ffg-price">{whole(b["set_price"])}</span>', card, f"{bid} card price")
         card = sub1(r'priced on [A-Z][a-z]{2} \d{1,2}, \d{4}', f'priced on {nice_date(b["priced_on"])}', card, f"{bid} card date")
         html = html[:a] + card + html[e:]
