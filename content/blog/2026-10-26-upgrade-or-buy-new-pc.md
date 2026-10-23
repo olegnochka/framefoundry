@@ -18,8 +18,8 @@ Open Task Manager (Ctrl+Shift+Esc), play for ten minutes, then check the Perform
 
 - **Graphics card near 100% and frame rates low** - the card is the limit. This is the most common case and the upgrade that changes the most.
 - **Memory near full while you play**, with stutter when you switch to Discord or a browser - add memory. Our [16GB or 32GB post](blog-is-16gb-ram-enough-for-gaming-2026.html) covers how to decide.
-- **Processor pegged at 100% while the graphics card sits at 60%** - the processor is the limit. Sometimes a faster chip fits the same socket; sometimes it does not, and that is where upgrades start to turn into a new PC.
-- **Long load times and a slow desktop** but fine frame rates once a game is running - the drive. Moving from a hard drive or an older SATA SSD (solid state drive) to an NVMe SSD is a cheap, noticeable fix.
+- **Processor at 100% while the graphics card sits at 60%** - the processor is the limit. Sometimes a faster chip fits the same socket; sometimes it does not, and that is where an upgrade turns into a new PC.
+- **Long load times and a slow desktop** but fine frame rates in game - the drive. Moving from a hard drive or an older SATA SSD (solid state drive) to an NVMe SSD is a cheap, noticeable fix.
 - **Nothing is pegged, but the PC got loud and slow over the years** - it needs a clean, not a part. Dust and dried-out thermal paste do exactly this. That is our $79 [tune-up](services.html), at your home.
 
 ## 3. Can the rest of the PC take the new part?
@@ -27,7 +27,7 @@ Open Task Manager (Ctrl+Shift+Esc), play for ten minutes, then check the Perform
 Before buying a part, check three things:
 
 - **Power supply.** A bigger graphics card needs enough wattage and the right power cables. Check the label on the supply and the card's requirements on the maker's spec page.
-- **Case clearance.** Modern cards are long and thick. Measure the space from the back of the case to the drive cage or front fans.
+- **Case clearance.** Modern cards are long and thick. Measure from the back of the case to the drive cage or front fans.
 - **Memory type.** Memory has to match the motherboard. The kits in our builds are DDR5; a DDR4 board needs a DDR4 kit, and a move to DDR5 means a new board and processor too.
 
 A card upgrade that also needs a new power supply is still usually fine. One that needs a new power supply, a new case and more memory is a new PC bought one piece at a time, and it is time to compare against buying new.
@@ -52,7 +52,7 @@ Upgrade labor is quoted up front for each job, and parts are at cost plus 5%, th
 - Windows 11 is not available for the PC.
 - The processor is the bottleneck and a faster one does not fit the board.
 - Three or more parts are due at once.
-- You want the parts to be new, covered by their makers' warranties, with one year of our labor on top, instead of mixing new parts into a PC whose other parts may be next to fail.
+- You want every part new, covered by its maker's warranty, with one year of our labor on top, instead of adding new parts to a PC whose other parts may fail next.
 
 Every build we sell uses the AMD AM5 platform with an upgradeable processor socket, so the next time you face this question, the answer is more likely to be "upgrade".
 
