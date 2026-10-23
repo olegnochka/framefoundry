@@ -1,5 +1,5 @@
 date,part_key,category,item,price_source,today_cost,site_price,change_vs_site_pct,used_in
-2026-10-23,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,179.67,178.95,0.4,"Mainstream, Performance"
+2026-10-23,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,179.67,179.67,0.0,"Mainstream, Performance"
 2026-10-23,cpu_9800x3d,Processor (CPU),AMD Ryzen 7 9800X3D,Newegg,469.00,469.00,0.0,Quiet Creator
 2026-10-23,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,348.00,348.00,0.0,upsell only
 2026-10-23,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,31.41,31.41,0.0,"Mainstream, Performance"
@@ -7,11 +7,11 @@ date,part_key,category,item,price_source,today_cost,site_price,change_vs_site_pc
 2026-10-23,mb_b850,Motherboard,Asus PRIME B850-PLUS WIFI (Wi-Fi built in),PCPartPicker,129.00,129.00,0.0,"Mainstream, Performance, Quiet Creator"
 2026-10-23,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,269.99,269.99,0.0,Mainstream
 2026-10-23,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,Newegg,499.99,499.99,0.0,"Performance, Quiet Creator"
-2026-10-23,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,Newegg,MISSING,519.99,,Mainstream
-2026-10-23,gpu_9070xt,Graphics card (GPU),ASRock Challenger Radeon RX 9070 XT 16GB,PCPartPicker,949.99,879.99,8.0,Performance
+2026-10-23,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,Newegg,561.99,561.99,0.0,Mainstream
+2026-10-23,gpu_9070xt,Graphics card (GPU),ASRock Challenger Radeon RX 9070 XT 16GB,PCPartPicker,949.99,949.99,0.0,Performance
 2026-10-23,gpu_5070ti,Graphics card (GPU),MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB,Newegg,1229.99,1229.99,0.0,Quiet Creator
 2026-10-23,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,159.00,159.00,0.0,"Mainstream, Performance"
-2026-10-23,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,319.00,338.95,-5.9,Quiet Creator
+2026-10-23,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,319.00,319.00,0.0,Quiet Creator
 2026-10-23,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,75.90,75.90,0.0,"Mainstream, Performance, Quiet Creator"
 2026-10-23,case_lancool207,Case,"Lian Li Lancool 207 (airflow, fans included)",PCPartPicker,82.99,82.99,0.0,"Mainstream, Performance"
 2026-10-23,case_north,Case,"Fractal Design North (wood front, quiet)",PCPartPicker,154.99,154.99,0.0,Quiet Creator

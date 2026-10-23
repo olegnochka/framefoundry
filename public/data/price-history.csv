@@ -174,3 +174,4 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-23,case_north,Fractal Design North,154.99,,154.99,daily rise watch
 2026-10-23,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch
 2026-10-23,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"correction (multi-store check): PCPartPicker's 74.99 is Newegg's 82.99 with an $8 promotional gift card netted out; actual price Newegg 82.99 in stock, Amazon 82.99 in stock - same as site, no move"
+2026-10-23,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,561.99,,561.99,"next-store rule (Oleg 2026-10-23): Newegg out of stock (519.99); same exact card in stock new at Amazon 561.99 - used as cost_basis"

@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 178.95
+      "site_price": 179.67
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -64,13 +64,13 @@
       "category": "Graphics card (GPU)",
       "item": "Sapphire PULSE Radeon RX 9060 XT 16GB",
       "basis": "newegg",
-      "site_price": 519.99
+      "site_price": 561.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
       "item": "ASRock Challenger Radeon RX 9070 XT 16GB",
       "basis": "pcpp",
-      "site_price": 879.99
+      "site_price": 949.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
@@ -88,7 +88,7 @@
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 338.95
+      "site_price": 319.0
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -121,7 +121,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 1999,
-      "priced_on": "2026-10-21",
+      "priced_on": "2026-10-23",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -140,8 +140,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2599,
-      "priced_on": "2026-10-21",
+      "set_price": 2699,
+      "priced_on": "2026-10-23",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -160,8 +160,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 3799,
-      "priced_on": "2026-10-21",
+      "set_price": 3699,
+      "priced_on": "2026-10-23",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
