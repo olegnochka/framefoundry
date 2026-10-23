@@ -17,7 +17,7 @@ Always writes public/data/prices-today.csv and builds-today.csv (read by the Goo
 Usage: python3 -E scripts/apply-prices.py [--date YYYY-MM-DD] [--dry-run] [--deploy]
 Prints a JSON summary on the last line.
 """
-import csv, json, re, subprocess, sys
+import csv, html, json, re, subprocess, sys
 from datetime import date as Date
 from decimal import Decimal as D, ROUND_HALF_UP
 from pathlib import Path
@@ -226,14 +226,19 @@ def main():
     used = sorted({k for b in builds.values() for k in b["parts"]} | set(parts))
     missing = [k for k in used if prices.get(k) is None and not parts[k].get("upsell_only")]
     movers = []
+    builds_page = BUILDS_HTML.read_text()
     for k in used:
         t = prices.get(k)
         if t is None:
             continue
         old = D(str(parts[k]["site_price"]))
         pct = (t / old - 1) * 100
-        if abs(pct) > rules["trigger_change"] * 100 and not parts[k].get("upsell_only"):
-            movers.append({"part": k, "item": parts[k]["item"], "site_price": float(old), "today": float(t), "change_pct": round(float(pct), 1)})
+        # A part the daily check replaced (out of stock everywhere - Oleg's rule, 2026-10-23) has a new name that the
+        # builds page does not show yet; treat it like a mover so the page gets the new part at its real price.
+        replaced = not parts[k].get("upsell_only") and html.escape(parts[k]["item"], quote=False) not in builds_page
+        if (abs(pct) > rules["trigger_change"] * 100 or replaced) and not parts[k].get("upsell_only"):
+            movers.append({"part": k, "item": parts[k]["item"], "site_price": float(old), "today": float(t), "change_pct": round(float(pct), 1),
+                           **({"replaced": True} if replaced else {})})
 
     old_prices = {bid: b["set_price"] for bid, b in builds.items()}
     summary = {"date": day, "missing": missing, "movers": movers, "repriced": False, "changes": [], "deployed": False}
