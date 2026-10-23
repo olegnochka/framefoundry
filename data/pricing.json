@@ -68,9 +68,11 @@
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
-      "item": "ASRock Challenger Radeon RX 9070 XT 16GB",
+      "item": "Asus PRIME OC Radeon RX 9070 XT 16GB",
+      "mpn": "PRIME-RX9070XT-O16G",
+      "match_note": "Replaced the ASRock Challenger RX 9070 XT (up to $949.99) on 2026-10-23 at Oleg's request. 312 mm long (Lancool 207 fits 375 mm), needs 3x PCIe 8-pin (the GF1 850W has 6). Amazon $829.99; other stores list $1,079.99.",
       "basis": "pcpp",
-      "site_price": 949.99
+      "site_price": 829.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
@@ -140,7 +142,7 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2699,
+      "set_price": 2599,
       "priced_on": "2026-10-23",
       "assembly_label": "Standard assembly",
       "assembly": 249,
