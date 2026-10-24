@@ -70,11 +70,11 @@
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
-      "item": "Asus PRIME OC Radeon RX 9070 XT 16GB",
-      "mpn": "PRIME-RX9070XT-O16G",
-      "match_note": "Replaced the ASRock Challenger RX 9070 XT (up to $949.99) on 2026-10-23 at Oleg's request. 312 mm long (Lancool 207 fits 375 mm), needs 3x PCIe 8-pin (the GF1 850W has 6). Amazon $829.99; other stores list $1,079.99.",
-      "basis": "pcpp",
-      "site_price": 1079.99
+      "item": "Sapphire PULSE Radeon RX 9070 XT 16GB",
+      "mpn": "11348-03-20G",
+      "match_note": "2026-10-24: replaces the Asus PRIME OC (Amazon deal ended, now $1,079.99). Oleg picked the PowerColor Hellhound OC at $869.99, but that offer was gone (only third-party sellers at $959+, 1 left), so the next cheapest card sold by a major store was used. 320 mm (Lancool 207 fits 375 mm), 2x PCIe 8-pin. Sold by Newegg.",
+      "basis": "newegg",
+      "site_price": 899.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
@@ -146,7 +146,7 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2799,
+      "set_price": 2599,
       "priced_on": "2026-10-24",
       "assembly_label": "Standard assembly",
       "assembly": 249,
