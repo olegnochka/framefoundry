@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 179.67
+      "site_price": 179.59
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -62,9 +62,11 @@
     },
     "gpu_9060xt": {
       "category": "Graphics card (GPU)",
-      "item": "Sapphire PULSE Radeon RX 9060 XT 16GB",
-      "basis": "newegg",
-      "site_price": 561.99
+      "item": "Asus DUAL Radeon RX 9060 XT 16GB",
+      "mpn": "DUAL-RX9060XT-16G",
+      "match_note": "Replaced the Sapphire PULSE RX 9060 XT 16GB (11350-03-20G) on 2026-10-24 by the daily check: Sapphire out of stock at Newegg 2 days in a row, Amazon only via third-party sellers. Black, 202 mm, 2.5-slot, fits the Lancool 207. Amazon sold by Amazon 529.00; Newegg/ASUS 789.99. Not the white DUAL-RX9060XT-16G-WHITE or the 8GB DUAL-RX9060XT-8G.",
+      "basis": "pcpp",
+      "site_price": 529.0
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -72,25 +74,27 @@
       "mpn": "PRIME-RX9070XT-O16G",
       "match_note": "Replaced the ASRock Challenger RX 9070 XT (up to $949.99) on 2026-10-23 at Oleg's request. 312 mm long (Lancool 207 fits 375 mm), needs 3x PCIe 8-pin (the GF1 850W has 6). Amazon $829.99; other stores list $1,079.99.",
       "basis": "pcpp",
-      "site_price": 829.99
+      "site_price": 1079.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
-      "item": "MSI SHADOW 3X OC GeForce RTX 5070 Ti 16GB",
-      "basis": "newegg",
-      "site_price": 1229.99
+      "item": "PNY Slim OC GeForce RTX 5070 Ti 16GB",
+      "mpn": "VCG5070T16DFSXPB1-O",
+      "match_note": "Replaced the MSI SHADOW 3X OC RTX 5070 Ti 16GB (G507T-16S3C) on 2026-10-24 by the daily check: MSI out of stock at Newegg, all PCPartPicker stores and Amazon. PNY RTX 5070 Ti 16GB Slim OC, black, 290 mm, 2-slot dual fan, fits the Fractal North. Amazon sold by Amazon 1299.99. Not the non-OC VCG5070T16DFSXPB1, not the Triple-Fan VCG5070T16TFXPB1-O (third-party sellers only).",
+      "basis": "pcpp",
+      "site_price": 1299.99
     },
     "ssd_1tb": {
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 159.0
+      "site_price": 156.99
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 319.0
+      "site_price": 334.95
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -123,7 +127,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 1999,
-      "priced_on": "2026-10-23",
+      "priced_on": "2026-10-24",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -142,8 +146,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2599,
-      "priced_on": "2026-10-23",
+      "set_price": 2799,
+      "priced_on": "2026-10-24",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -162,8 +166,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 3699,
-      "priced_on": "2026-10-23",
+      "set_price": 3799,
+      "priced_on": "2026-10-24",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
