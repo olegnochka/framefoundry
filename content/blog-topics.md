@@ -7,9 +7,9 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-10-22 Graphics card and memory prices are climbing this fall (2026-10-22-graphics-card-and-memory-prices-fall-2026.md)
 - [x] 2026-10-24 Is 16GB of RAM enough for gaming in 2026? (2026-10-24-is-16gb-ram-enough-for-gaming-2026.md)
 - [x] 2026-10-26 Is my PC worth upgrading, or should I buy new? (2026-10-26-upgrade-or-buy-new-pc.md)
+- [x] 2026-10-28 Why your gaming PC gets loud and hot after a year or two (2026-10-28-why-pc-gets-loud-and-hot.md)
 
 ## Up next
-- [ ] Why a PC gets loud and hot after a year or two - dust, dried thermal paste, fan curves (links the $79 tune-up)
 - [ ] 1080p, 1440p or 4K: which monitor resolution fits which build
 - [ ] What "X3D" means on AMD Ryzen processors and when it is worth paying for (7800X3D, 9800X3D in our builds)
 - [ ] Gaming PC for streaming: what changes (memory, encoder, second monitor, upload speed)
