@@ -194,3 +194,20 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-24,case_north,Fractal Design North,154.99,,154.99,daily rise watch
 2026-10-24,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch
 2026-10-24,gpu_9070xt,Sapphire PULSE Radeon RX 9070 XT 16GB,,899.99,899.99,"part switched (Oleg asked for PowerColor Hellhound OC at 869.99 - offer gone, only third-party 959-964.99 on Amazon, 1 left): Sapphire PULSE 11348-03-20G sold by Newegg 899.99 in stock"
+2026-10-25,cpu_9600x,AMD Ryzen 5 9600X,177.95,,177.95,"daily rise watch (PCPartPicker lowest 177.95, -0.9% vs site 179.59)"
+2026-10-25,cpu_9800x3d,AMD Ryzen 7 9800X3D,444.00,469.00,469.00,daily rise watch (Newegg 469.00 sold by Newegg in stock; PCPartPicker lowest 444.00 elsewhere)
+2026-10-25,cpu_7800x3d,AMD Ryzen 7 7800X3D,348.00,,348.00,daily rise watch (upsell only)
+2026-10-25,cooler_pa120se,Thermalright Peerless Assassin 120 SE,31.41,,31.41,daily rise watch
+2026-10-25,cooler_drp5,be quiet! Dark Rock Pro 5,82.49,,82.49,daily rise watch
+2026-10-25,mb_b850,Asus PRIME B850-PLUS WIFI,129.00,,129.00,daily rise watch
+2026-10-25,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,269.99,,269.99,daily rise watch
+2026-10-25,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,499.99,499.99,499.99,daily rise watch (Newegg CMK32GX5M2E6000Z36 499.99 in stock)
+2026-10-25,gpu_9060xt,Asus DUAL Radeon RX 9060 XT 16GB,757.33,789.99,789.99,"UP 49% vs site 529.00: yesterday's Amazon sold-by-Amazon 529.00 offer is gone. Exact card DUAL-RX9060XT-16G: Amazon 749.99 only from third-party seller M-X-C Tech (PCPartPicker shows 757.33, not trusted), Newegg sold by Newegg 789.99 in stock (used as cost_basis), ASUS store 789.99 in stock, B&H 789.99 out of stock, MemoryC 899.59. Still sold new at a trusted store, so not replaced. Cheaper RX 9060 XT 16GB in stock on PCPartPicker: ASRock Challenger OC 589.99 (249 mm, store not verified), Sapphire PULSE 599.99 but Amazon third-party only (Nutrend Automotive; Newegg out of stock 519.99), XFX Swift OC 619.99 (270 mm). Newegg's own cheapest 16GB 9060 XT is Gigabyte Gaming 759.99 - Oleg's call"
+2026-10-25,gpu_9070xt,Sapphire PULSE Radeon RX 9070 XT 16GB,899.99,899.99,899.99,daily rise watch (Newegg 11348-03-20G 899.99 sold by Newegg in stock; PCPartPicker lowest 899.99)
+2026-10-25,gpu_5070ti,PNY Slim OC GeForce RTX 5070 Ti 16GB,1299.99,,1299.99,"daily rise watch (PCPartPicker lowest in stock 1299.99 VCG5070T16DFSXPB1-O, same as site)"
+2026-10-25,ssd_1tb,Kingston NV3 1TB (SNV3S/1000G),156.99,,156.99,daily rise watch
+2026-10-25,ssd_2tb,WD_BLACK SN7100 2TB (WDS200T4X0E),329.99,,329.99,"daily rise watch (PCPartPicker lowest 329.99, -1.5% vs site 334.95)"
+2026-10-25,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),,,75.90,"same as site: Amazon ASIN B0CKY88GMT 75.90 sold by Amazon, in stock; PCPartPicker lists no store for this model and Newegg has no listing"
+2026-10-25,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"Newegg 82.99 in stock with a promo gift card (PCPartPicker shows 74.99 net of the gift card) - same as site, no move"
+2026-10-25,case_north,Fractal Design North,154.99,,154.99,daily rise watch
+2026-10-25,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch
