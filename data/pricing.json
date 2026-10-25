@@ -62,11 +62,13 @@
     },
     "gpu_9060xt": {
       "category": "Graphics card (GPU)",
-      "item": "Asus DUAL Radeon RX 9060 XT 16GB",
-      "mpn": "DUAL-RX9060XT-16G",
-      "match_note": "Replaced the Sapphire PULSE RX 9060 XT 16GB (11350-03-20G) on 2026-10-24 by the daily check: Sapphire out of stock at Newegg 2 days in a row, Amazon only via third-party sellers. Black, 202 mm, 2.5-slot, fits the Lancool 207. Amazon sold by Amazon 529.00; Newegg/ASUS 789.99. Not the white DUAL-RX9060XT-16G-WHITE or the 8GB DUAL-RX9060XT-8G.",
+      "item": "Sapphire PULSE Radeon RX 9060 XT 16GB",
+      "mpn": "11350-03-20G",
+      "match_note": "2026-10-25: back to the Sapphire PULSE (matches the build photo). Oleg OK'd a third-party Amazon seller for this card: ASIN B0F9LN5VZ6, sold by Nutrend Automotive Inc, $599.99. Newegg out of stock. Third-party sellers are allowed for this part only.",
       "basis": "pcpp",
-      "site_price": 789.99
+      "amazon_asin": "B0F9LN5VZ6",
+      "third_party_ok": true,
+      "site_price": 599.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -126,7 +128,7 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 2199,
+      "set_price": 1999,
       "priced_on": "2026-10-25",
       "assembly_label": "Standard assembly",
       "assembly": 249,
