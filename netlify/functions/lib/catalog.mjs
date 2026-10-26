@@ -4,12 +4,12 @@ export const BUILDS = {
   mainstream: {
     name: "Mainstream build",
     summary: "Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD, Lancool 207, Windows 11 Home, standard assembly",
-    totalCents: 199900,
+    totalCents: 209900,
   },
   performance: {
     name: "Performance build",
     summary: "Ryzen 5 9600X, Radeon RX 9070 XT 16GB, 32GB DDR5, 1TB SSD, Lancool 207, Windows 11 Home, standard assembly",
-    totalCents: 259900,
+    totalCents: 269900,
   },
   "quiet-creator": {
     name: "Quiet Creator build",

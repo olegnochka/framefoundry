@@ -15,13 +15,13 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 177.95
+      "site_price": 179.0
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 7 9800X3D",
       "basis": "newegg",
-      "site_price": 469.0
+      "site_price": 444.0
     },
     "cpu_7800x3d": {
       "category": "Processor (CPU)",
@@ -34,7 +34,7 @@
       "category": "CPU cooler",
       "item": "Thermalright Peerless Assassin 120 SE",
       "basis": "pcpp",
-      "site_price": 31.41
+      "site_price": 34.9
     },
     "cooler_drp5": {
       "category": "CPU cooler",
@@ -58,7 +58,7 @@
       "category": "Memory (RAM)",
       "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36",
       "basis": "newegg",
-      "site_price": 499.99
+      "site_price": 567.99
     },
     "gpu_9060xt": {
       "category": "Graphics card (GPU)",
@@ -80,17 +80,19 @@
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
-      "item": "PNY Slim OC GeForce RTX 5070 Ti 16GB",
-      "mpn": "VCG5070T16DFSXPB1-O",
-      "match_note": "Replaced the MSI SHADOW 3X OC RTX 5070 Ti 16GB (G507T-16S3C) on 2026-10-24 by the daily check: MSI out of stock at Newegg, all PCPartPicker stores and Amazon. PNY RTX 5070 Ti 16GB Slim OC, black, 290 mm, 2-slot dual fan, fits the Fractal North. Amazon sold by Amazon 1299.99. Not the non-OC VCG5070T16DFSXPB1, not the Triple-Fan VCG5070T16TFXPB1-O (third-party sellers only).",
+      "item": "Gigabyte GAMING OC GeForce RTX 5070 Ti 16GB",
+      "mpn": "GV-N507TGAMING OC-16GD",
+      "match_note": "Replaced the PNY Slim OC RTX 5070 Ti 16GB (VCG5070T16DFSXPB1-O) on 2026-10-26 by the daily check: PNY out of stock at B&H (1299.99), not listed at Amazon or Newegg, only the MemoryC marketplace at 1951.78. Gigabyte GAMING OC RTX 5070 Ti 16GB, black, 340 mm, 2.8-slot triple fan, fits the Fractal North (355 mm). Best Buy SKU 6618884 sold by Best Buy 1249.99 in stock online (open-box 1211.99 not counted); PCPartPicker only lists marketplace sellers for it (2059.67), so check Best Buy first. Alternatives seen: PNY ARGB EPIC-X RGB OC 1349.99 (Newegg and Best Buy), Asus PRIME non-OC 1199.99 only at the ASUS store (not a listed trusted store), Asus PRIME OC 1228.99 Staples listing is out of stock.",
       "basis": "pcpp",
-      "site_price": 1299.99
+      "site_price": 1249.99,
+      "bestbuy_sku": "6618884",
+      "bestbuy_for": "Gigabyte GAMING OC GeForce RTX 5070 Ti 16GB"
     },
     "ssd_1tb": {
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 156.99
+      "site_price": 158.99
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
@@ -128,8 +130,8 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 1999,
-      "priced_on": "2026-10-25",
+      "set_price": 2099,
+      "priced_on": "2026-10-26",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -148,8 +150,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2599,
-      "priced_on": "2026-10-25",
+      "set_price": 2699,
+      "priced_on": "2026-10-26",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -169,7 +171,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 3799,
-      "priced_on": "2026-10-25",
+      "priced_on": "2026-10-26",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
