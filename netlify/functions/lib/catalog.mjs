@@ -14,7 +14,7 @@ export const BUILDS = {
   "quiet-creator": {
     name: "Quiet Creator build",
     summary: "Ryzen 7 9800X3D, GeForce RTX 5070 Ti 16GB, 32GB DDR5, 2TB SSD, Fractal North, Windows 11 Home, premium quiet assembly",
-    totalCents: 399900,
+    totalCents: 379900,
   },
 };
 

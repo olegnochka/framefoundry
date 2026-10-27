@@ -246,3 +246,4 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-27,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"Newegg sold by Newegg 82.99 in stock with an $8 promo gift card (PCPartPicker shows 74.99 net of the gift card) - same as site, no move"
 2026-10-27,case_north,Fractal Design North,154.99,,154.99,daily rise watch
 2026-10-27,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch. Best Buy API skipped today: ~/.config/framefoundry/bestbuy_api_key is missing (Best Buy checked in the browser for the RTX 5070 Ti only)
+2026-10-27,gpu_5070ti,PNY ARGB EPIC-X OC GeForce RTX 5070 Ti 16GB,,1349.99,1349.99,"part switched (Oleg asked for PNY Slim OC at Amazon 1299.99 - no longer listed at Amazon, B&H out of stock): PNY ARGB EPIC-X OC VCG5070T16TFXXPB1-O sold by Newegg 1349.99 in stock, arrives Oct 28"
