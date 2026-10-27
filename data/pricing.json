@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 179.0
+      "site_price": 174.0
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -27,7 +27,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 7 7800X3D",
       "basis": "pcpp",
-      "site_price": 348.0,
+      "site_price": 365.99,
       "upsell_only": true
     },
     "cooler_pa120se": {
@@ -58,7 +58,7 @@
       "category": "Memory (RAM)",
       "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36",
       "basis": "newegg",
-      "site_price": 567.99
+      "site_price": 499.99
     },
     "gpu_9060xt": {
       "category": "Graphics card (GPU)",
@@ -68,7 +68,7 @@
       "basis": "pcpp",
       "amazon_asin": "B0F9LN5VZ6",
       "third_party_ok": true,
-      "site_price": 599.99
+      "site_price": 519.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -84,7 +84,7 @@
       "mpn": "GV-N507TGAMING OC-16GD",
       "match_note": "Replaced the PNY Slim OC RTX 5070 Ti 16GB (VCG5070T16DFSXPB1-O) on 2026-10-26 by the daily check: PNY out of stock at B&H (1299.99), not listed at Amazon or Newegg, only the MemoryC marketplace at 1951.78. Gigabyte GAMING OC RTX 5070 Ti 16GB, black, 340 mm, 2.8-slot triple fan, fits the Fractal North (355 mm). Best Buy SKU 6618884 sold by Best Buy 1249.99 in stock online (open-box 1211.99 not counted); PCPartPicker only lists marketplace sellers for it (2059.67), so check Best Buy first. Alternatives seen: PNY ARGB EPIC-X RGB OC 1349.99 (Newegg and Best Buy), Asus PRIME non-OC 1199.99 only at the ASUS store (not a listed trusted store), Asus PRIME OC 1228.99 Staples listing is out of stock.",
       "basis": "pcpp",
-      "site_price": 1249.99,
+      "site_price": 1499.99,
       "bestbuy_sku": "6618884",
       "bestbuy_for": "Gigabyte GAMING OC GeForce RTX 5070 Ti 16GB"
     },
@@ -98,7 +98,7 @@
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 329.99
+      "site_price": 329.0
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -130,8 +130,8 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 2099,
-      "priced_on": "2026-10-26",
+      "set_price": 1999,
+      "priced_on": "2026-10-27",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -150,8 +150,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2699,
-      "priced_on": "2026-10-26",
+      "set_price": 2599,
+      "priced_on": "2026-10-27",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -170,8 +170,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 3799,
-      "priced_on": "2026-10-26",
+      "set_price": 3999,
+      "priced_on": "2026-10-27",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
