@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 174.0
+      "site_price": 178.0
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -27,7 +27,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 7 7800X3D",
       "basis": "pcpp",
-      "site_price": 365.99,
+      "site_price": 364.99,
       "upsell_only": true
     },
     "cooler_pa120se": {
@@ -40,7 +40,7 @@
       "category": "CPU cooler",
       "item": "be quiet! Dark Rock Pro 5",
       "basis": "pcpp",
-      "site_price": 82.49
+      "site_price": 84.9
     },
     "mb_b850": {
       "category": "Motherboard",
@@ -68,7 +68,7 @@
       "basis": "pcpp",
       "amazon_asin": "B0F9LN5VZ6",
       "third_party_ok": true,
-      "site_price": 519.99
+      "site_price": 599.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -76,7 +76,7 @@
       "mpn": "11348-03-20G",
       "match_note": "2026-10-24: replaces the Asus PRIME OC (Amazon deal ended, now $1,079.99). Oleg picked the PowerColor Hellhound OC at $869.99, but that offer was gone (only third-party sellers at $959+, 1 left), so the next cheapest card sold by a major store was used. 320 mm (Lancool 207 fits 375 mm), 2x PCIe 8-pin. Sold by Newegg.",
       "basis": "newegg",
-      "site_price": 899.99
+      "site_price": 1049.99
     },
     "gpu_5070ti": {
       "category": "Graphics card (GPU)",
@@ -90,13 +90,13 @@
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 158.99
+      "site_price": 159.0
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 329.0
+      "site_price": 339.99
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -128,8 +128,8 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 1999,
-      "priced_on": "2026-10-27",
+      "set_price": 2099,
+      "priced_on": "2026-10-28",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -148,8 +148,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2599,
-      "priced_on": "2026-10-27",
+      "set_price": 2799,
+      "priced_on": "2026-10-28",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -168,8 +168,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 3799,
-      "priced_on": "2026-10-27",
+      "set_price": 3899,
+      "priced_on": "2026-10-28",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
