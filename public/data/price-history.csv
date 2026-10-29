@@ -264,3 +264,20 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-28,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"Newegg sold by Newegg 82.99 in stock with a promo gift card (PCPartPicker shows 74.99 net of the gift card) - same as site, no move"
 2026-10-28,case_north,Fractal Design North,154.99,,154.99,daily rise watch (same as site)
 2026-10-28,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch (same as site). Best Buy API skipped today: ~/.config/framefoundry/bestbuy_api_key is missing (Best Buy checked in the browser for the RX 9060 XT only - not carried)
+2026-10-29,cpu_9600x,AMD Ryzen 5 9600X,178.00,,178.00,"daily rise watch (PCPartPicker lowest 178.00, same as site)"
+2026-10-29,cpu_9800x3d,AMD Ryzen 7 9800X3D,443.00,444.00,444.00,same as site: Newegg sold by Newegg 444.00 in stock; PCPartPicker lowest 443.00
+2026-10-29,cpu_7800x3d,AMD Ryzen 7 7800X3D,364.89,,364.89,"daily rise watch (upsell only; PCPartPicker lowest boxed 364.89, same as site 364.99; OEM/tray 354.90 not counted)"
+2026-10-29,cooler_pa120se,Thermalright Peerless Assassin 120 SE,34.90,,34.90,daily rise watch (same as site)
+2026-10-29,cooler_drp5,be quiet! Dark Rock Pro 5,82.49,,82.49,"daily rise watch (PCPartPicker lowest 82.49, -2.8% vs site 84.90)"
+2026-10-29,mb_b850,Asus PRIME B850-PLUS WIFI,,,207.11,"UP 60.6% vs site 129.00: PCPartPicker shows the exact board OUT OF STOCK at both stores it tracks (B&H 186.99, Newegg 206.98); Newegg sold by Newegg OUT OF STOCK (last 203.99), Newegg marketplace: Deal Targets 218.84 ships from Canada, TELeasy 240.61 ships from US; Best Buy 231.84 in stock (checked in the browser, API key file missing); Amazon ASIN B0F6H6QQVM: buy box 207.11 ships from Amazon sold by Alakhras LLC (6 left), sold by Amazon.com 208.41 in stock, marketplace Deal Targets 204.54 (not trusted). Cost basis = Amazon 207.11 (shipped by Amazon; Amazon.com's own offer is 208.41). Exact board is still sold new, so no replacement"
+2026-10-29,ram_16gb,Kingston FURY Beast RGB 16GB (2x8) DDR5-6000,269.99,,269.99,daily rise watch (same as site)
+2026-10-29,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,499.99,499.99,499.99,same as site: Newegg sold by Newegg CMK32GX5M2E6000Z36 499.99 in stock; PCPartPicker lowest 499.99
+2026-10-29,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,599.99,,599.99,"same as site: PCPartPicker lowest in stock 599.99; Amazon ASIN B0F9LN5VZ6 buy box 599.99 from Nutrend Automotive Inc (third-party seller approved for this part), in stock but only 1 left, 16 other new offers from 599.99. Cost basis = Amazon / Nutrend Automotive Inc 599.99"
+2026-10-29,gpu_9070xt,Sapphire PULSE Radeon RX 9070 XT 16GB,1049.99,1049.99,1049.99,"same as site: Newegg sold by Newegg 11348-03-20G 1049.99 in stock; PCPartPicker lowest 1049.99. Cheaper equivalents in stock on PCPartPicker: PowerColor Reaper 919.99, Gigabyte GAMING OC 929.99, ASRock Taichi OC 929.99"
+2026-10-29,gpu_5070ti,PNY ARGB EPIC-X OC GeForce RTX 5070 Ti 16GB,1349.99,1349.99,1349.99,same as site: Newegg sold by Newegg VCG5070T16TFXXPB1-O 1349.99 in stock (free GPU holder promo); PCPartPicker lowest 1349.99. FYI plain PNY OC VCG5070T16TFXPB1-O 1249.99 in stock on PCPartPicker
+2026-10-29,ssd_1tb,Kingston NV3 1TB (SNV3S/1000G),158.99,,158.99,"daily rise watch (PCPartPicker lowest 158.99, same as site 159.00)"
+2026-10-29,ssd_2tb,WD_BLACK SN7100 2TB (WDS200T4X0E),339.99,,339.99,daily rise watch (same as site)
+2026-10-29,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),75.90,,75.90,same as site: PCPartPicker GF1 (2024) 850W 75.90
+2026-10-29,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"Newegg sold by Newegg 82.99 in stock with a promo gift card (PCPartPicker shows 74.99 net of the gift card) - same as site, no move"
+2026-10-29,case_north,Fractal Design North,154.99,,154.99,daily rise watch (same as site)
+2026-10-29,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch (same as site). Best Buy API skipped today: ~/.config/framefoundry/bestbuy_api_key is missing (Best Buy checked in the browser for the B850 board only)

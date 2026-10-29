@@ -27,7 +27,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 7 7800X3D",
       "basis": "pcpp",
-      "site_price": 364.99,
+      "site_price": 364.89,
       "upsell_only": true
     },
     "cooler_pa120se": {
@@ -40,13 +40,13 @@
       "category": "CPU cooler",
       "item": "be quiet! Dark Rock Pro 5",
       "basis": "pcpp",
-      "site_price": 84.9
+      "site_price": 82.49
     },
     "mb_b850": {
       "category": "Motherboard",
       "item": "Asus PRIME B850-PLUS WIFI (Wi-Fi built in)",
       "basis": "pcpp",
-      "site_price": 129.0
+      "site_price": 207.11
     },
     "ram_16gb": {
       "category": "Memory (RAM)",
@@ -90,7 +90,7 @@
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 159.0
+      "site_price": 158.99
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
@@ -129,7 +129,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 2099,
-      "priced_on": "2026-10-28",
+      "priced_on": "2026-10-29",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -148,8 +148,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2799,
-      "priced_on": "2026-10-28",
+      "set_price": 2899,
+      "priced_on": "2026-10-29",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -169,7 +169,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 3899,
-      "priced_on": "2026-10-28",
+      "priced_on": "2026-10-29",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
