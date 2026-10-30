@@ -298,3 +298,6 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-10-30,case_lancool207,Lian Li Lancool 207,74.99,82.99,82.99,"Newegg sold by Newegg 82.99 in stock with a promo gift card (PCPartPicker shows 74.99 net of the gift card) - same as site, no move"
 2026-10-30,case_north,Fractal Design North,154.99,,154.99,daily rise watch (same as site)
 2026-10-30,os_win11home,Windows 11 Home OEM,128.99,,128.99,daily rise watch (same as site). Best Buy API skipped today: ~/.config/framefoundry/bestbuy_api_key is missing
+2026-10-30,gpu_9070xt,PowerColor Reaper Radeon RX 9070 XT 16GB,,919.99,919.99,Switched (Oleg OK): PowerColor Reaper RX9070XT 16G-A sold by Newegg 919.99 in stock; Amazon 919.99; replaces Sapphire PULSE 1049.99
+2026-10-30,gpu_5070ti,PNY OC GeForce RTX 5070 Ti 16GB,,1249.99,1249.99,Switched (Oleg OK): PNY OC VCG5070T16TFXPB1-O sold by Newegg 1249.99 in stock; replaces PNY ARGB EPIC-X 1349.99
+2026-10-30,mb_b850,MSI PRO B850-S WIFI6E (Wi-Fi built in),139.99,,139.99,"Switched (Oleg OK): MSI PRO B850-S WIFI6E sold by Amazon.com 139.99 in stock; replaces Asus PRIME B850-PLUS WIFI (211.25, out of stock at Newegg and B&H)"

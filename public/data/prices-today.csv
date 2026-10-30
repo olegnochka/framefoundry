@@ -4,12 +4,12 @@ date,part_key,category,item,price_source,today_cost,site_price,change_vs_site_pc
 2026-10-30,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,364.89,364.89,0.0,upsell only
 2026-10-30,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,34.90,34.90,0.0,"Mainstream, Performance"
 2026-10-30,cooler_drp5,CPU cooler,be quiet! Dark Rock Pro 5,PCPartPicker,82.35,82.35,0.0,Quiet Creator
-2026-10-30,mb_b850,Motherboard,Asus PRIME B850-PLUS WIFI (Wi-Fi built in),PCPartPicker,211.25,211.25,0.0,"Mainstream, Performance, Quiet Creator"
+2026-10-30,mb_b850,Motherboard,MSI PRO B850-S WIFI6E (Wi-Fi built in),PCPartPicker,139.99,139.99,0.0,"Mainstream, Performance, Quiet Creator"
 2026-10-30,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,269.99,269.99,0.0,Mainstream
 2026-10-30,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,Newegg,499.99,499.99,0.0,"Performance, Quiet Creator"
 2026-10-30,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,PCPartPicker,649.99,649.99,0.0,Mainstream
-2026-10-30,gpu_9070xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9070 XT 16GB,Newegg,1049.99,1049.99,0.0,Performance
-2026-10-30,gpu_5070ti,Graphics card (GPU),PNY ARGB EPIC-X OC GeForce RTX 5070 Ti 16GB,Newegg,1349.99,1349.99,0.0,Quiet Creator
+2026-10-30,gpu_9070xt,Graphics card (GPU),PowerColor Reaper Radeon RX 9070 XT 16GB,Newegg,919.99,919.99,0.0,Performance
+2026-10-30,gpu_5070ti,Graphics card (GPU),PNY OC GeForce RTX 5070 Ti 16GB,Newegg,1249.99,1249.99,0.0,Quiet Creator
 2026-10-30,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,158.99,158.99,0.0,"Mainstream, Performance"
 2026-10-30,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,338.95,338.95,0.0,Quiet Creator
 2026-10-30,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,75.90,75.90,0.0,"Mainstream, Performance, Quiet Creator"
