@@ -5,7 +5,7 @@
 Business: Pacific Front Desk LLC dba Frame Foundry. Home-based workshop in Canoga Park, CA 91303 - no storefront, no walk-in sales; delivery and in-home service by appointment. Contact: hello@framefoundrypc.com. Prices are in US dollars, before sales tax.
 
 ## Current builds (set prices, ready to order online)
-- Mainstream - $2,099: Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD. 1080p high and comfortable 1440p gaming.
+- Mainstream - $2,199: Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD. 1080p high and comfortable 1440p gaming.
 - Performance - $2,899: Ryzen 5 9600X, Radeon RX 9070 XT 16GB, 32GB DDR5, 1TB SSD. High-refresh 1440p gaming.
 - Quiet Creator - $3,899: Ryzen 7 9800X3D, GeForce RTX 5070 Ti 16GB, 32GB DDR5, 2TB SSD, quiet tuning. Gaming plus creative work.
 Prices are re-checked daily against PCPartPicker and Newegg. Pay a 30% deposit or in full online; the balance is paid at delivery.

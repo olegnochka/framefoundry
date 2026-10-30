@@ -40,13 +40,13 @@
       "category": "CPU cooler",
       "item": "be quiet! Dark Rock Pro 5",
       "basis": "pcpp",
-      "site_price": 82.49
+      "site_price": 82.35
     },
     "mb_b850": {
       "category": "Motherboard",
       "item": "Asus PRIME B850-PLUS WIFI (Wi-Fi built in)",
       "basis": "pcpp",
-      "site_price": 207.11
+      "site_price": 211.25
     },
     "ram_16gb": {
       "category": "Memory (RAM)",
@@ -68,7 +68,7 @@
       "basis": "pcpp",
       "amazon_asin": "B0F9LN5VZ6",
       "third_party_ok": true,
-      "site_price": 599.99
+      "site_price": 649.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -96,7 +96,7 @@
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 339.99
+      "site_price": 338.95
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -128,8 +128,8 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 2099,
-      "priced_on": "2026-10-29",
+      "set_price": 2199,
+      "priced_on": "2026-10-30",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -149,7 +149,7 @@
     "performance": {
       "name": "Performance",
       "set_price": 2899,
-      "priced_on": "2026-10-29",
+      "priced_on": "2026-10-30",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -169,7 +169,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 3899,
-      "priced_on": "2026-10-29",
+      "priced_on": "2026-10-30",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
