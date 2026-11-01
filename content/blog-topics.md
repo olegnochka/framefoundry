@@ -11,9 +11,9 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-10-30 1080p, 1440p or 4K: which monitor fits which build (2026-10-30-monitor-resolution-1080p-1440p-4k.md)
 - [x] 2026-11-01 What "X3D" means on a Ryzen chip, and when it is worth paying for (2026-11-01-what-x3d-means-ryzen.md)
 - [x] 2026-11-03 Gaming PC for streaming: what changes, and what does not (2026-11-03-gaming-pc-for-streaming.md)
+- [x] 2026-11-05 Five settings to check on a new gaming PC (2026-11-05-new-gaming-pc-settings-to-check.md)
 
 ## Up next
-- [ ] Best settings to check on a new gaming PC: EXPO/XMP, refresh rate, drivers, Windows power plan
 - [ ] Monthly price notes: what moved this month in our price log (use public/data/price-history.csv; link the price report)
 - [ ] Wi-Fi or a cable for online games - and when a powerline or mesh setup helps
 - [ ] SSD buying guide: NVMe vs SATA, Gen4 vs Gen5, how much storage games need now
