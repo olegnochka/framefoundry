@@ -4,7 +4,7 @@ export const BUILDS = {
   mainstream: {
     name: "Mainstream build",
     summary: "Ryzen 5 9600X, Radeon RX 9060 XT 16GB, 16GB DDR5, 1TB SSD, Lancool 207, Windows 11 Home, standard assembly",
-    totalCents: 209900,
+    totalCents: 219900,
   },
   performance: {
     name: "Performance build",
@@ -14,7 +14,7 @@ export const BUILDS = {
   "quiet-creator": {
     name: "Quiet Creator build",
     summary: "Ryzen 7 9800X3D, GeForce RTX 5070 Ti 16GB, 32GB DDR5, 2TB SSD, Fractal North, Windows 11 Home, premium quiet assembly",
-    totalCents: 389900,
+    totalCents: 409900,
   },
 };
 
