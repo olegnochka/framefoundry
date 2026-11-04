@@ -1,18 +1,18 @@
 date,part_key,category,item,price_source,today_cost,site_price,change_vs_site_pct,used_in
-2026-11-03,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,178.00,178.00,0.0,"Mainstream, Performance"
-2026-11-03,cpu_9800x3d,Processor (CPU),AMD Ryzen 7 9800X3D,Newegg,479.00,479.00,0.0,Quiet Creator
-2026-11-03,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,371.89,371.89,0.0,upsell only
-2026-11-03,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,34.90,34.90,0.0,"Mainstream, Performance"
-2026-11-03,cooler_drp5,CPU cooler,be quiet! Dark Rock Pro 5,PCPartPicker,79.90,79.90,0.0,Quiet Creator
-2026-11-03,mb_b850,Motherboard,MSI PRO B850-S WIFI6E (Wi-Fi built in),PCPartPicker,139.99,139.99,0.0,"Mainstream, Performance, Quiet Creator"
-2026-11-03,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,269.99,269.99,0.0,Mainstream
-2026-11-03,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,PCPartPicker,499.99,499.99,0.0,"Performance, Quiet Creator"
-2026-11-03,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,PCPartPicker,729.99,729.99,0.0,Mainstream
-2026-11-03,gpu_9070xt,Graphics card (GPU),PowerColor Reaper Radeon RX 9070 XT 16GB,Newegg,919.99,919.99,0.0,Performance
-2026-11-03,gpu_5070ti,Graphics card (GPU),PNY OC GeForce RTX 5070 Ti 16GB,PCPartPicker,1500.00,1500.00,0.0,Quiet Creator
-2026-11-03,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,159.00,159.00,0.0,"Mainstream, Performance"
-2026-11-03,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,339.00,339.00,0.0,Quiet Creator
-2026-11-03,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,75.90,75.90,0.0,"Mainstream, Performance, Quiet Creator"
-2026-11-03,case_lancool207,Case,"Lian Li Lancool 207 (airflow, fans included)",PCPartPicker,82.99,82.99,0.0,"Mainstream, Performance"
-2026-11-03,case_north,Case,"Fractal Design North (wood front, quiet)",PCPartPicker,154.99,154.99,0.0,Quiet Creator
-2026-11-03,os_win11home,Operating system,Windows 11 Home (licensed OEM copy),PCPartPicker,129.99,129.99,0.0,"Mainstream, Performance, Quiet Creator"
+2026-11-04,cpu_9600x,Processor (CPU),AMD Ryzen 5 9600X,PCPartPicker,178.00,178.00,0.0,"Mainstream, Performance"
+2026-11-04,cpu_9800x3d,Processor (CPU),AMD Ryzen 7 9800X3D,Newegg,479.00,479.00,0.0,Quiet Creator
+2026-11-04,cpu_7800x3d,Processor (CPU),AMD Ryzen 7 7800X3D,PCPartPicker,372.00,372.00,0.0,upsell only
+2026-11-04,cooler_pa120se,CPU cooler,Thermalright Peerless Assassin 120 SE,PCPartPicker,34.90,34.90,0.0,"Mainstream, Performance"
+2026-11-04,cooler_drp5,CPU cooler,be quiet! Dark Rock Pro 5,PCPartPicker,79.90,79.90,0.0,Quiet Creator
+2026-11-04,mb_b850,Motherboard,MSI PRO B850-S WIFI6E (Wi-Fi built in),PCPartPicker,139.99,139.99,0.0,"Mainstream, Performance, Quiet Creator"
+2026-11-04,ram_16gb,Memory (RAM),Kingston FURY Beast RGB 16GB (2x8GB) DDR5-6000,PCPartPicker,269.99,269.99,0.0,Mainstream
+2026-11-04,ram_32gb,Memory (RAM),Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36,PCPartPicker,499.99,499.99,0.0,"Performance, Quiet Creator"
+2026-11-04,gpu_9060xt,Graphics card (GPU),Sapphire PULSE Radeon RX 9060 XT 16GB,PCPartPicker,649.99,649.99,0.0,Mainstream
+2026-11-04,gpu_9070xt,Graphics card (GPU),PowerColor Reaper Radeon RX 9070 XT 16GB,Newegg,999.99,999.99,0.0,Performance
+2026-11-04,gpu_5070ti,Graphics card (GPU),PNY OC GeForce RTX 5070 Ti 16GB,PCPartPicker,1500.00,1500.00,0.0,Quiet Creator
+2026-11-04,ssd_1tb,Storage (SSD),Kingston NV3 1TB NVMe,PCPartPicker,159.00,159.00,0.0,"Mainstream, Performance"
+2026-11-04,ssd_2tb,Storage (SSD),WD_BLACK SN7100 2TB NVMe,PCPartPicker,339.00,339.00,0.0,Quiet Creator
+2026-11-04,psu_850,Power supply (PSU),"Thermaltake Toughpower GF1 850W 80+ Gold, fully modular",PCPartPicker,76.99,76.99,0.0,"Mainstream, Performance, Quiet Creator"
+2026-11-04,case_lancool207,Case,"Lian Li Lancool 207 (airflow, fans included)",PCPartPicker,82.99,82.99,0.0,"Mainstream, Performance"
+2026-11-04,case_north,Case,"Fractal Design North (wood front, quiet)",PCPartPicker,154.99,154.99,0.0,Quiet Creator
+2026-11-04,os_win11home,Operating system,Windows 11 Home (licensed OEM copy),PCPartPicker,129.99,129.99,0.0,"Mainstream, Performance, Quiet Creator"
