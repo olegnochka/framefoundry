@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ga -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NCWVEJ7S0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6NCWVEJ7S0');</script>
+<!-- /ga -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five settings to check on a new gaming PC | Frame Foundry</title>
+<link rel="canonical" href="https://framefoundrypc.com/blog-new-gaming-pc-settings-to-check.html">
+<meta name="description" content="Memory profile, monitor refresh rate, graphics driver, Windows power mode and updates - what each does, where to find it, and which we set before delivery.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://framefoundrypc.com/blog-new-gaming-pc-settings-to-check.html">
+<meta property="og:title" content="Five settings to check on a new gaming PC | Frame Foundry">
+<meta property="og:description" content="Memory profile, monitor refresh rate, graphics driver, Windows power mode and updates - what each does, where to find it, and which we set before delivery.">
+<meta property="og:image" content="https://framefoundrypc.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon.png">
+<meta name="theme-color" content="#0D1014">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="commerce.css">
+<script src="site.js" defer></script>
+<script src="chat.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Five settings to check on a new gaming PC","description":"Memory profile, monitor refresh rate, graphics driver, Windows power mode and updates - what each does, where to find it, and which we set before delivery.","url":"https://framefoundrypc.com/blog-new-gaming-pc-settings-to-check.html","datePublished":"2026-11-05","dateModified":"2026-11-05","image":"https://framefoundrypc.com/img/og.jpg","keywords":"setup, memory, drivers, monitors","wordCount":996,"author":{"@type":"Organization","name":"Frame Foundry","url":"https://framefoundrypc.com/"},"publisher":{"@id":"https://framefoundrypc.com/#business"},"mainEntityOfPage":"https://framefoundrypc.com/blog-new-gaming-pc-settings-to-check.html"}</script>
+<link rel="alternate" type="application/rss+xml" title="Frame Foundry blog" href="https://framefoundrypc.com/blog.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 23V9h11M10 16h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>Frame Foundry</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./">Home</a>
+      <a href="builds.html">Builds</a>
+      <a href="services.html">Services</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta build-cta" href="quote.html">Build your PC</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Blog - Nov 5, 2026</p>
+    <h1>Five settings to check on a new gaming PC</h1>
+    <p>Memory profile, monitor refresh rate, graphics driver, Windows power mode and updates - what each does, where to find it, and which we set before delivery.</p>
+  </div>
+</section>
+<main>
+  <article class="wrap narrow">
+    <p class="muted" style="margin-top:2rem">5 min read <span class="stamp">setup</span> <span class="stamp">memory</span> <span class="stamp">drivers</span> <span class="stamp">monitors</span></p>
+<p>Short answer: before you judge how a new gaming PC runs, check five things. The memory profile (EXPO or XMP) in the BIOS, the refresh rate your monitor is actually using, the graphics driver, the Windows power mode, and Windows Update. None of them costs anything, and with all five wrong a PC feels like one from a tier below. On a PC we build, the first three are done before it leaves the workshop: <a href="services.html">Standard assembly</a> includes a BIOS (Basic Input/Output System) update, the memory profile set, and Windows 11 with current drivers, and the Premium setup tunes the monitor's refresh rate at your desk. This post is for everyone else.</p>
+<h2>1. The memory profile: the one most often missed</h2>
+<p>Memory kits have a rated speed, and the memory in our builds is DDR5-6000: a Kingston FURY Beast RGB 16GB kit in the Mainstream, a Corsair Vengeance 32GB kit in the Performance and Quiet Creator. The catch is that the processor's default is lower. AMD's spec page for the Ryzen 5 9600X lists its maximum memory speed as DDR5-5600 with two sticks, and that is what the board uses out of the box. The extra speed you paid for sits unused until someone turns on the kit's profile.</p>
+<p>On an AMD board that profile is called EXPO (Extended Profiles for Overclocking). AMD describes it as user-friendly memory overclocking for Ryzen processors on socket AM5, with Ryzen-optimized profiles so the kit runs at its rated speed in one step. Kingston's FURY Beast is on AMD's list of EXPO partners. XMP (Extreme Memory Profile) is the Intel version of the same idea, and most AM5 boards read both.</p>
+<p>To check it: open Task Manager, go to Performance, then Memory, and read the speed. If a 6000 kit reports 5600 or 4800, the profile is off. Turning it on means restarting into the BIOS, finding the EXPO or XMP switch, and picking the kit's own profile - the rated one, nothing beyond it. Our <a href="blog-is-16gb-ram-enough-for-gaming-2026.html">16GB memory post</a> covers how much memory you need; this is about making the memory you have run at full speed.</p>
+<h2>2. The refresh rate your monitor is really using</h2>
+<p>A 144 Hz or 165 Hz monitor only shows that many frames if Windows is set to it. Microsoft's help page gives the steps: Start, then Settings, System, Display, Advanced display settings, choose the monitor if you have more than one, and pick the rate under Refresh rate. Microsoft's own description of the gain is less motion blur and screen tearing, lower input lag and better responsiveness in games. One detail from the same page: rates marked with an asterisk are not supported at your current resolution, so choosing one changes the resolution too.</p>
+<p>Check it after every new monitor or cable. Our <a href="blog-monitor-resolution-1080p-1440p-4k.html">monitor post</a> explains which resolution fits which build; this setting turns the monitor's headline number into frames you can see.</p>
+<h2>3. The graphics driver</h2>
+<p>The driver sits between Windows and the graphics card, and the makers update it often with fixes for new games. Each brand has its own installer:</p>
+<ul><li><strong>Radeon cards</strong> (the RX 9060 XT in the Mainstream, the RX 9070 XT in the Performance) use AMD Software: Adrenalin Edition. AMD's support site has an Auto-Detect and Install tool that finds your card and downloads the right package. The RX 9070 XT driver page lists a Recommended release, the tested one for most people, and an Optional release with the newest game fixes; the two most recent are dated Oct 20 and Oct 30, 2026.</li><li><strong>GeForce cards</strong> (the RTX 5070 Ti in the Quiet Creator) use the NVIDIA app, which NVIDIA describes as the place to keep drivers up to date, optimize games and tune the card.</li></ul>
+<p>Install the maker's package rather than relying on whatever Windows picked. We install the current driver on every build, and a yearly <a href="services.html">tune-up</a> includes BIOS, driver and Windows updates for any desktop, not only ours.</p>
+<h2>4. The Windows power mode</h2>
+<p>Windows 11 has three power modes: Best power efficiency, Balanced and Best performance. Microsoft's page puts them under Start, Settings, System, Power &amp; battery. Balanced is the default and is fine for a gaming desktop. Best performance maximizes speed at the cost of more electricity, a small price on a desktop with no battery. The one to avoid on a gaming PC is Best power efficiency. If the setting is greyed out, Microsoft says a custom power plan is selected: open Control Panel, System and Security, Power Options, and choose Balanced to get the modes back.</p>
+<h2>5. Windows Update and the BIOS</h2>
+<p>Run Windows Update until it finds nothing more, then restart. A fresh install can be months behind, and game launchers and anti-cheat expect a current Windows. The BIOS is the same idea one level down: board makers release updates for memory compatibility and newer processors. A bad flash can leave a board dead, so if you are not comfortable with it, leave it to someone who does it every week. We update the BIOS on every build before the memory profile goes on.</p>
+<h2>What we set before delivery</h2>
+<div class="table-scroll"><table><thead><tr><th>Setting</th><th>Where it lives</th><th>On a Frame Foundry build</th></tr></thead><tbody><tr><td>Memory profile (EXPO or XMP)</td><td>BIOS</td><td>Set in Standard assembly</td></tr><tr><td>BIOS update</td><td>BIOS</td><td>Done in Standard assembly</td></tr><tr><td>Graphics driver</td><td>AMD Adrenalin or NVIDIA app</td><td>Current driver installed</td></tr><tr><td>Monitor refresh rate</td><td>Windows display settings</td><td>Tuned in Premium setup, or do it yourself in a minute</td></tr><tr><td>Windows Update</td><td>Windows settings</td><td>Run in Standard setup</td></tr></tbody></table></div>
+<p>The <a href="builds.html">builds page</a> lists every part in the Mainstream ($2,099), Performance ($2,699) and Quiet Creator ($3,899), prices before sales tax. Already have a PC and not sure its memory or driver are where they should be? Say so on the <a href="quote.html">quote form</a> and we will tell you what to check, or come and do it.</p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:3rem 0 0">
+    <p style="margin-top:1.6rem">Thinking about a new PC or an upgrade? See our <a href="builds.html">current builds</a> with every part priced, or <a href="quote.html">ask for a free quote</a>.</p>
+    <h2>More from the blog</h2>
+    <ul><li><a href="blog-gaming-pc-for-streaming.html">Gaming PC for streaming: what changes, and what does not</a> <span class="muted">- Nov 3, 2026</span></li><li><a href="blog-what-x3d-means-ryzen.html">What &quot;X3D&quot; means on a Ryzen chip, and when it is worth paying for</a> <span class="muted">- Nov 1, 2026</span></li><li><a href="blog-monitor-resolution-1080p-1440p-4k.html">1080p, 1440p or 4K: which monitor fits which build</a> <span class="muted">- Oct 30, 2026</span></li></ul>
+    <p><a href="guides.html">All guides and posts</a></p>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="wrap cols">
+    <div>
+      <p><strong>Frame Foundry</strong> - custom gaming PCs, built to order in the West San Fernando Valley.</p>
+      <p>Pacific Front Desk LLC dba Frame Foundry. Home-based workshop in Canoga Park, Los Angeles. No storefront - delivery and in-home service by appointment.</p>
+      <p><a href="mailto:hello@framefoundrypc.com">hello@framefoundrypc.com</a></p>
+    </div>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="builds.html">Builds</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="build-cta"><a href="quote.html">Build your PC</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <ul>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="guides.html">Buying guides</a></li>
+      <li><a href="price-report.html">Price report</a></li>
+      <li><a href="warranty.html">Warranty</a></li>
+      <li><a href="terms.html">Terms of Sale</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

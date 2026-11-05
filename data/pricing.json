@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 178.0
+      "site_price": 177.5
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -71,7 +71,7 @@
       "basis": "pcpp",
       "amazon_asin": "B0F9LN5VZ6",
       "third_party_ok": true,
-      "site_price": 649.99
+      "site_price": 749.99
     },
     "gpu_9070xt": {
       "category": "Graphics card (GPU)",
@@ -87,7 +87,7 @@
       "mpn": "VCG5070T16TFXPB1-O",
       "match_note": "2026-10-30 (Oleg OK'd cheaper equivalents): replaces the PNY ARGB EPIC-X OC ($1,349.99). Same PNY card without the RGB lighting, $1,249.99 sold by Newegg, in stock. 299.5 mm, 2.4-slot (Fractal North fits 355 mm); 16-pin via the included adapter on the GF1 850W's PCIe 8-pin cables. Ignore the refurbished listing. 2026-11-01: price source switched from Newegg to PCPartPicker - Newegg's own stock of VCG5070T16TFXPB1-O was out 2 days in a row (Oct 31 - Nov 1, list 1,249.99); PCPartPicker lowest in stock = B&H 1,349.99 (Best Buy 1,500.00, Amazon only a used one at 1,425.00).",
       "basis": "pcpp",
-      "site_price": 1500.0
+      "site_price": 1499.99
     },
     "ssd_1tb": {
       "category": "Storage (SSD)",
@@ -131,8 +131,8 @@
   "builds": {
     "mainstream": {
       "name": "Mainstream",
-      "set_price": 2099,
-      "priced_on": "2026-11-04",
+      "set_price": 2199,
+      "priced_on": "2026-11-05",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -152,7 +152,7 @@
     "performance": {
       "name": "Performance",
       "set_price": 2799,
-      "priced_on": "2026-11-04",
+      "priced_on": "2026-11-05",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -172,7 +172,7 @@
     "quiet-creator": {
       "name": "Quiet Creator",
       "set_price": 4099,
-      "priced_on": "2026-11-04",
+      "priced_on": "2026-11-05",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
