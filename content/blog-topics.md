@@ -15,9 +15,9 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-11-07 October price notes: what moved in our parts price log (2026-11-07-october-price-notes.md)
 - [x] 2026-11-09 Wi-Fi or a cable for online games: what to use and when (2026-11-09-wifi-or-cable-for-online-games.md)
 - [x] 2026-11-11 SSD buying guide: NVMe vs SATA, Gen4 vs Gen5, how much you need (2026-11-11-ssd-buying-guide.md)
+- [x] 2026-11-13 Power supplies: why the PSU is not the place to save money (2026-11-13-power-supply-not-the-place-to-save.md)
 
 ## Up next
-- [ ] Power supplies: why the PSU is not the place to save money (wattage, 80+ rating, exact model numbers)
 - [ ] Air vs liquid cooling for a gaming PC: noise, maintenance, cost
 - [ ] Quiet gaming PC: what actually makes a PC quiet (case, fans, cooler, fan curves)
 - [ ] Parental controls checklist for a kid's first gaming PC (Microsoft Family Safety, Steam, Epic, Roblox, Fortnite)
