@@ -15,7 +15,7 @@
       "category": "Processor (CPU)",
       "item": "AMD Ryzen 5 9600X",
       "basis": "pcpp",
-      "site_price": 172.95
+      "site_price": 174.0
     },
     "cpu_9800x3d": {
       "category": "Processor (CPU)",
@@ -95,13 +95,13 @@
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 159.0
+      "site_price": 158.99
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
       "item": "WD_BLACK SN7100 2TB NVMe",
       "basis": "pcpp",
-      "site_price": 339.0
+      "site_price": 334.99
     },
     "psu_850": {
       "category": "Power supply (PSU)",
@@ -121,20 +121,20 @@
       "category": "Case",
       "item": "Fractal Design North (wood front, quiet)",
       "basis": "pcpp",
-      "site_price": 154.99
+      "site_price": 149.99
     },
     "os_win11home": {
       "category": "Operating system",
       "item": "Windows 11 Home (licensed OEM copy)",
       "basis": "pcpp",
-      "site_price": 129.99
+      "site_price": 119.99
     }
   },
   "builds": {
     "mainstream": {
       "name": "Mainstream",
       "set_price": 2199,
-      "priced_on": "2026-11-10",
+      "priced_on": "2026-11-13",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -154,7 +154,7 @@
     "performance": {
       "name": "Performance",
       "set_price": 2799,
-      "priced_on": "2026-11-10",
+      "priced_on": "2026-11-13",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -173,8 +173,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 4099,
-      "priced_on": "2026-11-10",
+      "set_price": 3999,
+      "priced_on": "2026-11-13",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
