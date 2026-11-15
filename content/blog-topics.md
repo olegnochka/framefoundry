@@ -18,9 +18,9 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-11-13 Power supplies: why the PSU is not the place to save money (2026-11-13-power-supply-not-the-place-to-save.md)
 - [x] 2026-11-15 Air vs liquid cooling for a gaming PC: noise, maintenance, cost (2026-11-15-air-vs-liquid-cooling.md)
 - [x] 2026-11-17 Quiet gaming PC: what actually makes a PC quiet (2026-11-17-quiet-gaming-pc.md)
+- [x] 2026-11-19 Parental controls checklist for a kid's first gaming PC (2026-11-19-parental-controls-first-gaming-pc.md)
 
 ## Up next
-- [ ] Parental controls checklist for a kid's first gaming PC (Microsoft Family Safety, Steam, Epic, Roblox, Fortnite)
 - [ ] Holiday buying: what to check before Black Friday PC deals (exact models, return windows, warranty)
 - [ ] How to clean a gaming PC safely at home (and when to leave it to us)
 - [ ] What a 1-year local labor warranty covers vs a manufacturer warranty
