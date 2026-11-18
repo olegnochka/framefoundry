@@ -62,7 +62,7 @@
       "category": "Memory (RAM)",
       "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36",
       "basis": "pcpp",
-      "site_price": 499.99,
+      "site_price": 586.99,
       "match_note": "2026-10-31: price source switched from Newegg to PCPartPicker - Newegg's own stock of CMK32GX5M2E6000Z36 was out 2 days in a row (Oct 30-31); PCPartPicker lowest in stock = Corsair.com direct 499.99."
     },
     "gpu_9060xt": {
@@ -89,13 +89,13 @@
       "mpn": "VCG5070T16TFXPB1-O",
       "match_note": "2026-10-30 (Oleg OK'd cheaper equivalents): replaces the PNY ARGB EPIC-X OC ($1,349.99). Same PNY card without the RGB lighting, $1,249.99 sold by Newegg, in stock. 299.5 mm, 2.4-slot (Fractal North fits 355 mm); 16-pin via the included adapter on the GF1 850W's PCIe 8-pin cables. Ignore the refurbished listing. 2026-11-01: price source switched from Newegg to PCPartPicker - Newegg's own stock of VCG5070T16TFXPB1-O was out 2 days in a row (Oct 31 - Nov 1, list 1,249.99); PCPartPicker lowest in stock = B&H 1,349.99 (Best Buy 1,500.00, Amazon only a used one at 1,425.00).",
       "basis": "pcpp",
-      "site_price": 1499.99
+      "site_price": 1479.99
     },
     "ssd_1tb": {
       "category": "Storage (SSD)",
       "item": "Kingston NV3 1TB NVMe",
       "basis": "pcpp",
-      "site_price": 149.99
+      "site_price": 158.99
     },
     "ssd_2tb": {
       "category": "Storage (SSD)",
@@ -109,7 +109,7 @@
       "mpn": "PS-TPD-0850FNFAGU-P",
       "match_note": "Black, US plug. NOT the white Snow Edition / EU listing (B09QHTRYZ4). Amazon ASIN B0CKY88GMT.",
       "basis": "pcpp",
-      "site_price": 76.99
+      "site_price": 84.99
     },
     "case_lancool207": {
       "category": "Case",
@@ -121,7 +121,7 @@
       "category": "Case",
       "item": "Fractal Design North (wood front, quiet)",
       "basis": "pcpp",
-      "site_price": 149.99
+      "site_price": 154.99
     },
     "os_win11home": {
       "category": "Operating system",
@@ -134,7 +134,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 2199,
-      "priced_on": "2026-11-16",
+      "priced_on": "2026-11-18",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -153,8 +153,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2799,
-      "priced_on": "2026-11-16",
+      "set_price": 2899,
+      "priced_on": "2026-11-18",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -173,8 +173,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 3999,
-      "priced_on": "2026-11-16",
+      "set_price": 4099,
+      "priced_on": "2026-11-18",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,
