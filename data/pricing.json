@@ -62,7 +62,7 @@
       "category": "Memory (RAM)",
       "item": "Corsair Vengeance 32GB (2x16GB) DDR5-6000 CL36",
       "basis": "pcpp",
-      "site_price": 586.99,
+      "site_price": 474.99,
       "match_note": "2026-10-31: price source switched from Newegg to PCPartPicker - Newegg's own stock of CMK32GX5M2E6000Z36 was out 2 days in a row (Oct 30-31); PCPartPicker lowest in stock = Corsair.com direct 499.99."
     },
     "gpu_9060xt": {
@@ -121,7 +121,7 @@
       "category": "Case",
       "item": "Fractal Design North (wood front, quiet)",
       "basis": "pcpp",
-      "site_price": 154.99
+      "site_price": 116.24
     },
     "os_win11home": {
       "category": "Operating system",
@@ -134,7 +134,7 @@
     "mainstream": {
       "name": "Mainstream",
       "set_price": 2199,
-      "priced_on": "2026-11-19",
+      "priced_on": "2026-11-20",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 50,
@@ -153,8 +153,8 @@
     },
     "performance": {
       "name": "Performance",
-      "set_price": 2899,
-      "priced_on": "2026-11-19",
+      "set_price": 2799,
+      "priced_on": "2026-11-20",
       "assembly_label": "Standard assembly",
       "assembly": 249,
       "packaging": 55,
@@ -173,8 +173,8 @@
     },
     "quiet-creator": {
       "name": "Quiet Creator",
-      "set_price": 4099,
-      "priced_on": "2026-11-19",
+      "set_price": 3899,
+      "priced_on": "2026-11-20",
       "assembly_label": "Premium assembly (quiet tuning)",
       "assembly": 399,
       "packaging": 85,

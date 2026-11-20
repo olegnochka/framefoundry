@@ -641,3 +641,20 @@ date,part_key,item,pcpartpicker_lowest,newegg_sold_by_newegg,cost_basis,notes
 2026-11-19,case_lancool207,Lian Li Lancool 207,72.99,,82.99,"same as site 82.99: PCPartPicker 72.99 is Newegg after promo code TSX234 (-10.00, ends 12/1); Amazon 82.99 in stock; cost basis = 82.99 (promo-code prices not counted)"
 2026-11-19,case_north,Fractal Design North,154.99,,154.99,"same as site 154.99: PCPartPicker lowest 154.99 (both colors); North Mesh 154.99, XL 194.99 not counted"
 2026-11-19,os_win11home,Windows 11 Home OEM,119.99,,129.99,"same as site 129.99: PCPartPicker 119.99 is Newegg 129.99 after promo code BFF547 (-10.00, ends 12/1), not counted; MemoryC 178.25 available soon. Best Buy API skipped: ~/.config/framefoundry/bestbuy_api_key is missing"
+2026-11-20,cpu_9600x,AMD Ryzen 5 9600X,169.00,,173.99,"same as site 173.99: PCPartPicker product page: Amazon 173.99 and B&H 173.99 in stock (lowest without a code); Newegg 169.00 is after promo code BFEF161 (-50.00 from 219.00, ends 11/28), not counted; Best Buy out of stock. Best Buy API skipped: ~/.config/framefoundry/bestbuy_api_key is missing"
+2026-11-20,cpu_9800x3d,AMD Ryzen 7 9800X3D,399.00,469.99,469.99,"same as site 469.99: Newegg 9800X3D 469.99 sold by Newegg, in stock; PCPartPicker 399.00 is after a promo code (as on previous days), not counted"
+2026-11-20,cpu_7800x3d,AMD Ryzen 7 7800X3D,339.00,,339.00,same as site 339.00 (upsell only): PCPartPicker lowest boxed 339.00 in stock
+2026-11-20,cooler_pa120se,Thermalright Peerless Assassin 120 SE,34.90,,34.90,"daily rise watch (same as site; ARGB 36.90, WHITE ARGB 38.59 and V3 34.90 not counted)"
+2026-11-20,cooler_drp5,be quiet! Dark Rock Pro 5,69.90,,69.90,daily rise watch (PCPartPicker lowest 69.90 same as site)
+2026-11-20,mb_b850,MSI PRO B850-S WIFI6E,139.99,,139.99,"daily rise watch (PCPartPicker lowest 139.99, same as site)"
+2026-11-20,ram_16gb,TeamGroup T-Force Delta RGB 16GB (2x8) DDR5-6000 CL38,279.99,279.99,279.99,"same as site 279.99: FF3D516G6000HC38ADC01 279.99 sold by Newegg, in stock; PCPartPicker lowest 279.99"
+2026-11-20,ram_32gb,Corsair Vengeance 32GB (2x16) DDR5-6000 CL36,474.99,,474.99,"DOWN 19.1%: PCPartPicker product page (CMK32GX5M2E6000Z36): Corsair.com 474.99 in stock, no promo code (only store listed). vs site 586.99. Cost basis = Corsair.com 474.99"
+2026-11-20,gpu_9060xt,Sapphire PULSE Radeon RX 9060 XT 16GB,749.99,,749.99,same as site 749.99: PCPartPicker lowest in stock 749.99 (chipset filter). Amazon ASIN not checked (Amazon blocks automated access)
+2026-11-20,gpu_9070xt,PowerColor Reaper Radeon RX 9070 XT 16GB,,1049.99,1049.99,"same as site 1049.99: Newegg RX9070XT 16G-A 1,049.99 sold by Newegg, in stock (open box 879.99 not counted)"
+2026-11-20,gpu_5070ti,PNY OC GeForce RTX 5070 Ti 16GB,1469.99,,1469.99,"same as site 1469.99: PCPartPicker VCG5070T16TFXPB1-O 1,469.99 in stock"
+2026-11-20,ssd_1tb,Kingston NV3 1TB (SNV3S/1000G),139.99,,139.99,daily rise watch (PCPartPicker lowest 139.99 same as site)
+2026-11-20,ssd_2tb,WD_BLACK SN7100 2TB (WDS200T4X0E),329.99,,329.99,daily rise watch (PCPartPicker lowest 329.99 same as site)
+2026-11-20,psu_850,Thermaltake Toughpower GF1 850W (PS-TPD-0850FNFAGU-P),74.99,,74.99,daily rise watch (PCPartPicker lowest 74.99 same as site)
+2026-11-20,case_lancool207,Lian Li Lancool 207,72.99,,82.99,"same as site 82.99: PCPartPicker 72.99 is Newegg after promo code TSX234 (-10.00, ends 12/1); cost basis = 82.99 (promo-code prices not counted, as on previous days)"
+2026-11-20,case_north,Fractal Design North,116.24,,116.24,"DOWN 25.0%: PCPartPicker product page (FD-C-NOR1C-02, black): Amazon 116.24 and Best Buy 116.24 in stock, no promo code; B&H and Walmart 154.99, Newegg 154.99 + 9.99 shipping. White still 154.99. vs site 154.99. Cost basis = Amazon/Best Buy 116.24"
+2026-11-20,os_win11home,Windows 11 Home OEM,119.99,,129.99,"same as site 129.99: PCPartPicker 119.99 is Newegg 129.99 after promo code BFF547 (-10.00, ends 12/1), not counted; MemoryC 173.59 available soon"
