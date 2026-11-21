@@ -21,6 +21,6 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-11-19 Parental controls checklist for a kid's first gaming PC (2026-11-19-parental-controls-first-gaming-pc.md)
 - [x] 2026-11-21 Black Friday PC deals: what to check before you buy (2026-11-21-black-friday-pc-deals-checklist.md)
 - [x] 2026-11-23 How to clean a gaming PC safely at home (and when to call us) (2026-11-23-clean-gaming-pc-at-home.md)
+- [x] 2026-11-25 Labor warranty vs manufacturer warranty: what each one covers (2026-11-25-labor-warranty-vs-manufacturer-warranty.md)
 
 ## Up next
-- [ ] What a 1-year local labor warranty covers vs a manufacturer warranty
