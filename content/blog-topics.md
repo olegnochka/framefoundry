@@ -23,9 +23,9 @@ Oleg can add, reorder or delete topics any time. Mix the categories; keep it use
 - [x] 2026-11-23 How to clean a gaming PC safely at home (and when to call us) (2026-11-23-clean-gaming-pc-at-home.md)
 - [x] 2026-11-25 Labor warranty vs manufacturer warranty: what each one covers (2026-11-25-labor-warranty-vs-manufacturer-warranty.md)
 - [x] 2026-11-27 Giving a gaming PC as a holiday gift: what to sort out first (2026-11-27-gaming-pc-holiday-gift.md)
+- [x] 2026-11-29 November price notes: what moved in our parts price log (2026-11-29-november-price-notes.md)
 
 ## Up next
-- [ ] November price notes: what moved in our parts price log this month
 - [ ] How much graphics card memory (VRAM) do you need for gaming in 2026?
 - [ ] Moving your games, saves and files to a new PC without losing anything
 - [ ] Ryzen 5 9600X vs Ryzen 7 9800X3D: who needs the bigger chip
